@@ -1,6 +1,6 @@
 import os
 import re
-
+from datetime import datetime
 
 def merge_files(in_dir, out_dir, out_file='out', ext='sql', excludes = ['requirements']):
     files = []
@@ -10,7 +10,8 @@ def merge_files(in_dir, out_dir, out_file='out', ext='sql', excludes = ['require
         for exclude in excludes:
             files = list(filter(lambda filename: exclude not in filename, files))
     files.sort()
-    outpath = os.path.join(out_dir, 'out.{ext}'.format(ext=ext))
+    out_file = '{out_file}_{dt}.{ext}'.format(out_file=out_file, dt=datetime.today().strftime(r'%Y%m%d'), ext=ext)
+    outpath = os.path.join(out_dir, out_file)
     with open(outpath, 'w+') as of:
         for infile in files:
             with open(infile, 'r') as f:
