@@ -33,9 +33,9 @@ as
         return l_table_name; 
     end;
 begin
-    g_config            pljson := new pljson();
-    g_prefix            pljson := new pljson();
-    g_suffix            pljson := new pljson();
+    g_config            := new pljson();
+    g_prefix            := new pljson();
+    g_suffix            := new pljson();
     g_prefix.put('prefix'       ,'app');
     g_suffix.put('table'        ,'tab');
     g_suffix.put('type'         ,'typ');
