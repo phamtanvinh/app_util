@@ -1,4 +1,3 @@
-
 create or replace type body app_base_object
 as
 -- static
