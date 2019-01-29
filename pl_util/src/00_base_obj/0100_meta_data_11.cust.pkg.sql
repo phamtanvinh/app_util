@@ -14,3 +14,4 @@ as
 begin
     g_config        := new pljson();
 end meta_data_custom;
+/
