@@ -4,6 +4,7 @@ stage*
 .idea
 .vscode
 .DS_Store
+.research
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
