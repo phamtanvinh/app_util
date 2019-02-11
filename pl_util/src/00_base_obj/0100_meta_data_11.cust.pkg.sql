@@ -1,10 +1,11 @@
 create or replace package meta_data_custom
+/**
+* Project:      app_util<br/>
+* Description:  App tool for data management.
+* @author Vinhpt
+* @headcom
+*/
 as
-/* **********************************************************************************
- * app_meta_data_util
- * **********************************************************************************
- *  description: 
- * **********************************************************************************/
     g_config        pljson;
 end meta_data_custom;
 /

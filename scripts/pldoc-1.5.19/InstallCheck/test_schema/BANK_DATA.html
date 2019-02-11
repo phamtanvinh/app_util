@@ -1,0 +1,1333 @@
+<HTML xmlns:lxslt="http://xml.apache.org/xslt" xmlns:exslt="http://exslt.org/common">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>MyApplication</TITLE>
+<LINK TITLE="Style" HREF="../stylesheet.css" TYPE="text/css" REL="stylesheet">
+<!--
+        sameCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesLowerCase=FALSE
+        namesUpperCase=FALSE
+        namesDefaultCase=TRUE
+        defaultNamesCase=UPPER
+        namesFromCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesToCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-->
+</HEAD>
+<BODY BGCOLOR="white">
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">test_schema</FONT>
+<BR>Package&nbsp;BANK_DATA</H2> ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Testing national character here: äöüõçï<br/>
+ DB impact:       YES<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+<P></P>
+<DL>
+<DT>Deprecated:</DT>
+<DD>Use something <b>new</b> instead.</DD>
+<P></P>
+</DL>
+<HR>
+<P></P>
+<A NAME="field_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Field Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=VARCHAR2(100)
+       localTypeName=
+       schema=test_schema
+       fieldType=VARCHAR2(100)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2(100)</CODE></FONT></TD><TD><CODE><B><A HREF="#AUTHOR">AUTHOR</A></B> CONSTANT := 'altumano ''the wolf'''</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#C">C</A></B> CONSTANT := 3.2E9</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=VARCHAR2(100)
+       localTypeName=
+       schema=test_schema
+       fieldType=VARCHAR2(100)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2(100)</CODE></FONT></TD><TD><CODE><B><A HREF="#CURRENT_AUTHOR">CURRENT_AUTHOR</A></B> := '\altumano\ `the wolf` &auml;&ouml;&uuml;&otilde;&ccedil;'</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=DATE
+       localTypeName=
+       schema=test_schema
+       fieldType=DATE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->DATE</CODE></FONT></TD><TD><CODE><B><A HREF="#CURRENT_DATE">CURRENT_DATE</A></B> := '24-feb-02'</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#CURRENT_PI">CURRENT_PI</A></B> := 3.1415</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      package-level variables
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#CURRENT_YEAR">CURRENT_YEAR</A></B> := 2002</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#D">D</A></B> CONSTANT := 3.2E9</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=DATE
+       localTypeName=
+       schema=test_schema
+       fieldType=DATE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->DATE</CODE></FONT></TD><TD><CODE><B><A HREF="#DATE_CREATED">DATE_CREATED</A></B> CONSTANT := '29-oct-01'</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#PI">PI</A></B> CONSTANT := 3.1415</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      constants
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#YEAR_CREATED">YEAR_CREATED</A></B> CONSTANT := 2001</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="type_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Type Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=TABLE OF INTEGER INDEX BY VARCHAR2(30)
+       localTypeName=
+       schema=test_schema
+       fieldType=TABLE OF INTEGER INDEX BY VARCHAR2(30)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF INTEGER INDEX BY VARCHAR2(30)</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#ASSC_ARRAY">ASSC_ARRAY</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Associative array.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=TABLE OF bank_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=test_schema
+       fieldType=TABLE OF bank_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF bank_type INDEX BY BINARY_INTEGER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#BANK_TABLE">BANK_TABLE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Bank table type.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=RECORD
+       localTypeName=
+       schema=test_schema
+       fieldType=RECORD
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->RECORD</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="BANK_TYPE"></A><TD><CODE><B><A HREF="#BANK_TYPE(VARCHAR2(20),VARCHAR2(100),VARCHAR2(105),VARCHAR2(35),VARCHAR2(20),VARCHAR2(1),VARCHAR2(100),VARCHAR2(50),VARCHAR2(50),VARCHAR2(100),VARCHAR2(255),DATE,VARCHAR2(20),VARCHAR2(20),VARCHAR2(20))">BANK_TYPE</A></B>(ID VARCHAR2(20), NAME VARCHAR2(100), ADDRESS VARCHAR2(105), LOCATION VARCHAR2(35), BIC VARCHAR2(20), AUTH_KEY VARCHAR2(1), CONTACT VARCHAR2(100), PHONE VARCHAR2(50), FAX VARCHAR2(50), TELEX VARCHAR2(100), MEDIUM VARCHAR2(255), MOD_TIME DATE, APP_USER VARCHAR2(20), DB_USER VARCHAR2(20), CUSTOMER_ID VARCHAR2(20))</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Bank record type.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=files%ROWTYPE
+       localTypeName=
+       schema=test_schema
+       fieldType=files%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->files%ROWTYPE</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#FILES_RECORD">FILES_RECORD</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Files subtype.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=REF CURSOR RETURN bank_type
+       localTypeName=
+       schema=test_schema
+       fieldType=REF CURSOR RETURN bank_type
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->REF CURSOR RETURN bank_type</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#REF_TYPE">REF_TYPE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Bank ref cursor.</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="method_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Method Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="DEL"></A><TD><CODE><B><A HREF="#DEL(BANK_TYPE)">DEL</A></B>(P_DATA IN BANK_TYPE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Delete a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="DEL_TABLE"></A><TD><CODE><B><A HREF="#DEL_TABLE(BANK_TABLE)">DEL_TABLE</A></B>(P_DATA IN BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Delete a table
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=3 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET"></A><TD><CODE><B><A HREF="#GET(VARCHAR2,BANK_TYPE,VARCHAR2)">GET</A></B>(P_ID IN VARCHAR2, R_BANK_REC OUT BANK_TYPE, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Gets bank record by ID.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=6 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,BANK_TABLE)">GET</A></B>(P_ID IN VARCHAR2, P_BIC IN VARCHAR2, P_NAME IN VARCHAR2, P_ADDRESS IN VARCHAR2, P_LOCATION IN VARCHAR2, R_BANK_TAB IN OUT BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <B>Deprecated.</B>&nbsp;<I>Use Get_By_Criteria instead.</I></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_BY_BIC"></A><TD><CODE><B><A HREF="#GET_BY_BIC(VARCHAR2,BANK_TYPE,NUMBER,VARCHAR2)">GET_BY_BIC</A></B>(P_BIC IN VARCHAR2, R_BANK_REC OUT BANK_TYPE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Gets bank record by BIC.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=2 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_BY_BIC(VARCHAR2,BANK_TYPE)">GET_BY_BIC</A></B>(P_BIC IN VARCHAR2, R_RECORD IN OUT BANK_TYPE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      DEPRECATED
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_BY_CRITERIA"></A><TD><CODE><B><A HREF="#GET_BY_CRITERIA(BANK_TYPE,BANK_TABLE,NUMBER,VARCHAR2)">GET_BY_CRITERIA</A></B>(P_CRITERIA IN BANK_TYPE, R_BANK_TAB IN OUT BANK_TABLE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Search data by given criteria.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_BY_ID"></A><TD><CODE><B><A HREF="#GET_BY_ID(VARCHAR2,BANK_TABLE)">GET_BY_ID</A></B>(P_ID IN VARCHAR2, R_RECORDS IN OUT BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      DEPRECATED
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=3 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_OUR"></A><TD><CODE><B><A HREF="#GET_OUR(BANK_DATA.BANK_TYPE,NUMBER,VARCHAR2)">GET_OUR</A></B>(R_OURBANK OUT BANK_DATA.BANK_TYPE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Get our bank record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=VARCHAR2
+       localTypeName=
+       schema=test_schema
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_TABLE"></A><TD><CODE><B><A HREF="#GET_TABLE(VARCHAR2,BANK_TABLE,NUMBER,VARCHAR2)">GET_TABLE</A></B>(P_ID IN VARCHAR2, R_BANK_TAB IN OUT BANK_TABLE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Gets bank data table (0 or 1 record) by bank ID.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_WITHOUT_PARAMETERS">GET_WITHOUT_PARAMETERS</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (no comments) 
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="INS"></A><TD><CODE><B><A HREF="#INS(BANK_TYPE)">INS</A></B>(P_DATA IN BANK_TYPE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Insert a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="INS_TABLE"></A><TD><CODE><B><A HREF="#INS_TABLE(BANK_TABLE)">INS_TABLE</A></B>(P_DATA IN BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Insert a table
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="LCK"></A><TD><CODE><B><A HREF="#LCK(BANK_TYPE)">LCK</A></B>(P_DATA IN BANK_TYPE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Lock a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="LCK_TABLE"></A><TD><CODE><B><A HREF="#LCK_TABLE(BANK_TABLE)">LCK_TABLE</A></B>(P_DATA IN BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Lock a table
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=8 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="SEARCH"></A><TD><CODE><B><A HREF="#SEARCH(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,BANK_TABLE,NUMBER,VARCHAR2)">SEARCH</A></B>(P_ID IN VARCHAR2, P_BIC IN VARCHAR2, P_NAME IN VARCHAR2, P_ADDRESS IN VARCHAR2, P_LOCATION IN VARCHAR2, R_BANK_TAB IN OUT BANK_TABLE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Search data by given criteria.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="UPD"></A><TD><CODE><B><A HREF="#UPD(BANK_TYPE)">UPD</A></B>(P_DATA IN BANK_TYPE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Update a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="UPD_TABLE"></A><TD><CODE><B><A HREF="#UPD_TABLE(BANK_TABLE)">UPD_TABLE</A></B>(P_DATA IN BANK_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Update a table
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#WITHOUT_PARAMETERS">WITHOUT_PARAMETERS</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       (no comments) 
+</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="trigger_summary"></A><A NAME="field_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Field Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="AUTHOR"></A>
+<H3>AUTHOR</H3>
+<PRE>
+        public VARCHAR2(100) <B>AUTHOR</B> CONSTANT := 'altumano ''the wolf'''</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="C"></A>
+<H3>C</H3>
+<PRE>
+        public NUMBER <B>C</B> CONSTANT := 3.2E9</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="CURRENT_AUTHOR"></A>
+<H3>CURRENT_AUTHOR</H3>
+<PRE>
+        public VARCHAR2(100) <B>CURRENT_AUTHOR</B> := '\altumano\ `the wolf` &auml;&ouml;&uuml;&otilde;&ccedil;'</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="CURRENT_DATE"></A>
+<H3>CURRENT_DATE</H3>
+<PRE>
+        public DATE <B>CURRENT_DATE</B> := '24-feb-02'</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="CURRENT_PI"></A>
+<H3>CURRENT_PI</H3>
+<PRE>
+        public NUMBER <B>CURRENT_PI</B> := 3.1415</PRE>
+<DL>
+<DD>package-level variables
+</DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="CURRENT_YEAR"></A>
+<H3>CURRENT_YEAR</H3>
+<PRE>
+        public NUMBER <B>CURRENT_YEAR</B> := 2002</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="D"></A>
+<H3>D</H3>
+<PRE>
+        public NUMBER <B>D</B> CONSTANT := 3.2E9</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="DATE_CREATED"></A>
+<H3>DATE_CREATED</H3>
+<PRE>
+        public DATE <B>DATE_CREATED</B> CONSTANT := '29-oct-01'</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="PI"></A>
+<H3>PI</H3>
+<PRE>
+        public NUMBER <B>PI</B> CONSTANT := 3.1415</PRE>
+<DL>
+<DD>constants
+</DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="YEAR_CREATED"></A>
+<H3>YEAR_CREATED</H3>
+<PRE>
+        public NUMBER <B>YEAR_CREATED</B> CONSTANT := 2001</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="type_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Type Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="ASSC_ARRAY"></A>
+<H3>ASSC_ARRAY</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=TABLE OF INTEGER INDEX BY VARCHAR2(30)
+       localTypeName=
+       schema=test_schema
+       fieldType=TABLE OF INTEGER INDEX BY VARCHAR2(30)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF INTEGER INDEX BY VARCHAR2(30) <B>ASSC_ARRAY</B>()</PRE>
+<DL>
+<DD> Associative array.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="BANK_TABLE"></A>
+<H3>BANK_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=TABLE OF bank_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=test_schema
+       fieldType=TABLE OF bank_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF bank_type INDEX BY BINARY_INTEGER <B>BANK_TABLE</B>()</PRE>
+<DL>
+<DD> Bank table type.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="BANK_TYPE(VARCHAR2(20),VARCHAR2(100),VARCHAR2(105),VARCHAR2(35),VARCHAR2(20),VARCHAR2(1),VARCHAR2(100),VARCHAR2(50),VARCHAR2(50),VARCHAR2(100),VARCHAR2(255),DATE,VARCHAR2(20),VARCHAR2(20),VARCHAR2(20))"></A>
+<H3>BANK_TYPE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=RECORD
+       localTypeName=
+       schema=test_schema
+       fieldType=RECORD
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->RECORD <B>BANK_TYPE</B>(ID VARCHAR2(20), <BR>                        NAME VARCHAR2(100), <BR>                        ADDRESS VARCHAR2(105), <BR>                        LOCATION VARCHAR2(35), <BR>                        BIC VARCHAR2(20), <BR>                        AUTH_KEY VARCHAR2(1), <BR>                        CONTACT VARCHAR2(100), <BR>                        PHONE VARCHAR2(50), <BR>                        FAX VARCHAR2(50), <BR>                        TELEX VARCHAR2(100), <BR>                        MEDIUM VARCHAR2(255), <BR>                        MOD_TIME DATE, <BR>                        APP_USER VARCHAR2(20), <BR>                        DB_USER VARCHAR2(20), <BR>                        CUSTOMER_ID VARCHAR2(20))</PRE>
+<DL>
+<DD> Bank record type.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="FILES_RECORD"></A>
+<H3>FILES_RECORD</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=files%ROWTYPE
+       localTypeName=
+       schema=test_schema
+       fieldType=files%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->files%ROWTYPE <B>FILES_RECORD</B>()</PRE>
+<DL>
+<DD> Files subtype.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="REF_TYPE"></A>
+<H3>REF_TYPE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=REF CURSOR RETURN bank_type
+       localTypeName=
+       schema=test_schema
+       fieldType=REF CURSOR RETURN bank_type
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->REF CURSOR RETURN bank_type <B>REF_TYPE</B>()</PRE>
+<DL>
+<DD> Bank ref cursor.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="method_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="DEL(BANK_TYPE)"></A>
+<H3>DEL</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>DEL</B>(P_DATA IN BANK_TYPE)</PRE>
+<DL>
+<DD>Delete a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="DEL_TABLE(BANK_TABLE)"></A>
+<H3>DEL_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>DEL_TABLE</B>(P_DATA IN BANK_TABLE)</PRE>
+<DL>
+<DD>Delete a table
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET(VARCHAR2,BANK_TYPE,VARCHAR2)"></A>
+<H3>GET</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=NUMBER
+       localTypeName=
+       schema=test_schema
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER <B>GET</B>(P_ID IN VARCHAR2, <BR>                  R_BANK_REC OUT BANK_TYPE, <BR>                  R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Gets bank record by ID. <br/>
+ (<a href="http://pldoc.sourceforge.net">PLDoc</a>)
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_ID</CODE> -
+              bank ID</DD>
+<DD>
+<CODE>R_BANK_REC</CODE> -
+              record of type bank_type</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              return message</DD>
+</DT>
+<DT>Returns:
+          <DD>return code, <b>0 is ok</b> <br/>
+                       &lt;&gt;0 means a problem: <br/>
+                       -1 unknown error <br/>
+                       -2 locking error <br/></DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,BANK_TABLE)"></A>
+<H3>GET</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET</B>(P_ID IN VARCHAR2, <BR>            P_BIC IN VARCHAR2, <BR>            P_NAME IN VARCHAR2, <BR>            P_ADDRESS IN VARCHAR2, <BR>            P_LOCATION IN VARCHAR2, <BR>            R_BANK_TAB IN OUT BANK_TABLE)</PRE>
+<DL>
+<DD> Gets table of banks.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL>
+<DT>Deprecated:</DT>
+<DD>Use Get_By_Criteria instead.</DD>
+<P></P>
+</DL>
+</DL>
+<HR>
+<A NAME="GET_BY_BIC(VARCHAR2,BANK_TYPE,NUMBER,VARCHAR2)"></A>
+<H3>GET_BY_BIC</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_BIC</B>(P_BIC IN VARCHAR2, <BR>                   R_BANK_REC OUT BANK_TYPE, <BR>                   R_RESULT OUT NUMBER, <BR>                   R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Gets bank record by BIC.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>R_BANK_REC</CODE> -
+              record of type bank_type</DD>
+<DD>
+<CODE>R_RESULT</CODE> -
+              return code, 0=ok</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              return message</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_BY_BIC(VARCHAR2,BANK_TYPE)"></A>
+<H3>GET_BY_BIC</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_BIC</B>(P_BIC IN VARCHAR2, <BR>                   R_RECORD IN OUT BANK_TYPE)</PRE>
+<DL>
+<DD>DEPRECATED
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_BY_CRITERIA(BANK_TYPE,BANK_TABLE,NUMBER,VARCHAR2)"></A>
+<H3>GET_BY_CRITERIA</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_CRITERIA</B>(P_CRITERIA IN BANK_TYPE, <BR>                        R_BANK_TAB IN OUT BANK_TABLE, <BR>                        R_RESULT OUT NUMBER, <BR>                        R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Search data by given criteria.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_CRITERIA</CODE> -
+              record of criteria</DD>
+<DD>
+<CODE>R_BANK_TAB</CODE> -
+              table of type bank_table</DD>
+<DD>
+<CODE>R_RESULT</CODE> -
+              return code, 0=ok</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              return message</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_BY_ID(VARCHAR2,BANK_TABLE)"></A>
+<H3>GET_BY_ID</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_ID</B>(P_ID IN VARCHAR2, <BR>                  R_RECORDS IN OUT BANK_TABLE)</PRE>
+<DL>
+<DD>DEPRECATED
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_OUR(BANK_DATA.BANK_TYPE,NUMBER,VARCHAR2)"></A>
+<H3>GET_OUR</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_OUR</B>(R_OURBANK OUT BANK_DATA.BANK_TYPE, <BR>                R_RESULT OUT NUMBER, <BR>                R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD>Get our bank record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_TABLE(VARCHAR2,BANK_TABLE,NUMBER,VARCHAR2)"></A>
+<H3>GET_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=VARCHAR2
+       localTypeName=
+       schema=test_schema
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_TABLE</B>(P_ID IN VARCHAR2, <BR>                          R_BANK_TAB IN OUT BANK_TABLE, <BR>                          R_RESULT OUT NUMBER, <BR>                          R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Gets bank data table (0 or 1 record) by bank ID.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_ID</CODE> -
+              bank ID,
+ second line is also allowed,
+ and third, too</DD>
+<DD>
+<CODE>R_BANK_TAB</CODE> -
+              table of type bank_table</DD>
+<DD>
+<CODE>R_RESULT</CODE> -
+              return code, 0=ok,
+-1 error, -2 severe error</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              return message</DD>
+</DT>
+<DT>Returns:
+          <DD>some value</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_WITHOUT_PARAMETERS"></A>
+<H3>GET_WITHOUT_PARAMETERS</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_WITHOUT_PARAMETERS</B>()</PRE>
+<DL>
+<DD> (no comments) 
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="INS(BANK_TYPE)"></A>
+<H3>INS</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INS</B>(P_DATA IN BANK_TYPE)</PRE>
+<DL>
+<DD>Insert a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="INS_TABLE(BANK_TABLE)"></A>
+<H3>INS_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INS_TABLE</B>(P_DATA IN BANK_TABLE)</PRE>
+<DL>
+<DD>Insert a table
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LCK(BANK_TYPE)"></A>
+<H3>LCK</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>LCK</B>(P_DATA IN BANK_TYPE)</PRE>
+<DL>
+<DD>Lock a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LCK_TABLE(BANK_TABLE)"></A>
+<H3>LCK_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>LCK_TABLE</B>(P_DATA IN BANK_TABLE)</PRE>
+<DL>
+<DD>Lock a table
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="SEARCH(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,BANK_TABLE,NUMBER,VARCHAR2)"></A>
+<H3>SEARCH</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SEARCH</B>(P_ID IN VARCHAR2, <BR>               P_BIC IN VARCHAR2, <BR>               P_NAME IN VARCHAR2, <BR>               P_ADDRESS IN VARCHAR2, <BR>               P_LOCATION IN VARCHAR2, <BR>               R_BANK_TAB IN OUT BANK_TABLE, <BR>               R_RESULT OUT NUMBER, <BR>               R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Search data by given criteria.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_ID</CODE> -
+              bank ID</DD>
+<DD>
+<CODE>P_BIC</CODE> -
+              bank BIC</DD>
+<DD>
+<CODE>P_NAME</CODE> -
+              name</DD>
+<DD>
+<CODE>P_ADDRESS</CODE> -
+              address</DD>
+<DD>
+<CODE>P_LOCATION</CODE> -
+              location</DD>
+<DD>
+<CODE>R_BANK_TAB</CODE> -
+              table of type bank_table</DD>
+<DD>
+<CODE>R_RESULT</CODE> -
+              return code, 0=ok</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              return message</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="UPD(BANK_TYPE)"></A>
+<H3>UPD</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>UPD</B>(P_DATA IN BANK_TYPE)</PRE>
+<DL>
+<DD>Update a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="UPD_TABLE(BANK_TABLE)"></A>
+<H3>UPD_TABLE</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>UPD_TABLE</B>(P_DATA IN BANK_TABLE)</PRE>
+<DL>
+<DD> Update a table
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_DATA</CODE> -
+              new data</DD>
+</DT>
+<DT>Throws:
+        <DD>
+<CODE>ORA-20001</CODE> -
+               if some error was recognized</DD>
+<DD>
+<CODE>ORA-XXXXX</CODE> -
+               if some unexpected error occured</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="WITHOUT_PARAMETERS"></A>
+<H3>WITHOUT_PARAMETERS</H3>
+<PRE>public <!--
+       schemaName=test_schema
+       typeName=
+       localTypeName=
+       schema=test_schema
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>WITHOUT_PARAMETERS</B>()</PRE>
+<DL>
+<DD> (no comments) 
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="trigger_detail"></A>
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

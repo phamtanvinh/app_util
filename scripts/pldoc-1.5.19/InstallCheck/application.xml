@@ -1,0 +1,1413 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE APPLICATION SYSTEM "application.dtd">
+<APPLICATION NAME="MyApplication">
+  <PACKAGE NAME="BANK_DATA" SCHEMA="test_schema">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Testing national character here: äöüõçï<br/>
+ DB impact:       YES<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@DEPRECATED">
+      <COMMENT><![CDATA[Use something <b>new</b> instead.]]></COMMENT>
+    </TAG>
+    <CONSTANT DEFAULT="3.1415" NAME="PI">
+      <COMMENT_FIRST_LINE><![CDATA[constants
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[constants
+]]></COMMENT>
+      <RETURN TYPE="NUMBER"/>
+    </CONSTANT>
+    <CONSTANT DEFAULT="3.2E9" NAME="C">
+      <RETURN TYPE="NUMBER"/>
+    </CONSTANT>
+    <CONSTANT DEFAULT="3.2E9" NAME="D">
+      <RETURN TYPE="NUMBER"/>
+    </CONSTANT>
+    <CONSTANT DEFAULT="2001" NAME="YEAR_CREATED">
+      <RETURN TYPE="NUMBER"/>
+    </CONSTANT>
+    <CONSTANT DEFAULT="'altumano ''the wolf'''" NAME="AUTHOR">
+      <RETURN TYPE="VARCHAR2(100)"/>
+    </CONSTANT>
+    <CONSTANT DEFAULT="'29-oct-01'" NAME="DATE_CREATED">
+      <RETURN TYPE="DATE"/>
+    </CONSTANT>
+    <TYPE NAME="ASSC_ARRAY">
+      <COMMENT_FIRST_LINE><![CDATA[ Associative array.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Associative array.
+]]></COMMENT>
+      <RETURN TYPE="TABLE OF INTEGER INDEX BY VARCHAR2(30)"/>
+    </TYPE>
+    <TYPE NAME="BANK_TYPE">
+      <COMMENT_FIRST_LINE><![CDATA[ Bank record type.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Bank record type.
+]]></COMMENT>
+      <FIELD NAME="ID" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="NAME" TYPE="VARCHAR2(100)"/>
+      <FIELD NAME="ADDRESS" TYPE="VARCHAR2(105)"/>
+      <FIELD NAME="LOCATION" TYPE="VARCHAR2(35)"/>
+      <FIELD NAME="BIC" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="AUTH_KEY" TYPE="VARCHAR2(1)"/>
+      <FIELD NAME="CONTACT" TYPE="VARCHAR2(100)"/>
+      <FIELD NAME="PHONE" TYPE="VARCHAR2(50)"/>
+      <FIELD NAME="FAX" TYPE="VARCHAR2(50)"/>
+      <FIELD NAME="TELEX" TYPE="VARCHAR2(100)"/>
+      <FIELD NAME="MEDIUM" TYPE="VARCHAR2(255)"/>
+      <FIELD NAME="MOD_TIME" TYPE="DATE"/>
+      <FIELD NAME="APP_USER" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="DB_USER" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="CUSTOMER_ID" TYPE="VARCHAR2(20)"/>
+      <RETURN TYPE="RECORD"/>
+    </TYPE>
+    <TYPE NAME="BANK_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[ Bank table type.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Bank table type.
+]]></COMMENT>
+      <RETURN TYPE="TABLE OF bank_type INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="REF_TYPE">
+      <COMMENT_FIRST_LINE><![CDATA[ Bank ref cursor.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Bank ref cursor.
+]]></COMMENT>
+      <RETURN TYPE="REF CURSOR RETURN bank_type"/>
+    </TYPE>
+    <TYPE NAME="FILES_RECORD">
+      <COMMENT_FIRST_LINE><![CDATA[ Files subtype.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Files subtype.
+]]></COMMENT>
+      <RETURN TYPE="files%ROWTYPE"/>
+    </TYPE>
+    <VARIABLE DEFAULT="3.1415" NAME="CURRENT_PI">
+      <COMMENT_FIRST_LINE><![CDATA[package-level variables
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[package-level variables
+]]></COMMENT>
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE DEFAULT="2002" NAME="CURRENT_YEAR">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE DEFAULT="'\altumano\ `the wolf` &amp;auml;&amp;ouml;&amp;uuml;&amp;otilde;&amp;ccedil;'" NAME="CURRENT_AUTHOR">
+      <RETURN TYPE="VARCHAR2(100)"/>
+    </VARIABLE>
+    <VARIABLE DEFAULT="'24-feb-02'" NAME="CURRENT_DATE">
+      <RETURN TYPE="DATE"/>
+    </VARIABLE>
+    <CURSOR NAME="CUR1">
+      <COMMENT_FIRST_LINE><![CDATA[cursors
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[cursors
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="A" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="B" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN" NAME="C" TYPE="DATE"/>
+      <ARGUMENT MODE="IN" NAME="D" TYPE="BOOLEAN"/>
+      <RETURN TYPE="CUSTOMER%ROWTYPE"/>
+    </CURSOR>
+    <CURSOR NAME="CUR2">
+      <ARGUMENT MODE="IN" NAME="A" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="B" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN" NAME="C" TYPE="DATE"/>
+      <ARGUMENT MODE="IN" NAME="D" TYPE="BOOLEAN"/>
+    </CURSOR>
+    <FUNCTION NAME="GET">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets bank record by ID.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets bank record by ID. <br/>
+ (<a href="http://pldoc.sourceforge.net">PLDoc</a>)
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[bank ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_BANK_REC" TYPE="BANK_TYPE">
+        <COMMENT><![CDATA[record of type bank_type]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, <b>0 is ok</b> <br/>
+                       &lt;&gt;0 means a problem: <br/>
+                       -1 unknown error <br/>
+                       -2 locking error <br/>]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_id           bank ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_bank_rec     record of type bank_type]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message      return message]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[return code, <b>0 is ok</b> <br/>
+                       &lt;&gt;0 means a problem: <br/>
+                       -1 unknown error <br/>
+                       -2 locking error <br/>]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="14" END_LINE="89" LINES="5" START_COLUMN="10" START_LINE="85"/>
+    </FUNCTION>
+    <PROCEDURE NAME="WITHOUT_PARAMETERS">
+      <COMMENT_FIRST_LINE><![CDATA[ (no comments) 
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ (no comments) 
+]]></COMMENT>
+      <SUMMARY END_COLUMN="29" END_LINE="92" LINES="1" START_COLUMN="11" START_LINE="92"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_WITHOUT_PARAMETERS">
+      <COMMENT_FIRST_LINE><![CDATA[ (no comments) 
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ (no comments) 
+]]></COMMENT>
+      <SUMMARY END_COLUMN="32" END_LINE="95" LINES="1" START_COLUMN="10" START_LINE="95"/>
+    </FUNCTION>
+    <PROCEDURE NAME="GET_BY_ID">
+      <COMMENT_FIRST_LINE><![CDATA[DEPRECATED
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[DEPRECATED
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORDS" TYPE="BANK_TABLE"/>
+      <SUMMARY END_COLUMN="39" END_LINE="113" LINES="3" START_COLUMN="11" START_LINE="111"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_BY_BIC">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets bank record by BIC.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets bank record by BIC.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_BIC" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="OUT" NAME="R_BANK_REC" TYPE="BANK_TYPE">
+        <COMMENT><![CDATA[record of type bank_type]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_id           bank BIC]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_bank_rec     record of type bank_type]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result       return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message      return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="34" END_LINE="126" LINES="5" START_COLUMN="11" START_LINE="122"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_BY_BIC">
+      <COMMENT_FIRST_LINE><![CDATA[DEPRECATED
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[DEPRECATED
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_BIC" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORD" TYPE="BANK_TYPE"/>
+      <SUMMARY END_COLUMN="38" END_LINE="131" LINES="3" START_COLUMN="11" START_LINE="129"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets bank data table (0 or 1 record) by bank ID.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets bank data table (0 or 1 record) by bank ID.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[bank ID,
+ second line is also allowed,
+ and third, too]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_BANK_TAB" TYPE="BANK_TABLE">
+        <COMMENT><![CDATA[table of type bank_table]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok,
+-1 error, -2 severe error]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[some value]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_id           bank ID,
+ second line is also allowed,
+ and third, too]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_bank_tab     table of type bank_table]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result       return code, 0=ok,
+-1 error, -2 severe error]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message      return message]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[some value]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="16" END_LINE="149" LINES="6" START_COLUMN="10" START_LINE="144"/>
+    </FUNCTION>
+    <PROCEDURE NAME="SEARCH">
+      <COMMENT_FIRST_LINE><![CDATA[ Search data by given criteria.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Search data by given criteria.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[bank ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_BIC" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[bank BIC]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_NAME" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[name]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_ADDRESS" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[address]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_LOCATION" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[location]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_BANK_TAB" TYPE="BANK_TABLE">
+        <COMMENT><![CDATA[table of type bank_table]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_id           bank ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_bic          bank BIC]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_name         name]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_address      address]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_location     location]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_bank_tab     table of type bank_table]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result       return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message      return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="34" END_LINE="169" LINES="9" START_COLUMN="11" START_LINE="161"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets table of banks.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets table of banks.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_BIC" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_ADDRESS" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_LOCATION" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_BANK_TAB" TYPE="BANK_TABLE"/>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT><![CDATA[Use Get_By_Criteria instead.]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="39" END_LINE="181" LINES="7" START_COLUMN="11" START_LINE="175"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_BY_CRITERIA">
+      <COMMENT_FIRST_LINE><![CDATA[ Search data by given criteria.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Search data by given criteria.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CRITERIA" TYPE="BANK_TYPE">
+        <COMMENT><![CDATA[record of criteria]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_BANK_TAB" TYPE="BANK_TABLE">
+        <COMMENT><![CDATA[table of type bank_table]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_criteria     record of criteria]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_bank_tab     table of type bank_table]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result       return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message      return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="34" END_LINE="193" LINES="5" START_COLUMN="11" START_LINE="189"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS">
+      <COMMENT_FIRST_LINE><![CDATA[Insert a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Insert a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TYPE"/>
+      <SUMMARY END_COLUMN="34" END_LINE="197" LINES="2" START_COLUMN="11" START_LINE="196"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[Insert a table
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Insert a table
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TABLE"/>
+      <SUMMARY END_COLUMN="35" END_LINE="201" LINES="2" START_COLUMN="11" START_LINE="200"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPD">
+      <COMMENT_FIRST_LINE><![CDATA[Update a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Update a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TYPE"/>
+      <SUMMARY END_COLUMN="34" END_LINE="205" LINES="2" START_COLUMN="11" START_LINE="204"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPD_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[ Update a table
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Update a table
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TABLE">
+        <COMMENT><![CDATA[new data]]></COMMENT>
+      </ARGUMENT>
+      <THROWS NAME="ORA-20001">
+        <COMMENT><![CDATA[ if some error was recognized]]></COMMENT>
+      </THROWS>
+      <THROWS NAME="ORA-XXXXX">
+        <COMMENT><![CDATA[ if some unexpected error occured]]></COMMENT>
+      </THROWS>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_data     new data]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@THROWS">
+        <COMMENT><![CDATA[ORA-20001 if some error was recognized]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@THROWS">
+        <COMMENT><![CDATA[ORA-xxxxx if some unexpected error occured]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="35" END_LINE="213" LINES="2" START_COLUMN="11" START_LINE="212"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="DEL">
+      <COMMENT_FIRST_LINE><![CDATA[Delete a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Delete a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TYPE"/>
+      <SUMMARY END_COLUMN="34" END_LINE="217" LINES="2" START_COLUMN="11" START_LINE="216"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="DEL_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[Delete a table
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Delete a table
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TABLE"/>
+      <SUMMARY END_COLUMN="35" END_LINE="221" LINES="2" START_COLUMN="11" START_LINE="220"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="LCK">
+      <COMMENT_FIRST_LINE><![CDATA[Lock a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Lock a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TYPE"/>
+      <SUMMARY END_COLUMN="34" END_LINE="225" LINES="2" START_COLUMN="11" START_LINE="224"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="LCK_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[Lock a table
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Lock a table
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="BANK_TABLE"/>
+      <SUMMARY END_COLUMN="35" END_LINE="229" LINES="2" START_COLUMN="11" START_LINE="228"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_OUR">
+      <COMMENT_FIRST_LINE><![CDATA[Get our bank record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get our bank record
+]]></COMMENT>
+      <ARGUMENT MODE="OUT" NAME="R_OURBANK" TYPE="BANK_DATA.BANK_TYPE"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="34" END_LINE="235" LINES="4" START_COLUMN="11" START_LINE="232"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="4" END_LINE="239" LINES="239" START_COLUMN="23" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="ADVICE_DATA" SCHEMA="">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Advices<br/>
+ DB impact:       YES<br/>
+ Commit inside:   YES<br/>
+ Rollback inside: YES<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TYPE NAME="ADVICE_TYPE_RECORD">
+      <RETURN TYPE="advice_type%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="ADVICE_TYPE_TABLE">
+      <RETURN TYPE="TABLE OF advice_type_record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="ADVICE_MEDIUM_RECORD">
+      <RETURN TYPE="advice_medium%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="ADVICE_MEDIUM_TABLE">
+      <RETURN TYPE="TABLE OF advice_medium_record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="ADVICE_RECORD">
+      <RETURN TYPE="advices%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="ADVICE_TABLE">
+      <RETURN TYPE="TABLE OF advice_record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="SW_ADVICE_RECORD">
+      <RETURN TYPE="sw_advice%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="SW_ADVICE_TABLE">
+      <RETURN TYPE="TABLE OF sw_advice_record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="FILES_RECORD">
+      <RETURN TYPE="files%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="FILES_TABLE">
+      <RETURN TYPE="TABLE OF files_record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <FUNCTION NAME="GET_ADVICE_TYPES">
+      <COMMENT_FIRST_LINE><![CDATA[Get list of advice types
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get list of advice types
+]]></COMMENT>
+      <ARGUMENT MODE="OUT" NAME="R_LIST" TYPE="ADVICE_TYPE_TABLE"/>
+      <COMMENT_FIRST_LINE><![CDATA[list of advice types
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[list of advice types
+]]></COMMENT>
+      <RETURN TYPE="NUMBER"/>
+      <SUMMARY END_COLUMN="14" END_LINE="32" LINES="3" START_COLUMN="10" START_LINE="30"/>
+    </FUNCTION>
+    <PROCEDURE NAME="GET_ADVICE_DEFAULTS">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets defaults of an advice type (for given sector).]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets defaults of an advice type (for given sector).
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[business sector]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_DIR" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[direction (IN/OUT)]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_TYPE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[advice type code]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="DEF_MEDIUM" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[default medium]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="DEF_MEDIUM_OPTION" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[default medium option]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="DEF_PARTY" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[default party]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="PARTY_FIXED" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[party is fixed (TRUE/FALSE)]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_sector           business sector]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_dir              direction (IN/OUT)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_type             advice type code]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[def_medium         default medium]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[def_medium_option  default medium option]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[def_party          default party]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[party_fixed        party is fixed (TRUE/FALSE)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="34" END_LINE="55" LINES="10" START_COLUMN="11" START_LINE="46"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_ADVICE_TYPE_NAME">
+      <COMMENT_FIRST_LINE><![CDATA[&lt;Second line of comment&gt;
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[&lt;Second line of comment&gt;
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_TYPE" TYPE="VARCHAR2"/>
+      <COMMENT_FIRST_LINE><![CDATA[advice type code
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[advice type code
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="16" END_LINE="61" LINES="3" START_COLUMN="10" START_LINE="59"/>
+    </FUNCTION>
+    <PROCEDURE NAME="GET_ADVICE_MEDIUM">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets record of an advice medium
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets record of an advice medium
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ADV_TYPE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[advice type]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_MEDIUM" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[medium]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_MEDIUM_OPTION" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[medium option]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_REC" TYPE="ADVICE_MEDIUM_RECORD">
+        <COMMENT><![CDATA[advice medium record]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_adv_type         advice type]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_medium           medium]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_medium_option    medium option]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_rec              advice medium record]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="37" END_LINE="77" LINES="7" START_COLUMN="11" START_LINE="71"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET">
+      <COMMENT_FIRST_LINE><![CDATA[Get advice record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get advice record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_STEP_SEQ" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN" NAME="P_SEQ" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_REC" TYPE="ADVICE_RECORD"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="37" END_LINE="86" LINES="7" START_COLUMN="11" START_LINE="80"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="LIST_ADVICES">
+      <COMMENT_FIRST_LINE><![CDATA[Get list of advices on contract
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get list of advices on contract
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_STEP_SEQ" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN" NAME="P_IN_OUT" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_LIST" TYPE="ADVICE_TABLE"/>
+      <SUMMARY END_COLUMN="41" END_LINE="95" LINES="7" START_COLUMN="11" START_LINE="89"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS">
+      <COMMENT_FIRST_LINE><![CDATA[Register advice
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Register advice
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="P" TYPE="ADVICE_RECORD"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="36" END_LINE="101" LINES="4" START_COLUMN="11" START_LINE="98"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="DEL">
+      <COMMENT_FIRST_LINE><![CDATA[Remove advice
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Remove advice
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="P" TYPE="ADVICE_RECORD"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="36" END_LINE="107" LINES="4" START_COLUMN="11" START_LINE="104"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS_SW_ADVICE">
+      <COMMENT_FIRST_LINE><![CDATA[Register swift (sub)message
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Register swift (sub)message
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="P" TYPE="SW_ADVICE_RECORD"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="36" END_LINE="113" LINES="4" START_COLUMN="11" START_LINE="110"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_SW_ADVICE">
+      <COMMENT_FIRST_LINE><![CDATA[Get list of SWIFT messages under SWIFT advice
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get list of SWIFT messages under SWIFT advice
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_LIST" TYPE="SW_ADVICE_TABLE"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="37" END_LINE="120" LINES="5" START_COLUMN="11" START_LINE="116"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS_FILE">
+      <COMMENT_FIRST_LINE><![CDATA[Register file (sub)documents
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Register file (sub)documents
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="P" TYPE="FILES_RECORD"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="36" END_LINE="126" LINES="4" START_COLUMN="11" START_LINE="123"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_FILES">
+      <COMMENT_FIRST_LINE><![CDATA[Get list of files under the document
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get list of files under the document
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DOC_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_LIST" TYPE="FILES_TABLE"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="37" END_LINE="133" LINES="5" START_COLUMN="11" START_LINE="129"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="CFR_ADVICE_OUT">
+      <COMMENT_FIRST_LINE><![CDATA[ Clearance for release of outgoing advices.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Clearance for release of outgoing advices.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[contract ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_STEP" TYPE="NUMBER">
+        <COMMENT><![CDATA[step number]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_APP_USER" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[application user]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_contract_id      contract ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_step             step number]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_app_user         application user]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="37" END_LINE="148" LINES="6" START_COLUMN="11" START_LINE="143"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="CFR_ADVICE_IN">
+      <COMMENT_FIRST_LINE><![CDATA[ Clearance for release of incoming advices.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Clearance for release of incoming advices.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[contract ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_STEP" TYPE="NUMBER">
+        <COMMENT><![CDATA[step number]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_APP_USER" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[application user]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_contract_id      contract ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_step             step number]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_app_user         application user]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="37" END_LINE="163" LINES="6" START_COLUMN="11" START_LINE="158"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="RELEASE_ADVICE_OUT">
+      <COMMENT_FIRST_LINE><![CDATA[ Step release of outgoing advices.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Step release of outgoing advices.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[contract ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_STEP" TYPE="NUMBER">
+        <COMMENT><![CDATA[step number]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_APP_USER" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[application user]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_contract_id      contract ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_step             step number]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_app_user         application user]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="37" END_LINE="178" LINES="6" START_COLUMN="11" START_LINE="173"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="RELEASE_ADVICE_IN">
+      <COMMENT_FIRST_LINE><![CDATA[ Step release of incoming advices.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Step release of incoming advices.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CONTRACT_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[contract ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_STEP" TYPE="NUMBER">
+        <COMMENT><![CDATA[step number]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_APP_USER" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[application user]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[return code, 0=ok]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[return message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_contract_id      contract ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_step             step number]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_app_user         application user]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           return code, 0=ok]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          return message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="37" END_LINE="193" LINES="6" START_COLUMN="11" START_LINE="188"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="4" END_LINE="195" LINES="195" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="CUSTOMER_DATA" SCHEMA="">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Customer Data Management<br/>
+ DB impact:       YES<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <EXCEPTION NAME="RECORD_LOCKED"/>
+    <TYPE NAME="CUSTOMER_TYPE">
+      <FIELD NAME="ID" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="NAME" TYPE="VARCHAR2(100)"/>
+      <FIELD NAME="SHORT_NAME" TYPE="VARCHAR2(35)"/>
+      <FIELD NAME="DB_ID" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="SUB_CUST_CODE" TYPE="VARCHAR2(20)"/>
+      <FIELD NAME="SUB_ACCOUNT" TYPE="VARCHAR2(30)"/>
+      <FIELD NAME="REGNO" TYPE="VARCHAR2(50)"/>
+      <FIELD NAME="RESIDENCE" TYPE="VARCHAR2(10)"/>
+      <FIELD NAME="CT_TYPE" TYPE="VARCHAR2(10)"/>
+      <FIELD NAME="CT_ENTITY" TYPE="VARCHAR2(10)"/>
+      <FIELD NAME="LANGUAGE" TYPE="VARCHAR2(10)"/>
+      <FIELD NAME="BUSINESS_TYPE" TYPE="VARCHAR2(10)"/>
+      <FIELD NAME="TAX_CODE" TYPE="VARCHAR2(10)"/>
+      <RETURN TYPE="RECORD"/>
+    </TYPE>
+    <TYPE NAME="CUSTOMER_TABLE">
+      <RETURN TYPE="TABLE OF customer_type INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <TYPE NAME="LOAN_CUSTOMER_TYPE">
+      <RETURN TYPE="loan_customers%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="LOAN_CUSTOMER_TABLE">
+      <RETURN TYPE="TABLE OF loan_customer_type INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <PROCEDURE NAME="GET_RECORD">
+      <COMMENT_FIRST_LINE><![CDATA[Get data by id
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get data by id
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="OUT" NAME="R" TYPE="CUSTOMER_TYPE"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="37" END_LINE="43" LINES="5" START_COLUMN="11" START_LINE="39"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_BY_ID">
+      <COMMENT_FIRST_LINE><![CDATA[Get data by id
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Get data by id
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORDS" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="43" END_LINE="48" LINES="3" START_COLUMN="11" START_LINE="46"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_BY_CRITERIA">
+      <COMMENT_FIRST_LINE><![CDATA[Search data
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Search data
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_CRITERIA" TYPE="CUSTOMER_TYPE"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORDS" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="43" END_LINE="53" LINES="3" START_COLUMN="11" START_LINE="51"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET">
+      <COMMENT_FIRST_LINE><![CDATA[Search data
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Search data
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_SHORT_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_CUST_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_ACCOUNT" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="P_REGNO" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORDS" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="43" END_LINE="63" LINES="8" START_COLUMN="11" START_LINE="56"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SEARCH_BY_ACCOUNT">
+      <COMMENT_FIRST_LINE><![CDATA[Search customer by account number
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Search customer by account number
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ACCOUNT" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="R_RECORD" TYPE="CUSTOMER_TYPE"/>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="34" END_LINE="70" LINES="5" START_COLUMN="11" START_LINE="66"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INS">
+      <COMMENT_FIRST_LINE><![CDATA[Insert a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Insert a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="39" END_LINE="74" LINES="2" START_COLUMN="11" START_LINE="73"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPD">
+      <COMMENT_FIRST_LINE><![CDATA[Update a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Update a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="39" END_LINE="78" LINES="2" START_COLUMN="11" START_LINE="77"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="DEL">
+      <COMMENT_FIRST_LINE><![CDATA[Delete a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Delete a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="39" END_LINE="82" LINES="2" START_COLUMN="11" START_LINE="81"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="LCK">
+      <COMMENT_FIRST_LINE><![CDATA[Lock a record
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Lock a record
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_DATA" TYPE="CUSTOMER_TABLE"/>
+      <SUMMARY END_COLUMN="39" END_LINE="86" LINES="2" START_COLUMN="11" START_LINE="85"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_LOAN_CUSTOMER">
+      <COMMENT_FIRST_LINE><![CDATA[ Get loan-related customer data by customer ID.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Get loan-related customer data by customer ID.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[customer ID]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R" TYPE="LOAN_CUSTOMER_TYPE">
+        <COMMENT><![CDATA[loan-related customer data]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_RESULT" TYPE="NUMBER">
+        <COMMENT><![CDATA[result (0=ok)]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="OUT" NAME="R_MESSAGE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[error message]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_id               customer ID]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r                  loan-related customer data]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_result           result (0=ok)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[r_message          error message]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="34" END_LINE="99" LINES="5" START_COLUMN="11" START_LINE="95"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="4" END_LINE="101" LINES="101" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="EXEC_SP" SCHEMA="">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test<br/>
+ Description:     Executes stored procedure<br/>
+ DB impact:       NO<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <CONSTANT DEFAULT="'dd.mm.yyyy hh24:mi:ss'" NAME="DATEFORMAT">
+      <RETURN TYPE="VARCHAR2(100)"/>
+    </CONSTANT>
+    <TYPE NAME="STRING_ARRAY">
+      <RETURN TYPE="TABLE OF VARCHAR2(32000) INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <PROCEDURE NAME="EXEC_SP">
+      <ARGUMENT MODE="IN" NAME="SP_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="SP_PACKAGE" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="SP_SCHEMA" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="SP_TYPE" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN OUT" NAME="ARG_NAMES" TYPE="STRING_ARRAY"/>
+      <ARGUMENT MODE="IN OUT" NAME="ARG_TYPES" TYPE="STRING_ARRAY"/>
+      <ARGUMENT MODE="IN OUT" NAME="ARG_PASS" TYPE="STRING_ARRAY"/>
+      <ARGUMENT MODE="IN OUT" NAME="ARG_VALUES" TYPE="STRING_ARRAY"/>
+      <ARGUMENT MODE="OUT" NAME="ERROR_CODE" TYPE="NUMBER"/>
+      <ARGUMENT MODE="OUT" NAME="ERROR_MSG" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="28" END_LINE="29" LINES="11" START_COLUMN="11" START_LINE="19"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="4" END_LINE="31" LINES="31" START_COLUMN="12" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="LOBS_DATA" SCHEMA="">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/><br/>
+ Description:     Large Objects<br/>
+ DB impact:       NO<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <FUNCTION NAME="PUT">
+      <COMMENT_FIRST_LINE><![CDATA[Storing a large object; returns ID
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Storing a large object; returns ID
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_VALUE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="NUMBER"/>
+      <SUMMARY END_COLUMN="14" END_LINE="19" LINES="3" START_COLUMN="10" START_LINE="17"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET">
+      <COMMENT_FIRST_LINE><![CDATA[Loading a large object by ID
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Loading a large object by ID
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="16" END_LINE="24" LINES="3" START_COLUMN="10" START_LINE="22"/>
+    </FUNCTION>
+    <PROCEDURE NAME="REMOVE">
+      <COMMENT_FIRST_LINE><![CDATA[Remove a stored object
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Remove a stored object
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_ID" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="29" END_LINE="28" LINES="2" START_COLUMN="11" START_LINE="27"/>
+    </PROCEDURE>
+    <FUNCTION NAME="HH_GET_INFO">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="ERTY_ID_IN" TYPE="HH_T.A_ID%TYPE"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="DF_ID_IN" TYPE="HH_T.B_ID%TYPE"/>
+      <ARGUMENT DEFAULT="VK_ASDGFH_PA.SOME_FUNCTION()" MODE="IN" NAME="FGHJ_ID_IN" TYPE="HH_T.C_ID%TYPE"/>
+      <ARGUMENT DEFAULT="VK_ASDGFH_PA.SOME_CONSTANT" MODE="IN" NAME="CASCADE_IN" TYPE="NUMBER"/>
+      <RETURN TYPE="VK_TYPES_PA.TYPE_RG_INFO_REC"/>
+      <SUMMARY END_COLUMN="36" END_LINE="36" LINES="7" START_COLUMN="10" START_LINE="30"/>
+    </FUNCTION>
+    <PROCEDURE NAME="START_BATCH_JOB">
+      <ARGUMENT MODE="IN" NAME="P_INTERVAL" TYPE="DBA_JOBS.INTERVAL%TYPE"/>
+      <SUMMARY END_COLUMN="65" END_LINE="38" LINES="1" START_COLUMN="11" START_LINE="38"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="OUT">
+      <ARGUMENT MODE="IN" NAME="CURSOR" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="31" END_LINE="40" LINES="1" START_COLUMN="11" START_LINE="40"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="REFRESH_ALL">
+      <ARGUMENT DEFAULT="LAST_DAY(ADD_MONTHS(TRUNC(SYSDATE), 1)) + 1" MODE="IN" NAME="KEHTIB" TYPE="DATE"/>
+      <SUMMARY END_COLUMN="84" END_LINE="42" LINES="1" START_COLUMN="11" START_LINE="42"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="4" END_LINE="44" LINES="44" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="LOGG" SCHEMA="">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Logging<br/>
+ DB impact:       YES<br/>
+ Commit inside:   YES<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample2.sql,v 1.5 2002/12/02 20:37:37 altumano Exp $<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TYPE NAME="LOG_RECORD">
+      <RETURN TYPE="logs%ROWTYPE"/>
+    </TYPE>
+    <TYPE NAME="LOG_TABLE">
+      <RETURN TYPE="TABLE OF Log_Record INDEX BY BINARY_INTEGER"/>
+    </TYPE>
+    <PROCEDURE NAME="ADD_ERROR">
+      <COMMENT_FIRST_LINE><![CDATA[Records an ERROR in the error logging table.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Records an ERROR in the error logging table.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'NONE'" MODE="IN" NAME="TXT" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="LOC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PROC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PCK" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="USER" MODE="IN" NAME="USR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="ERR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="SYSDATE" MODE="IN" NAME="DTIME" TYPE="DATE"/>
+      <SUMMARY END_COLUMN="44" END_LINE="28" LINES="8" START_COLUMN="11" START_LINE="21"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="ADD_WARNING">
+      <COMMENT_FIRST_LINE><![CDATA[Records a WARNING in the error logging table.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Records a WARNING in the error logging table.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'NONE'" MODE="IN" NAME="TXT" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="LOC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PROC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PCK" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="USER" MODE="IN" NAME="USR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="ERR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="SYSDATE" MODE="IN" NAME="DTIME" TYPE="DATE"/>
+      <SUMMARY END_COLUMN="44" END_LINE="38" LINES="8" START_COLUMN="11" START_LINE="31"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="ADD_TRACE">
+      <COMMENT_FIRST_LINE><![CDATA[Records a TRACE in the error logging table.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Records a TRACE in the error logging table.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'NONE'" MODE="IN" NAME="TXT" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="LOC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PROC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PCK" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="USER" MODE="IN" NAME="USR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="ERR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="SYSDATE" MODE="IN" NAME="DTIME" TYPE="DATE"/>
+      <SUMMARY END_COLUMN="44" END_LINE="48" LINES="8" START_COLUMN="11" START_LINE="41"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="ADD_RECORD">
+      <COMMENT_FIRST_LINE><![CDATA[Records an event in the error logging table.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Records an event in the error logging table.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_TYPE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'NONE'" MODE="IN" NAME="TXT" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="LOC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PROC" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="PCK" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="USER" MODE="IN" NAME="USR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'UNKNOWN'" MODE="IN" NAME="ERR" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="SYSDATE" MODE="IN" NAME="DTIME" TYPE="DATE"/>
+      <SUMMARY END_COLUMN="44" END_LINE="59" LINES="9" START_COLUMN="11" START_LINE="51"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="FLUSH">
+      <COMMENT_FIRST_LINE><![CDATA[Saves pending logs into the log table
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Saves pending logs into the log table
+]]></COMMENT>
+      <SUMMARY END_COLUMN="16" END_LINE="62" LINES="1" START_COLUMN="11" START_LINE="62"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SHOW_OUTPUT">
+      <COMMENT_FIRST_LINE><![CDATA[Shows pending logs on DBMS_OUTPUT, without erasing them
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Shows pending logs on DBMS_OUTPUT, without erasing them
+]]></COMMENT>
+      <SUMMARY END_COLUMN="22" END_LINE="65" LINES="1" START_COLUMN="11" START_LINE="65"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="CLEAN">
+      <COMMENT_FIRST_LINE><![CDATA[Clear pending logs
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[Clear pending logs
+]]></COMMENT>
+      <SUMMARY END_COLUMN="16" END_LINE="68" LINES="1" START_COLUMN="11" START_LINE="68"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_CALL_STACK">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="16" END_LINE="72" LINES="2" START_COLUMN="10" START_LINE="71"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="4" END_LINE="74" LINES="74" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="DEPR" SCHEMA="">
+    <PROCEDURE NAME="DEPR_GET">
+      <COMMENT_FIRST_LINE><![CDATA[ Gets something.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Gets something.
+ Hopefully...
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR2" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[business sector2]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[business sector]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR3" TYPE="NUMBER">
+        <COMMENT><![CDATA[business sector3]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR4" TYPE="NUMBER"/>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_sector2	business sector2]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_sector	business sector]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_sector3	business sector3]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT><![CDATA[Use Get_By_Criteria instead.]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="28" END_LINE="28" LINES="5" START_COLUMN="11" START_LINE="24"/>
+    </PROCEDURE>
+    <FUNCTION NAME="DO_SOMETHING">
+      <COMMENT_FIRST_LINE><![CDATA[XXX
+YYY
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[XXX
+YYY
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="P_SECTOR" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[business sector999]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="NUMBER">
+        <COMMENT><![CDATA[Standard Fehler345]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[p_sector business sector999]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[Standard Fehler345]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="14" END_LINE="38" LINES="3" START_COLUMN="10" START_LINE="36"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="4" END_LINE="40" LINES="40" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="session_state" SCHEMA="">
+    <VARIABLE DEFAULT="USER" NAME="CURRENT_USER">
+      <RETURN TYPE="VARCHAR2(100)"/>
+    </VARIABLE>
+    <VARIABLE DEFAULT="USER" NAME="LAST_USER">
+      <RETURN TYPE="VARCHAR2(100)"/>
+    </VARIABLE>
+    <VARIABLE NAME="LAST_ID">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <SUMMARY END_COLUMN="4" END_LINE="8" LINES="8" START_COLUMN="9" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="DEPRECATED" SCHEMA="SAMPLES">
+    <COMMENT><![CDATA[ ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Documenting specification and body, listing deprecated items.<br/>
+ DB impact:       YES<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ ========================================================================<br/>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@DEPRECATED">
+      <COMMENT><![CDATA[Use something <b>new</b> instead.]]></COMMENT>
+    </TAG>
+    <CONSTANT DEFAULT="'VALUE'" NAME="VCCONSTANT">
+      <COMMENT_FIRST_LINE><![CDATA[ Constant, which will be shown with value in html.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Constant, which will be shown with value in html.
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2(10)"/>
+    </CONSTANT>
+    <PROCEDURE NAME="PR_MIXED_CASE">
+      <COMMENT_FIRST_LINE><![CDATA[ Test (in Specification) procedure to show, that parameters named in mixed case, are
+ shown in lower case in the output.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Test (in Specification) procedure to show, that parameters named in mixed case, are
+ shown in lower case in the output.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="I_VCMIXEDCASE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[This mixed case parameter has an inline @deprecated deprecated tag.]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[i_vcMixedCase This mixed case parameter has an inline @deprecated deprecated tag.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT><![CDATA[Demonstrating that single sentence deprecated method comments are processed correctly.]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="53" END_LINE="24" LINES="1" START_COLUMN="13" START_LINE="24"/>
+    </PROCEDURE>
+    <FUNCTION NAME="PR_DEFAULT_PARAMETER">
+      <COMMENT_FIRST_LINE><![CDATA[ Test (in Specification) procedure to show, that for parameters which have a default, the
+ default is shown in the output.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Test (in Specification) procedure to show, that for parameters which have a default, the
+ default is shown in the output.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'STANDARD'" MODE="IN" NAME="I_VCDEFAULT" TYPE="VARCHAR2"/>
+      <RETURN TYPE="INTEGER">
+        <COMMENT><![CDATA[success code - please ignore @deprecated.]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[i_vcMixedCase The mixed case parameter.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT><![CDATA[Demonstrating that multi-sentence deprecated method comments are processed correctly.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[success code - please ignore @deprecated.]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="91" END_LINE="33" LINES="1" START_COLUMN="12" START_LINE="33"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="4" END_LINE="34" LINES="34" START_COLUMN="17" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE_BODY NAME="DEPRECATED" SCHEMA="SAMPLES">
+    <PROCEDURE NAME="PR_MIXED_CASE">
+      <COMMENT_FIRST_LINE><![CDATA[ Test (in BODY) procedure to show, that for parameters which have a default, the
+ default is shown in the output.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Test (in BODY) procedure to show, that for parameters which have a default, the
+ default is shown in the output.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="I_VCMIXEDCASE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[This mixed case parameter has an inline @deprecated deprecated tag.]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[i_vcMixedCase This mixed case parameter has an inline @deprecated deprecated tag.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT>
+        </COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="6" END_LINE="12" LINES="4" START_COLUMN="13" START_LINE="9"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PR_DEFAULT_PARAMETER">
+      <COMMENT_FIRST_LINE><![CDATA[ Test (in BODY) procedure to show, that for parameters which have a default, the
+ default is shown in the output.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Test (in BODY) procedure to show, that for parameters which have a default, the
+ default is shown in the output.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'STANDARD'" MODE="IN" NAME="I_VCDEFAULT" TYPE="VARCHAR2"/>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[i_vcMixedCase The mixed case parameter.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT>
+        </COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="6" END_LINE="24" LINES="4" START_COLUMN="13" START_LINE="21"/>
+    </PROCEDURE>
+    <FUNCTION NAME="PR_PRIVATE_PROCEDURE">
+      <COMMENT_FIRST_LINE><![CDATA[ Test (in BODY) private procedure to show, that for parameters which have a default, the
+ default is shown in the output.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Test (in BODY) private procedure to show, that for parameters which have a default, the
+ default is shown in the output.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="'STANDARD'" MODE="IN" NAME="I_VCDEFAULT" TYPE="VARCHAR2"/>
+      <RETURN TYPE="INTEGER">
+        <COMMENT><![CDATA[success code - please ignore @deprecated.]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[i_vcMixedCase The mixed case parameter.]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@DEPRECATED">
+        <COMMENT>
+        </COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[success code - please ignore @deprecated.]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="6" END_LINE="36" LINES="4" START_COLUMN="12" START_LINE="33"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="4" END_LINE="37" LINES="37" START_COLUMN="22" START_LINE="1"/>
+  </PACKAGE_BODY>
+  <GENERATOR>
+    <OBJECTS>
+      <PROCESSED COUNT="5"/>
+      <SKIPPED COUNT="0"/>
+    </OBJECTS>
+    <CREATED DATE="1/29/19" TIME="9:46 AM"/>
+    <SETTINGS DEFAULT_KEYWORDS_CASE="UPPER" DEFAULT_NAMES_CASE="UPPER" IGNORE_INFORMAL_COMMENTS="FALSE" INPUT_ENCODING="Cp1252" KEYWORDS_TO_DEFAULT_CASE="TRUE" KEYWORDS_TO_LOWER_CASE="FALSE" KEYWORDS_TO_UPPER_CASE="FALSE" NAMES_TO_DEFAULT_CASE="TRUE" NAMES_TO_LOWER_CASE="FALSE" NAMES_TO_UPPER_CASE="FALSE" SHOW_SKIPPED_PACKAGES="FALSE" VERBOSE="FALSE"/>
+  </GENERATOR>
+</APPLICATION>

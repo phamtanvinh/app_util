@@ -21,7 +21,6 @@ as
                 "config_value"  varchar2(4000)
                     constraint is_json_value check("config_value" is json), 
                 "config_type"   varchar2(64), 
-                "description"   varchar2(1024), 
                 "status"        varchar2(16),
                 "created_date"  date, 
                 "updated_date"  date
@@ -43,7 +42,6 @@ as
                 config_name,
                 config_value,
                 config_type,
-                description,
                 status,
                 created_date,
                 updated_date)
@@ -54,7 +52,6 @@ as
                 :config_name,
                 :config_value,
                 :config_type,
-                :description,
                 :status,
                 :created_date,
                 :updated_date);
@@ -75,7 +72,6 @@ as
                 config_name,
                 config_value,
                 config_type,
-                description,
                 status,
                 created_date,
                 updated_date

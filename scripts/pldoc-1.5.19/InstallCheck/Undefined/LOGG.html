@@ -1,0 +1,453 @@
+<HTML xmlns:lxslt="http://xml.apache.org/xslt" xmlns:exslt="http://exslt.org/common">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>MyApplication</TITLE>
+<LINK TITLE="Style" HREF="../stylesheet.css" TYPE="text/css" REL="stylesheet">
+<!--
+        sameCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesLowerCase=FALSE
+        namesUpperCase=FALSE
+        namesDefaultCase=TRUE
+        defaultNamesCase=UPPER
+        namesFromCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesToCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-->
+</HEAD>
+<BODY BGCOLOR="white">
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1"></FONT>
+<BR>Package&nbsp;LOGG</H2> ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Logging<br/>
+ DB impact:       YES<br/>
+ Commit inside:   YES<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample2.sql,v 1.5 2002/12/02 20:37:37 altumano Exp $<br/>
+ ========================================================================<br/>
+<P></P>
+<DL></DL>
+<HR>
+<P></P>
+<A NAME="field_summary"></A><A NAME="type_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Type Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=logs%ROWTYPE
+       localTypeName=
+       schema=
+       fieldType=logs%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->logs%ROWTYPE</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#LOG_RECORD">LOG_RECORD</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=TABLE OF Log_Record INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF Log_Record INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF Log_Record INDEX BY BINARY_INTEGER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#LOG_TABLE">LOG_TABLE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="method_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Method Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=7 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="ADD_ERROR"></A><TD><CODE><B><A HREF="#ADD_ERROR(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)">ADD_ERROR</A></B>(TXT IN VARCHAR2 DEFAULT 'NONE', LOC IN VARCHAR2 DEFAULT 'UNKNOWN', PROC IN VARCHAR2 DEFAULT 'UNKNOWN', PCK IN VARCHAR2 DEFAULT 'UNKNOWN', USR IN VARCHAR2 DEFAULT USER, ERR IN VARCHAR2 DEFAULT 'UNKNOWN', DTIME IN DATE DEFAULT SYSDATE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Records an ERROR in the error logging table.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=8 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="ADD_RECORD"></A><TD><CODE><B><A HREF="#ADD_RECORD(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)">ADD_RECORD</A></B>(P_TYPE IN VARCHAR2, TXT IN VARCHAR2 DEFAULT 'NONE', LOC IN VARCHAR2 DEFAULT 'UNKNOWN', PROC IN VARCHAR2 DEFAULT 'UNKNOWN', PCK IN VARCHAR2 DEFAULT 'UNKNOWN', USR IN VARCHAR2 DEFAULT USER, ERR IN VARCHAR2 DEFAULT 'UNKNOWN', DTIME IN DATE DEFAULT SYSDATE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Records an event in the error logging table.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=7 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="ADD_TRACE"></A><TD><CODE><B><A HREF="#ADD_TRACE(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)">ADD_TRACE</A></B>(TXT IN VARCHAR2 DEFAULT 'NONE', LOC IN VARCHAR2 DEFAULT 'UNKNOWN', PROC IN VARCHAR2 DEFAULT 'UNKNOWN', PCK IN VARCHAR2 DEFAULT 'UNKNOWN', USR IN VARCHAR2 DEFAULT USER, ERR IN VARCHAR2 DEFAULT 'UNKNOWN', DTIME IN DATE DEFAULT SYSDATE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Records a TRACE in the error logging table.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=7 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="ADD_WARNING"></A><TD><CODE><B><A HREF="#ADD_WARNING(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)">ADD_WARNING</A></B>(TXT IN VARCHAR2 DEFAULT 'NONE', LOC IN VARCHAR2 DEFAULT 'UNKNOWN', PROC IN VARCHAR2 DEFAULT 'UNKNOWN', PCK IN VARCHAR2 DEFAULT 'UNKNOWN', USR IN VARCHAR2 DEFAULT USER, ERR IN VARCHAR2 DEFAULT 'UNKNOWN', DTIME IN DATE DEFAULT SYSDATE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Records a WARNING in the error logging table.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#CLEAN">CLEAN</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Clear pending logs
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#FLUSH">FLUSH</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Saves pending logs into the log table
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CALL_STACK">GET_CALL_STACK</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SHOW_OUTPUT">SHOW_OUTPUT</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Shows pending logs on DBMS_OUTPUT, without erasing them
+</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="trigger_summary"></A><A NAME="field_detail"></A><A NAME="type_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Type Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="LOG_RECORD"></A>
+<H3>LOG_RECORD</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=logs%ROWTYPE
+       localTypeName=
+       schema=
+       fieldType=logs%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->logs%ROWTYPE <B>LOG_RECORD</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LOG_TABLE"></A>
+<H3>LOG_TABLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=TABLE OF Log_Record INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF Log_Record INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF Log_Record INDEX BY BINARY_INTEGER <B>LOG_TABLE</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="method_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="ADD_ERROR(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)"></A>
+<H3>ADD_ERROR</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>ADD_ERROR</B>(TXT IN VARCHAR2 DEFAULT 'NONE', <BR>                  LOC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  PROC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  PCK IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  USR IN VARCHAR2 DEFAULT USER, <BR>                  ERR IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  DTIME IN DATE DEFAULT SYSDATE)</PRE>
+<DL>
+<DD>Records an ERROR in the error logging table.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="ADD_RECORD(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)"></A>
+<H3>ADD_RECORD</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>ADD_RECORD</B>(P_TYPE IN VARCHAR2, <BR>                   TXT IN VARCHAR2 DEFAULT 'NONE', <BR>                   LOC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                   PROC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                   PCK IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                   USR IN VARCHAR2 DEFAULT USER, <BR>                   ERR IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                   DTIME IN DATE DEFAULT SYSDATE)</PRE>
+<DL>
+<DD>Records an event in the error logging table.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="ADD_TRACE(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)"></A>
+<H3>ADD_TRACE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>ADD_TRACE</B>(TXT IN VARCHAR2 DEFAULT 'NONE', <BR>                  LOC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  PROC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  PCK IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  USR IN VARCHAR2 DEFAULT USER, <BR>                  ERR IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                  DTIME IN DATE DEFAULT SYSDATE)</PRE>
+<DL>
+<DD>Records a TRACE in the error logging table.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="ADD_WARNING(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,DATE)"></A>
+<H3>ADD_WARNING</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>ADD_WARNING</B>(TXT IN VARCHAR2 DEFAULT 'NONE', <BR>                    LOC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                    PROC IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                    PCK IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                    USR IN VARCHAR2 DEFAULT USER, <BR>                    ERR IN VARCHAR2 DEFAULT 'UNKNOWN', <BR>                    DTIME IN DATE DEFAULT SYSDATE)</PRE>
+<DL>
+<DD>Records a WARNING in the error logging table.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="CLEAN"></A>
+<H3>CLEAN</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>CLEAN</B>()</PRE>
+<DL>
+<DD>Clear pending logs
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="FLUSH"></A>
+<H3>FLUSH</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>FLUSH</B>()</PRE>
+<DL>
+<DD>Saves pending logs into the log table
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_CALL_STACK"></A>
+<H3>GET_CALL_STACK</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_CALL_STACK</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="SHOW_OUTPUT"></A>
+<H3>SHOW_OUTPUT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SHOW_OUTPUT</B>()</PRE>
+<DL>
+<DD>Shows pending logs on DBMS_OUTPUT, without erasing them
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="trigger_detail"></A>
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

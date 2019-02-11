@@ -1,0 +1,1019 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE APPLICATION SYSTEM "application.dtd">
+<APPLICATION NAME="APP_UTIL">
+  <PACKAGE NAME="APP_UTIL" SCHEMA="">
+    <COMMENT><![CDATA[ Project: app_util <br/>
+ Description: This package will hold base methods for other packages, types, functions
+ or produres.<br/>
+ Features:<br/>
+ <pre>
+   1. manipulate string <br/>
+   2. manipulate table <br/>
+   3. manipulate date and time <br/>
+   4. manipulate dictionary <br/>
+   5. manipulate transaction <br/>
+   6. manipulate json
+ </pre>
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE DEFAULT="30" NAME="G_RPAD_SIZE">
+      <COMMENT_FIRST_LINE><![CDATA[ Pading print format.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Pading print format.
+]]></COMMENT>
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <TYPE NAME="TUPLE">
+      <COMMENT_FIRST_LINE><![CDATA[ List of data, max size 4000.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ List of data, max size 4000.
+]]></COMMENT>
+      <RETURN TYPE="table OF varchar2(4000)"/>
+    </TYPE>
+    <TYPE NAME="DICTIONARY">
+      <COMMENT_FIRST_LINE><![CDATA[ Key length: 64, Value length: 4000.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Key length: 64, Value length: 4000.
+]]></COMMENT>
+      <RETURN TYPE="table OF varchar2(4000) INDEX BY varchar2(64)"/>
+    </TYPE>
+    <FUNCTION NAME="GET_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate string to print format.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate string to print format.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_KEY" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass key string]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="PI_VALUE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass value string]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER">
+        <COMMENT><![CDATA[Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_key Pass key string]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_value Pass value string]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_rpad_size Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="68" END_LINE="36" LINES="4" START_COLUMN="14" START_LINE="33"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate string to print format.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate string to print format.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_DICTIONARY" TYPE="DICTIONARY">
+        <COMMENT><![CDATA[Pass dictionary]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER">
+        <COMMENT><![CDATA[Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_dictionary Pass dictionary]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_rpad_size Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="68" END_LINE="45" LINES="3" START_COLUMN="14" START_LINE="43"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate string to print format.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate string to print format.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_JO" TYPE="PLJSON">
+        <COMMENT><![CDATA[Pass pljson type]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER">
+        <COMMENT><![CDATA[Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_jo Pass pljson type]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_rpad_size Pading size, if ignore then using g_rpad_size(30)]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="68" END_LINE="54" LINES="3" START_COLUMN="14" START_LINE="52"/>
+    </FUNCTION>
+    <PROCEDURE NAME="PRINT_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Print string from key, value.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Print string from key, value.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_KEY" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass key]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="PI_VALUE" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass value]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER"/>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_key Pass key]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_value Pass value]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="52" END_LINE="62" LINES="4" START_COLUMN="15" START_LINE="59"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PRINT_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Print string from dictionary.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Print string from dictionary.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_DICTIONARY" TYPE="DICTIONARY">
+        <COMMENT><![CDATA[Pass dictionary, defined by app_util]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER"/>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_dictionary Pass dictionary, defined by app_util]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="52" END_LINE="68" LINES="3" START_COLUMN="15" START_LINE="66"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PRINT_STRING_FORMAT">
+      <COMMENT_FIRST_LINE><![CDATA[ Print string from pljson.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Print string from pljson.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_JO" TYPE="PLJSON">
+        <COMMENT><![CDATA[Pass plsjon]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="G_RPAD_SIZE" MODE="IN" NAME="PI_RPAD_SIZE" TYPE="NUMBER"/>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_jo Pass plsjon]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="53" END_LINE="74" LINES="3" START_COLUMN="15" START_LINE="72"/>
+    </PROCEDURE>
+    <FUNCTION NAME="EXIST_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[ Check table if exist.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Check table if exist.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_TABLE_NAME" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Table name]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="BOOLEAN">
+        <COMMENT><![CDATA[boolean. If true then the table exists]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_table_name Table name]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[boolean. If true then the table exists]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="64" END_LINE="81" LINES="1" START_COLUMN="14" START_LINE="81"/>
+    </FUNCTION>
+    <PROCEDURE NAME="DROP_TABLE">
+      <COMMENT_FIRST_LINE><![CDATA[ Drop table if exist.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Drop table if exist.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_TABLE_NAME" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass table name to drop]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="FALSE" MODE="IN" NAME="PI_IS_FORCED" TYPE="BOOLEAN">
+        <COMMENT><![CDATA[Defaul false, if set true, this table will drop cascade]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_table_name Pass table name to drop]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_is_forced Defaul false, if set true, this table will drop cascade]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="85" END_LINE="87" LINES="1" START_COLUMN="15" START_LINE="87"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_DNUM">
+      <COMMENT_FIRST_LINE><![CDATA[ Convert timestamp to format yyyymmdd.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Convert timestamp to format yyyymmdd.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="CURRENT_TIMESTAMP" MODE="IN" NAME="PI_TS" TYPE="TIMESTAMP">
+        <COMMENT><![CDATA[Pass timestamp]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="NUMBER">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_ts Pass timestamp]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="79" END_LINE="94" LINES="1" START_COLUMN="14" START_LINE="94"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_TNUM">
+      <COMMENT_FIRST_LINE><![CDATA[ Convert timestamp to format hh24miss.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Convert timestamp to format hh24miss.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="CURRENT_TIMESTAMP" MODE="IN" NAME="PI_TS" TYPE="TIMESTAMP">
+        <COMMENT><![CDATA[Pass timestamp]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="NUMBER">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_ts Pass timestamp]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="79" END_LINE="100" LINES="1" START_COLUMN="14" START_LINE="100"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_UNIX_TS">
+      <COMMENT_FIRST_LINE><![CDATA[ Convert timestamp to unix timestamp.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Convert timestamp to unix timestamp.
+]]></COMMENT>
+      <ARGUMENT DEFAULT="CURRENT_TIMESTAMP" MODE="IN" NAME="PI_TS" TYPE="TIMESTAMP">
+        <COMMENT><![CDATA[Pass timestamp]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="NUMBER">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_ts Pass timestamp]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[number]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="82" END_LINE="106" LINES="1" START_COLUMN="14" START_LINE="106"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_DICTIONARY">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate a dictionary from pljson type.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate a dictionary from pljson type.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_JSON" TYPE="PLJSON">
+        <COMMENT><![CDATA[Pass pljson]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="DICTIONARY">
+        <COMMENT><![CDATA[dictionary]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_json Pass pljson]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[dictionary]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="65" END_LINE="113" LINES="1" START_COLUMN="14" START_LINE="113"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_TRANSACTION_ID">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate local transaction id.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate local transaction id.
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="48" END_LINE="119" LINES="1" START_COLUMN="14" START_LINE="119"/>
+    </FUNCTION>
+    <PROCEDURE NAME="UPDATE_JSON">
+      <COMMENT_FIRST_LINE><![CDATA[ Update pljson from another, only keys exist.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Update pljson from another, only keys exist.
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_JSON" TYPE="PLJSON">
+        <COMMENT><![CDATA[Pass pljson object to update]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="PI_JSON" TYPE="PLJSON">
+        <COMMENT><![CDATA[This is source to update]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pio_json Pass pljson object to update]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_json This is source to update]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="6" END_LINE="129" LINES="4" START_COLUMN="15" START_LINE="126"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPDATE_JSON">
+      <COMMENT_FIRST_LINE><![CDATA[ Update pljson from a json string, only keys exist.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Update pljson from a json string, only keys exist.
+]]></COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_JSON" TYPE="PLJSON">
+        <COMMENT><![CDATA[Pass pljson object to update]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT MODE="IN" NAME="PI_JSON" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[This is source string to update]]></COMMENT>
+      </ARGUMENT>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pio_json Pass pljson object to update]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_json This is source string to update]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="6" END_LINE="138" LINES="4" START_COLUMN="15" START_LINE="135"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="13" END_LINE="139" LINES="139" START_COLUMN="27" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="APP_META_DATA_UTIL" SCHEMA="">
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  This package is used to config global config as default,
+ which is able to be overrided by custom package.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="G_CONFIG">
+      <COMMENT_FIRST_LINE><![CDATA[ All global configurations.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ All global configurations.
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="G_PREFIX">
+      <COMMENT_FIRST_LINE><![CDATA[ Config for all global prefixes.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Config for all global prefixes.
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="G_SUFFIX">
+      <COMMENT_FIRST_LINE><![CDATA[ Config for all global suffixes.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Config for all global suffixes.
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <FUNCTION NAME="GET_OBJECT_NAME">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate object string from global config by default.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate object string from global config by default.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_OBJECT_NAME" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass object name]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_PREFIX" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass prefix, default from g_prefix]]></COMMENT>
+      </ARGUMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_SUFFIX" TYPE="VARCHAR2">
+        <COMMENT><![CDATA[Pass suffix, default from g_suffix]]></COMMENT>
+      </ARGUMENT>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_object_name Pass object name]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_prefix Pass prefix, default from g_prefix]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@PARAM">
+        <COMMENT><![CDATA[pi_suffix Pass suffix, default from g_suffix]]></COMMENT>
+      </TAG>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="22" END_LINE="28" LINES="5" START_COLUMN="14" START_LINE="24"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_TABLE_NAME">
+      <COMMENT_FIRST_LINE><![CDATA[ Generate table name from global config.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Generate table name from global config.
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_TABLE_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_PREFIX" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_SUFFIX" TYPE="VARCHAR2"/>
+      <RETURN TYPE="VARCHAR2">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </RETURN>
+      <TAG TYPE="@RETURN">
+        <COMMENT><![CDATA[varchar2]]></COMMENT>
+      </TAG>
+      <SUMMARY END_COLUMN="22" END_LINE="37" LINES="5" START_COLUMN="14" START_LINE="33"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="23" END_LINE="38" LINES="38" START_COLUMN="27" START_LINE="1"/>
+  </PACKAGE>
+  <OBJECT_TYPE NAME="APP_BASE_OBJECT" SCHEMA="">
+    <COMMENT><![CDATA[ Project:      app_util <br/>
+ Description: This type is base object for all suptype in this project,
+ include private attributes, abstract methods and inherit methods.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="__name__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="__config_code__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="__attributes__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="__ts__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="TIMESTAMP"/>
+    </VARIABLE>
+    <FUNCTION NAME="APP_BASE_OBJECT" SCOPE="CONSTRUCTOR" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Create new object.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Create new object.
+]]></COMMENT>
+      <RETURN TYPE="CONSTRUCTOR FUNCTION SELF AS RESULT"/>
+      <SUMMARY END_COLUMN="57" END_LINE="21" LINES="1" START_COLUMN="26" START_LINE="21"/>
+    </FUNCTION>
+    <PROCEDURE NAME="INITIALIZE" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Abstract method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Abstract method. <br/>
+ Used to create constructor
+]]></COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="29" LINES="4" START_COLUMN="22" START_LINE="26"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Inherit method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Inherit method. <br/>
+ Store attributes info into <code>__attributes__</code>
+]]></COMMENT>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="33" LINES="1" START_COLUMN="22" START_LINE="33"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PRINT_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Abstract method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Abstract method. <br/>
+ Print (no sort) all global attributes from <code>__attributes__</code>
+]]></COMMENT>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="37" LINES="1" START_COLUMN="22" START_LINE="37"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PRINT_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Inherit method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Inherit method. <br/>
+ Print (sorted) all global attributes from <code>__attributes__</code>
+]]></COMMENT>
+      <ARGUMENT MODE="IN" NAME="PI_IS_SORTED" TYPE="BOOLEAN"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="64" END_LINE="41" LINES="1" START_COLUMN="22" START_LINE="41"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPDATE_ALL" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Abstract method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Abstract method. <br/>
+ Update all attributes.
+]]></COMMENT>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="46" LINES="1" START_COLUMN="22" START_LINE="46"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="12" END_LINE="47" LINES="47" START_COLUMN="24" START_LINE="1"/>
+  </OBJECT_TYPE>
+  <OBJECT_TYPE NAME="APP_CONFIG" SCHEMA="">
+    <SUPERTYPE NAME="APP_BASE_OBJECT">
+      <RETURN TYPE="APP_BASE_OBJECT"/>
+    </SUPERTYPE>
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description: This type is used to manipulate config from table, as private config.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="CONFIG_ID" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="CONFIG_CODE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="CONFIG_USER" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="CONFIG_NAME" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="CONFIG_VALUE" VERSION="1">
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="CONFIG_TYPE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="STATUS" VERSION="1">
+      <RETURN TYPE="VARCHAR2(16)"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_DATE" VERSION="1">
+      <RETURN TYPE="DATE"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_DATE" VERSION="1">
+      <RETURN TYPE="DATE"/>
+    </VARIABLE>
+    <FUNCTION NAME="APP_CONFIG" SCOPE="CONSTRUCTOR" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="CONSTRUCTOR FUNCTION SELF AS RESULT"/>
+      <SUMMARY END_COLUMN="52" END_LINE="21" LINES="1" START_COLUMN="26" START_LINE="21"/>
+    </FUNCTION>
+    <PROCEDURE NAME="SET_CONFIG" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_USER" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="PLJSON()" MODE="IN" NAME="PI_CONFIG_VALUE" TYPE="PLJSON"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_TYPE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_STATUS" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="32" LINES="9" START_COLUMN="22" START_LINE="24"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="PRINT_CONFIG_VALUE" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="33" LINES="1" START_COLUMN="22" START_LINE="33"/>
+    </PROCEDURE>
+    <PROCEDURE INHERITANCE="OVERRIDING" NAME="GET_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Implement method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Implement method.
+ Put config info.
+]]></COMMENT>
+      <RETURN TYPE="OVERRIDING MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="33" END_LINE="37" LINES="1" START_COLUMN="33" START_LINE="37"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INITIALIZE" SCOPE="MEMBER" VERSION="1">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_USER" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="PLJSON()" MODE="IN" NAME="PI_CONFIG_VALUE" TYPE="PLJSON"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_TYPE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_STATUS" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="47" LINES="10" START_COLUMN="22" START_LINE="38"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="12" END_LINE="49" LINES="49" START_COLUMN="24" START_LINE="1"/>
+  </OBJECT_TYPE>
+  <PACKAGE NAME="APP_CONFIG_SQL" SCHEMA="">
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  App tool for data management.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="__config__">
+      <COMMENT_FIRST_LINE><![CDATA[g_config                pljson;
+g_table_name            varchar2(64);
+private config
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[g_config                pljson;
+g_table_name            varchar2(64);
+private config
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <FUNCTION NAME="GET_CREATE_TABLE_SQL">
+      <COMMENT_FIRST_LINE><![CDATA[procedure update_config;
+get sql
+]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[procedure update_config;
+get sql
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="50" END_LINE="22" LINES="1" START_COLUMN="14" START_LINE="22"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_INSERT_SQL">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="44" END_LINE="23" LINES="1" START_COLUMN="14" START_LINE="23"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_CONFIG_SQL">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="44" END_LINE="24" LINES="1" START_COLUMN="14" START_LINE="24"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="19" END_LINE="25" LINES="25" START_COLUMN="27" START_LINE="1"/>
+  </PACKAGE>
+  <PACKAGE NAME="APP_CONFIG_UTIL" SCHEMA="">
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  App tool for data management.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="G_APP_CONFIG">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="APP_CONFIG"/>
+    </VARIABLE>
+    <VARIABLE NAME="G_CONFIG">
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="__config__">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="VARCHAR2(4000)"/>
+    </VARIABLE>
+    <PROCEDURE NAME="REFRESH_CONFIG">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <SUMMARY END_COLUMN="29" END_LINE="19" LINES="1" START_COLUMN="15" START_LINE="19"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SET_CONFIG">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_APP_CONFIG" TYPE="APP_CONFIG"/>
+      <SUMMARY END_COLUMN="65" END_LINE="22" LINES="1" START_COLUMN="15" START_LINE="22"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INITIALIZE">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="FALSE" MODE="IN" NAME="PI_IS_FORCED" TYPE="BOOLEAN"/>
+      <SUMMARY END_COLUMN="61" END_LINE="25" LINES="1" START_COLUMN="15" START_LINE="25"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INSERT_CONFIG">
+      <SUMMARY END_COLUMN="28" END_LINE="26" LINES="1" START_COLUMN="15" START_LINE="26"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_CONFIG">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'active'" MODE="IN" NAME="PI_STATUS" TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="6" END_LINE="32" LINES="6" START_COLUMN="15" START_LINE="27"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_CONFIG">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_ID" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="'active'" MODE="IN" NAME="PI_STATUS" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="OUT" NAME="PO_APP_CONFIG" TYPE="APP_CONFIG"/>
+      <SUMMARY END_COLUMN="6" END_LINE="39" LINES="7" START_COLUMN="15" START_LINE="33"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="20" END_LINE="40" LINES="40" START_COLUMN="27" START_LINE="1"/>
+  </PACKAGE>
+  <OBJECT_TYPE NAME="APP_EXTEND" SCHEMA="">
+    <SUPERTYPE NAME="APP_BASE_OBJECT">
+      <RETURN TYPE="APP_BASE_OBJECT"/>
+    </SUPERTYPE>
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  App tool for data management.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="__app_config__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="APP_CONFIG"/>
+    </VARIABLE>
+    <VARIABLE NAME="__config__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="__mode__" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Private attribute.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Private attribute.
+]]></COMMENT>
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_TS" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="TIMESTAMP"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_DNUM" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_TNUM" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_UNIX_TS" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_TS" VERSION="1">
+      <RETURN TYPE="TIMESTAMP"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_DNUM" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_TNUM" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_UNIX_TS" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="DURATION" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="CREATED_DATE" VERSION="1">
+      <RETURN TYPE="DATE"/>
+    </VARIABLE>
+    <VARIABLE NAME="UPDATED_DATE" VERSION="1">
+      <RETURN TYPE="DATE"/>
+    </VARIABLE>
+    <FUNCTION NAME="APP_EXTEND" SCOPE="CONSTRUCTOR" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="CONSTRUCTOR FUNCTION SELF AS RESULT"/>
+      <SUMMARY END_COLUMN="52" END_LINE="32" LINES="1" START_COLUMN="26" START_LINE="32"/>
+    </FUNCTION>
+    <PROCEDURE NAME="INITIALIZE" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_MODE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="40" LINES="6" START_COLUMN="22" START_LINE="35"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SET_PRIVATE_ATTRIBUTES" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_MODE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="45" LINES="4" START_COLUMN="22" START_LINE="42"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_DATETIME_DIM" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_TS" TYPE="TIMESTAMP"/>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_DNUM" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_TNUM" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_UNIX_TS" TYPE="NUMBER"/>
+      <ARGUMENT MODE="IN OUT" NAME="PIO_DATE" TYPE="DATE"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="53" LINES="7" START_COLUMN="22" START_LINE="47"/>
+    </PROCEDURE>
+    <PROCEDURE INHERITANCE="OVERRIDING" NAME="GET_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE><![CDATA[ Implemented method.]]></COMMENT_FIRST_LINE>
+      <COMMENT><![CDATA[ Implemented method.
+]]></COMMENT>
+      <RETURN TYPE="OVERRIDING MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="33" END_LINE="56" LINES="1" START_COLUMN="33" START_LINE="56"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_CREATED_DATETIME_DIM" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="59" LINES="1" START_COLUMN="22" START_LINE="59"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_UPDATED_DATETIME_DIM" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="60" LINES="1" START_COLUMN="22" START_LINE="60"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="GET_DURATION" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="61" LINES="1" START_COLUMN="22" START_LINE="61"/>
+    </PROCEDURE>
+    <PROCEDURE INHERITANCE="OVERRIDING" NAME="UPDATE_ALL" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="OVERRIDING MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="33" END_LINE="62" LINES="1" START_COLUMN="33" START_LINE="62"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="12" END_LINE="63" LINES="63" START_COLUMN="24" START_LINE="1"/>
+  </OBJECT_TYPE>
+  <OBJECT_TYPE NAME="APP_LOGGER" SCHEMA="">
+    <SUPERTYPE NAME="APP_EXTEND">
+      <RETURN TYPE="APP_EXTEND"/>
+    </SUPERTYPE>
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  App tool for data management.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="TRANSACTION_ID" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="TRANSACTION_CODE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="APP_USER" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="UNIT_NAME" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="UNIT_TYPE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="LOG_STEP_ID" VERSION="1">
+      <RETURN TYPE="NUMBER"/>
+    </VARIABLE>
+    <VARIABLE NAME="LOG_STEP_NAME" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="LOG_STEP_DESCRIPTION" VERSION="1">
+      <RETURN TYPE="VARCHAR2(1024)"/>
+    </VARIABLE>
+    <VARIABLE NAME="ERROR_SQLCODE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(64)"/>
+    </VARIABLE>
+    <VARIABLE NAME="ERROR_SQLERRM" VERSION="1">
+      <RETURN TYPE="VARCHAR2(4000)"/>
+    </VARIABLE>
+    <VARIABLE NAME="ERROR_BACKTRACE" VERSION="1">
+      <RETURN TYPE="VARCHAR2(4000)"/>
+    </VARIABLE>
+    <FUNCTION NAME="APP_LOGGER" SCOPE="CONSTRUCTOR" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="CONSTRUCTOR FUNCTION SELF AS RESULT"/>
+      <SUMMARY END_COLUMN="52" END_LINE="23" LINES="1" START_COLUMN="26" START_LINE="23"/>
+    </FUNCTION>
+    <FUNCTION NAME="APP_LOGGER" SCOPE="CONSTRUCTOR" VERSION="1">
+      <ARGUMENT MODE="IN" NAME="PI_TRANSACTION_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="PI_APP_USER" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="PI_UNIT_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT MODE="IN" NAME="PI_UNIT_TYPE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="CONSTRUCTOR FUNCTION SELF AS RESULT"/>
+      <SUMMARY END_COLUMN="22" END_LINE="29" LINES="6" START_COLUMN="26" START_LINE="24"/>
+    </FUNCTION>
+    <PROCEDURE NAME="INITIALIZE" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_CONFIG_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_MODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_TRANSACTION_CODE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_APP_USER" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_UNIT_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_UNIT_TYPE" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_DESCRIPTION" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="42" LINES="11" START_COLUMN="22" START_LINE="32"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SET_TRANSACTION" SCOPE="MEMBER" VERSION="1">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_TRANSACTION_CODE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="86" END_LINE="43" LINES="1" START_COLUMN="22" START_LINE="43"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SET_PROCESS_UNIT" SCOPE="MEMBER" VERSION="1">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_UNIT_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_UNIT_TYPE" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="47" LINES="4" START_COLUMN="22" START_LINE="44"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="SET_LOG_STEP" SCOPE="MEMBER" VERSION="1">
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_DESCRIPTION" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="51" LINES="4" START_COLUMN="22" START_LINE="48"/>
+    </PROCEDURE>
+    <PROCEDURE INHERITANCE="OVERRIDING" NAME="GET_ATTRIBUTES_INFO" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="OVERRIDING MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="33" END_LINE="52" LINES="1" START_COLUMN="33" START_LINE="52"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="UPDATE_STEP" SCOPE="MEMBER" VERSION="1">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_NAME" TYPE="VARCHAR2"/>
+      <ARGUMENT DEFAULT="NULL" MODE="IN" NAME="PI_LOG_STEP_DESCRIPTION" TYPE="VARCHAR2"/>
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="5" END_LINE="58" LINES="4" START_COLUMN="22" START_LINE="55"/>
+    </PROCEDURE>
+    <PROCEDURE NAME="INITIALIZE_EXCEPTION" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="22" END_LINE="59" LINES="1" START_COLUMN="22" START_LINE="59"/>
+    </PROCEDURE>
+    <PROCEDURE INHERITANCE="OVERRIDING" NAME="UPDATE_ALL" SCOPE="MEMBER" VERSION="1">
+      <RETURN TYPE="OVERRIDING MEMBER PROCEDURE"/>
+      <SUMMARY END_COLUMN="33" END_LINE="60" LINES="1" START_COLUMN="33" START_LINE="60"/>
+    </PROCEDURE>
+    <SUMMARY END_COLUMN="12" END_LINE="61" LINES="61" START_COLUMN="24" START_LINE="1"/>
+  </OBJECT_TYPE>
+  <PACKAGE NAME="APP_LOGGER_SQL" SCHEMA="">
+    <COMMENT><![CDATA[ Project:      app_util<br/>
+ Description:  App tool for data management.
+]]></COMMENT>
+    <TAG TYPE="@HEADCOM">
+      <COMMENT>
+      </COMMENT>
+    </TAG>
+    <TAG TYPE="@AUTHOR">
+      <COMMENT><![CDATA[Vinhpt]]></COMMENT>
+    </TAG>
+    <VARIABLE NAME="G_APP_LOGGER">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="APP_LOGGER"/>
+    </VARIABLE>
+    <VARIABLE NAME="G_CONFIG">
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <VARIABLE NAME="__config__">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="PLJSON"/>
+    </VARIABLE>
+    <PROCEDURE NAME="RESET_CONFIG">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <SUMMARY END_COLUMN="27" END_LINE="18" LINES="1" START_COLUMN="15" START_LINE="18"/>
+    </PROCEDURE>
+    <FUNCTION NAME="GET_CREATE_LOGGER_RUNNING_SQL">
+      <COMMENT_FIRST_LINE>
+      </COMMENT_FIRST_LINE>
+      <COMMENT>
+      </COMMENT>
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="59" END_LINE="21" LINES="1" START_COLUMN="14" START_LINE="21"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_CREATE_LOGGER_EXCEPTION_SQL">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="61" END_LINE="22" LINES="1" START_COLUMN="14" START_LINE="22"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_INSERT_LOGGER_RUNNING_SQL">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="59" END_LINE="23" LINES="1" START_COLUMN="14" START_LINE="23"/>
+    </FUNCTION>
+    <FUNCTION NAME="GET_INSERT_LOGGER_EXCEPTION_SQL">
+      <RETURN TYPE="VARCHAR2"/>
+      <SUMMARY END_COLUMN="61" END_LINE="24" LINES="1" START_COLUMN="14" START_LINE="24"/>
+    </FUNCTION>
+    <SUMMARY END_COLUMN="19" END_LINE="25" LINES="25" START_COLUMN="27" START_LINE="1"/>
+  </PACKAGE>
+  <GENERATOR>
+    <OBJECTS>
+      <PROCESSED COUNT="9"/>
+      <SKIPPED COUNT="0"/>
+    </OBJECTS>
+    <CREATED DATE="2/11/19" TIME="11:12 PM"/>
+    <SETTINGS DEFAULT_KEYWORDS_CASE="UPPER" DEFAULT_NAMES_CASE="UPPER" IGNORE_INFORMAL_COMMENTS="FALSE" INPUT_ENCODING="UTF-8" KEYWORDS_TO_DEFAULT_CASE="TRUE" KEYWORDS_TO_LOWER_CASE="FALSE" KEYWORDS_TO_UPPER_CASE="FALSE" NAMES_TO_DEFAULT_CASE="TRUE" NAMES_TO_LOWER_CASE="FALSE" NAMES_TO_UPPER_CASE="FALSE" SHOW_SKIPPED_PACKAGES="FALSE" VERBOSE="FALSE"/>
+  </GENERATOR>
+</APPLICATION>

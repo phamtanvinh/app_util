@@ -1,0 +1,884 @@
+<HTML xmlns:lxslt="http://xml.apache.org/xslt" xmlns:exslt="http://exslt.org/common">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>APP_UTIL</TITLE>
+<LINK TITLE="Style" HREF="../stylesheet.css" TYPE="text/css" REL="stylesheet">
+<!--
+        sameCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesLowerCase=FALSE
+        namesUpperCase=FALSE
+        namesDefaultCase=TRUE
+        defaultNamesCase=UPPER
+        namesFromCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesToCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-->
+</HEAD>
+<BODY BGCOLOR="white">
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>APP_UTIL</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1"></FONT>
+<BR>Package&nbsp;APP_UTIL</H2> Project: app_util <br/>
+ Description: This package will hold base methods for other packages, types, functions
+ or produres.<br/>
+ Features:<br/>
+ <pre>
+   1. manipulate string <br/>
+   2. manipulate table <br/>
+   3. manipulate date and time <br/>
+   4. manipulate dictionary <br/>
+   5. manipulate transaction <br/>
+   6. manipulate json
+ </pre>
+<P></P>
+<DL>
+<DT>Author:</DT>
+<DD>Vinhpt</DD>
+</DL>
+<HR>
+<P></P>
+<A NAME="field_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Field Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD><TD><CODE><B><A HREF="#G_RPAD_SIZE">G_RPAD_SIZE</A></B> := 30</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Pading print format.</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="type_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Type Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=table OF varchar2(4000) INDEX BY varchar2(64)
+       localTypeName=
+       schema=
+       fieldType=table OF varchar2(4000) INDEX BY varchar2(64)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->table OF varchar2(4000) INDEX BY varchar2(64)</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#DICTIONARY">DICTIONARY</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Key length: 64, Value length: 4000.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=table OF varchar2(4000)
+       localTypeName=
+       schema=
+       fieldType=table OF varchar2(4000)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->table OF varchar2(4000)</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#TUPLE">TUPLE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       List of data, max size 4000.</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="method_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Method Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="DROP_TABLE"></A><TD><CODE><B><A HREF="#DROP_TABLE(VARCHAR2,BOOLEAN)">DROP_TABLE</A></B>(PI_TABLE_NAME IN VARCHAR2, PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Drop table if exist.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=BOOLEAN
+       localTypeName=
+       schema=
+       fieldType=BOOLEAN
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->BOOLEAN</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="EXIST_TABLE"></A><TD><CODE><B><A HREF="#EXIST_TABLE(VARCHAR2)">EXIST_TABLE</A></B>(PI_TABLE_NAME IN VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Check table if exist.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=DICTIONARY
+       localTypeName=DICTIONARY
+       schema=
+       fieldType=DICTIONARY
+       synonymsFile=,,--><!--localTypeNameParameter--><A href="#DICTIONARY">DICTIONARY</A></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_DICTIONARY"></A><TD><CODE><B><A HREF="#GET_DICTIONARY(PLJSON)">GET_DICTIONARY</A></B>(PI_JSON IN PLJSON)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Generate a dictionary from pljson type.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_DNUM"></A><TD><CODE><B><A HREF="#GET_DNUM(TIMESTAMP)">GET_DNUM</A></B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Convert timestamp to format yyyymmdd.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=3 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_STRING_FORMAT"></A><TD><CODE><B><A HREF="#GET_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)">GET_STRING_FORMAT</A></B>(PI_KEY IN VARCHAR2, PI_VALUE IN VARCHAR2, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Generate string to print format.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=2 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_STRING_FORMAT(DICTIONARY,NUMBER)">GET_STRING_FORMAT</A></B>(PI_DICTIONARY IN DICTIONARY, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Generate string to print format.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=2 
+		predecessorCount=2 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_STRING_FORMAT(PLJSON,NUMBER)">GET_STRING_FORMAT</A></B>(PI_JO IN PLJSON, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Generate string to print format.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_TNUM"></A><TD><CODE><B><A HREF="#GET_TNUM(TIMESTAMP)">GET_TNUM</A></B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Convert timestamp to format hh24miss.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_TRANSACTION_ID">GET_TRANSACTION_ID</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Generate local transaction id.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_UNIX_TS"></A><TD><CODE><B><A HREF="#GET_UNIX_TS(TIMESTAMP)">GET_UNIX_TS</A></B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Convert timestamp to unix timestamp.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=3 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="PRINT_STRING_FORMAT"></A><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_KEY IN VARCHAR2, PI_VALUE IN VARCHAR2, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Print string from key, value.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=2 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(DICTIONARY,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_DICTIONARY IN DICTIONARY, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Print string from dictionary.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=2 
+		predecessorCount=2 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(PLJSON,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_JO IN PLJSON, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Print string from pljson.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="UPDATE_JSON"></A><TD><CODE><B><A HREF="#UPDATE_JSON(PLJSON,PLJSON)">UPDATE_JSON</A></B>(PIO_JSON IN OUT PLJSON, PI_JSON IN PLJSON)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Update pljson from another, only keys exist.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=2 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#UPDATE_JSON(PLJSON,VARCHAR2)">UPDATE_JSON</A></B>(PIO_JSON IN OUT PLJSON, PI_JSON IN VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Update pljson from a json string, only keys exist.</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="trigger_summary"></A><A NAME="field_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Field Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="G_RPAD_SIZE"></A>
+<H3>G_RPAD_SIZE</H3>
+<PRE>
+        public NUMBER <B>G_RPAD_SIZE</B> := 30</PRE>
+<DL>
+<DD> Pading print format.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="type_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Type Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="DICTIONARY"></A>
+<H3>DICTIONARY</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=table OF varchar2(4000) INDEX BY varchar2(64)
+       localTypeName=
+       schema=
+       fieldType=table OF varchar2(4000) INDEX BY varchar2(64)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->table OF varchar2(4000) INDEX BY varchar2(64) <B>DICTIONARY</B>()</PRE>
+<DL>
+<DD> Key length: 64, Value length: 4000.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="TUPLE"></A>
+<H3>TUPLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=table OF varchar2(4000)
+       localTypeName=
+       schema=
+       fieldType=table OF varchar2(4000)
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->table OF varchar2(4000) <B>TUPLE</B>()</PRE>
+<DL>
+<DD> List of data, max size 4000.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="method_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="DROP_TABLE(VARCHAR2,BOOLEAN)"></A>
+<H3>DROP_TABLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>DROP_TABLE</B>(PI_TABLE_NAME IN VARCHAR2, <BR>                   PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</PRE>
+<DL>
+<DD> Drop table if exist.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_TABLE_NAME</CODE> -
+              Pass table name to drop</DD>
+<DD>
+<CODE>PI_IS_FORCED</CODE> -
+              Defaul false, if set true, this table will drop cascade</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="EXIST_TABLE(VARCHAR2)"></A>
+<H3>EXIST_TABLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=BOOLEAN
+       localTypeName=
+       schema=
+       fieldType=BOOLEAN
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->BOOLEAN <B>EXIST_TABLE</B>(PI_TABLE_NAME IN VARCHAR2)</PRE>
+<DL>
+<DD> Check table if exist.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_TABLE_NAME</CODE> -
+              Table name</DD>
+</DT>
+<DT>Returns:
+          <DD>boolean. If true then the table exists</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_DICTIONARY(PLJSON)"></A>
+<H3>GET_DICTIONARY</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=DICTIONARY
+       localTypeName=DICTIONARY
+       schema=
+       fieldType=DICTIONARY
+       synonymsFile=,,--><!--localTypeNameParameter--><A href="#DICTIONARY">DICTIONARY</A> <B>GET_DICTIONARY</B>(PI_JSON IN PLJSON)</PRE>
+<DL>
+<DD> Generate a dictionary from pljson type.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_JSON</CODE> -
+              Pass pljson</DD>
+</DT>
+<DT>Returns:
+          <DD>dictionary</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_DNUM(TIMESTAMP)"></A>
+<H3>GET_DNUM</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER <B>GET_DNUM</B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</PRE>
+<DL>
+<DD> Convert timestamp to format yyyymmdd.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_TS</CODE> -
+              Pass timestamp</DD>
+</DT>
+<DT>Returns:
+          <DD>number</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)"></A>
+<H3>GET_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_STRING_FORMAT</B>(PI_KEY IN VARCHAR2, <BR>                                  PI_VALUE IN VARCHAR2, <BR>                                  PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Generate string to print format.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_KEY</CODE> -
+              Pass key string</DD>
+<DD>
+<CODE>PI_VALUE</CODE> -
+              Pass value string</DD>
+<DD>
+<CODE>PI_RPAD_SIZE</CODE> -
+              Pading size, if ignore then using g_rpad_size(30)</DD>
+</DT>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_STRING_FORMAT(DICTIONARY,NUMBER)"></A>
+<H3>GET_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_STRING_FORMAT</B>(PI_DICTIONARY IN DICTIONARY, <BR>                                  PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Generate string to print format.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_DICTIONARY</CODE> -
+              Pass dictionary</DD>
+<DD>
+<CODE>PI_RPAD_SIZE</CODE> -
+              Pading size, if ignore then using g_rpad_size(30)</DD>
+</DT>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_STRING_FORMAT(PLJSON,NUMBER)"></A>
+<H3>GET_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_STRING_FORMAT</B>(PI_JO IN PLJSON, <BR>                                  PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Generate string to print format.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_JO</CODE> -
+              Pass pljson type</DD>
+<DD>
+<CODE>PI_RPAD_SIZE</CODE> -
+              Pading size, if ignore then using g_rpad_size(30)</DD>
+</DT>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_TNUM(TIMESTAMP)"></A>
+<H3>GET_TNUM</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER <B>GET_TNUM</B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</PRE>
+<DL>
+<DD> Convert timestamp to format hh24miss.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_TS</CODE> -
+              Pass timestamp</DD>
+</DT>
+<DT>Returns:
+          <DD>number</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_TRANSACTION_ID"></A>
+<H3>GET_TRANSACTION_ID</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=VARCHAR2
+       localTypeName=
+       schema=
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_TRANSACTION_ID</B>()</PRE>
+<DL>
+<DD> Generate local transaction id.
+</DD>
+<DD>
+<DL>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_UNIX_TS(TIMESTAMP)"></A>
+<H3>GET_UNIX_TS</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=NUMBER
+       localTypeName=
+       schema=
+       fieldType=NUMBER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->NUMBER <B>GET_UNIX_TS</B>(PI_TS IN TIMESTAMP DEFAULT CURRENT_TIMESTAMP)</PRE>
+<DL>
+<DD> Convert timestamp to unix timestamp.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_TS</CODE> -
+              Pass timestamp</DD>
+</DT>
+<DT>Returns:
+          <DD>number</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="PRINT_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)"></A>
+<H3>PRINT_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_KEY IN VARCHAR2, <BR>                            PI_VALUE IN VARCHAR2, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Print string from key, value.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_KEY</CODE> -
+              Pass key</DD>
+<DD>
+<CODE>PI_VALUE</CODE> -
+              Pass value</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="PRINT_STRING_FORMAT(DICTIONARY,NUMBER)"></A>
+<H3>PRINT_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_DICTIONARY IN DICTIONARY, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Print string from dictionary.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_DICTIONARY</CODE> -
+              Pass dictionary, defined by app_util</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="PRINT_STRING_FORMAT(PLJSON,NUMBER)"></A>
+<H3>PRINT_STRING_FORMAT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_JO IN PLJSON, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+<DL>
+<DD> Print string from pljson.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_JO</CODE> -
+              Pass plsjon</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="UPDATE_JSON(PLJSON,PLJSON)"></A>
+<H3>UPDATE_JSON</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>UPDATE_JSON</B>(PIO_JSON IN OUT PLJSON, <BR>                    PI_JSON IN PLJSON)</PRE>
+<DL>
+<DD> Update pljson from another, only keys exist.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PIO_JSON</CODE> -
+              Pass pljson object to update</DD>
+<DD>
+<CODE>PI_JSON</CODE> -
+              This is source to update</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="UPDATE_JSON(PLJSON,VARCHAR2)"></A>
+<H3>UPDATE_JSON</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>UPDATE_JSON</B>(PIO_JSON IN OUT PLJSON, <BR>                    PI_JSON IN VARCHAR2)</PRE>
+<DL>
+<DD> Update pljson from a json string, only keys exist.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PIO_JSON</CODE> -
+              Pass pljson object to update</DD>
+<DD>
+<CODE>PI_JSON</CODE> -
+              This is source string to update</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="trigger_detail"></A>
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>APP_UTIL</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

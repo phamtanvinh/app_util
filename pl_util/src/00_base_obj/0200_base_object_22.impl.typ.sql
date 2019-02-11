@@ -17,23 +17,17 @@ as
         "__attributes__".put('__name__'         ,"__name__");
         "__attributes__".put('__config_code__'  ,"__config_code__");
         "__attributes__".put('__ts__'           ,"__ts__");
-        "__attributes__".put('description'      ,description);
-        "__attributes__".put('created_date'     ,created_date);
-        "__attributes__".put('updated_date'     ,updated_date);
     end;
 
     member procedure initialize(
         pi_name             varchar2 default null,
-        pi_config_code      varchar2 default null,
-        pi_description      varchar2 default null
+        pi_config_code      varchar2 default null
     )
     is
     begin
         "__name__"          := nvl(pi_name          ,'app_base_object');
         "__config_code__"   := nvl(pi_config_code   ,'app_base_object');
         "__ts__"            := current_timestamp;
-        description         := pi_description;
-        created_date        := sysdate;
     end;
 
     member procedure print_attributes_info
@@ -57,7 +51,7 @@ as
     member procedure update_all
     is
     begin
-        updated_date        := sysdate;
+        null;
     end;
 end;
 /

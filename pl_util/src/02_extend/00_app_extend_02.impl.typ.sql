@@ -12,7 +12,6 @@ as
     member procedure initialize(
         pi_name             varchar2    default null,
         pi_config_code      varchar2    default null,
-        pi_description      varchar2    default null,
         pi_config           varchar2    default null,
         pi_mode             varchar2    default null
     )
@@ -20,8 +19,8 @@ as
     begin
         (self as app_base_object).initialize(
             pi_name         => nvl(pi_name          ,'app_extend'),
-            pi_config_code  => nvl(pi_config_code   ,'app_extend'),
-            pi_description  => pi_description);
+            pi_config_code  => nvl(pi_config_code   ,'app_extend')
+        );
         -- apply custom config
         set_private_attributes(
             pi_mode         => pi_mode,
