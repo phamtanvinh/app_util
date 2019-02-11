@@ -1,7 +1,7 @@
 <HTML xmlns:lxslt="http://xml.apache.org/xslt" xmlns:exslt="http://exslt.org/common">
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>test</TITLE>
+<TITLE>APP_UTIL</TITLE>
 <LINK TITLE="Style" HREF="../stylesheet.css" TYPE="text/css" REL="stylesheet">
 <!--
         sameCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
@@ -21,7 +21,7 @@
 <TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
 </TR>
 </TABLE>
-</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>test</b></EM></TD>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>APP_UTIL</b></EM></TD>
 </TR>
 <TR>
 <TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
@@ -32,8 +32,9 @@
 <HR>
 <H2>
 <FONT SIZE="-1"></FONT>
-<BR>Object Type&nbsp;APP_BASE_OBJECT</H2> Project:      app_util<br/>
- Description:  App tool for data management.
+<BR>Object Type&nbsp;APP_BASE_OBJECT</H2> Project:      app_util <br/>
+ Description: This type is base object for all suptype in this project,
+ include private attributes, abstract methods and inherit methods.
 <P></P>
 <DL>
 <DT>Author:</DT>
@@ -116,8 +117,7 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#APP_BASE_OBJECT">APP_BASE_OBJECT</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Create new object.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -134,7 +134,7 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_ATTRIBUTES_INFO">GET_ATTRIBUTES_INFO</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       Inherit method.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -151,8 +151,7 @@
 		siblingNoArgumentCount=0--><A NAME="INITIALIZE"></A><TD><CODE><B><A HREF="#INITIALIZE(VARCHAR2,VARCHAR2)">INITIALIZE</A></B>(PI_NAME IN VARCHAR2 DEFAULT NULL, PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Abstract method.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -169,7 +168,7 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_ATTRIBUTES_INFO">PRINT_ATTRIBUTES_INFO</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       Abstract method.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -186,7 +185,7 @@
 		siblingNoArgumentCount=1--><TD><CODE><B><A HREF="#PRINT_ATTRIBUTES_INFO(BOOLEAN)">PRINT_ATTRIBUTES_INFO</A></B>(PI_IS_SORTED IN BOOLEAN)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       Inherit method.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -203,7 +202,7 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#UPDATE_ALL">UPDATE_ALL</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       This method will be orverried to update all attributes.</TD>
+       Abstract method.</TD>
 </TR>
 </TABLE>
 <P></P>
@@ -281,8 +280,8 @@
        fieldType=CONSTRUCTOR FUNCTION SELF AS RESULT
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->CONSTRUCTOR FUNCTION SELF AS RESULT <B>APP_BASE_OBJECT</B>()</PRE>
 <DL>
-<DD>
-      </DD>
+<DD> Create new object.
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -300,7 +299,9 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>GET_ATTRIBUTES_INFO</B>()</PRE>
 <DL>
-<DD></DD>
+<DD> Inherit method. <br/>
+ Store attributes info into <code>__attributes__</code>
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -318,8 +319,9 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>INITIALIZE</B>(PI_NAME IN VARCHAR2 DEFAULT NULL, <BR>                                   PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL)</PRE>
 <DL>
-<DD>
-      </DD>
+<DD> Abstract method. <br/>
+ Used to create constructor
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -337,7 +339,9 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>PRINT_ATTRIBUTES_INFO</B>()</PRE>
 <DL>
-<DD></DD>
+<DD> Abstract method. <br/>
+ Print (no sort) all global attributes from <code>__attributes__</code>
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -355,7 +359,9 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>PRINT_ATTRIBUTES_INFO</B>(PI_IS_SORTED IN BOOLEAN)</PRE>
 <DL>
-<DD></DD>
+<DD> Inherit method. <br/>
+ Print (sorted) all global attributes from <code>__attributes__</code>
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -373,7 +379,8 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>UPDATE_ALL</B>()</PRE>
 <DL>
-<DD> This method will be orverried to update all attributes.
+<DD> Abstract method. <br/>
+ Update all attributes.
 </DD>
 <DD>
 <DL></DL>
@@ -391,7 +398,7 @@
 <TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
 </TR>
 </TABLE>
-</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>test</b></EM></TD>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>APP_UTIL</b></EM></TD>
 </TR>
 <TR>
 <TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">

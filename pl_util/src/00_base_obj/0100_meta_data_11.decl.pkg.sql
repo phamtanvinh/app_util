@@ -1,7 +1,8 @@
 create or replace package app_meta_data_util
 /**
 * Project:      app_util<br/>
-* Description:  App tool for data management.
+* Description:  This package is used to config global config as default,
+* which is able to be overrided by custom package.
 * @author Vinhpt
 * @headcom
 */

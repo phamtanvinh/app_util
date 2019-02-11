@@ -1,8 +1,7 @@
 create or replace package app_util
 /**
-* Project:      app_util<br/>
-* Description:  App tool for data management.<br/>
-* This package will hold base methods for other packages, types, functions
+* Project: app_util <br/>
+* Description: This package will hold base methods for other packages, types, functions
 * or produres.<br/>
 * Features:<br/>
 * <pre>
@@ -77,7 +76,7 @@ as
     /** 
     * Check table if exist.
     * @param pi_table_name Table name
-    * @return boolean If true, the table exists
+    * @return boolean. If true then the table exists
     */
     function exist_table(pi_table_name varchar2) return boolean;
     /**

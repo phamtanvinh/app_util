@@ -1,15 +1,17 @@
 create or replace type app_extend force
+under app_base_object(
 /**
 * Project:      app_util<br/>
 * Description:  App tool for data management.
 * @author Vinhpt
 * @headcom
 */
-under app_base_object(
 -- private attributes
-    /** */
+    /** Private attribute.*/
     "__app_config__"    app_config,
+    /** Private attribute.*/
     "__config__"        pljson,
+    /** Private attribute.*/
     "__mode__"          varchar2(64),
 -- globall attributes
     /** */
@@ -36,10 +38,12 @@ under app_base_object(
         pi_config           varchar2    default null,
         pi_mode             varchar2    default null
     ),
+    /** */
     member procedure set_private_attributes(
         pi_config           varchar2    default null,
         pi_mode             varchar2    default null
     ),
+    /** */
     member procedure get_datetime_dim(
         pio_ts              in out timestamp,
         pio_dnum            in out number,
@@ -47,6 +51,8 @@ under app_base_object(
         pio_unix_ts         in out number,
         pio_date            in out date
     ),
+    /** Implemented method.
+    */
     overriding member procedure get_attributes_info,
 -- manipulate
     /** */

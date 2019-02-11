@@ -1,11 +1,11 @@
 create or replace type app_logger force
+under app_extend(
 /**
 * Project:      app_util<br/>
 * Description:  App tool for data management.
 * @author Vinhpt
 * @headcom
 */
-under app_extend(
     transaction_id          varchar2(64),
     transaction_code        varchar2(64),
     app_user                varchar2(64),
