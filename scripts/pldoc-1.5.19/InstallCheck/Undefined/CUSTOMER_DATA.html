@@ -1,0 +1,617 @@
+<HTML xmlns:lxslt="http://xml.apache.org/xslt" xmlns:exslt="http://exslt.org/common">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>MyApplication</TITLE>
+<LINK TITLE="Style" HREF="../stylesheet.css" TYPE="text/css" REL="stylesheet">
+<!--
+        sameCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesLowerCase=FALSE
+        namesUpperCase=FALSE
+        namesDefaultCase=TRUE
+        defaultNamesCase=UPPER
+        namesFromCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        namesToCase=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-->
+</HEAD>
+<BODY BGCOLOR="white">
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1"></FONT>
+<BR>Package&nbsp;CUSTOMER_DATA</H2> ========================================================================<br/>
+ Project:         Test Project (<a href="http://pldoc.sourceforge.net">PLDoc</a>)<br/>
+ Description:     Customer Data Management<br/>
+ DB impact:       YES<br/>
+ Commit inside:   NO<br/>
+ Rollback inside: NO<br/>
+ ------------------------------------------------------------------------<br/>
+ $Header: /cvsroot/pldoc/sources/samples/sample1.sql,v 1.17 2003/08/30 07:52:44 altumano Exp $<br/>
+ ========================================================================<br/>
+<P></P>
+<DL></DL>
+<HR>
+<P></P>
+<A NAME="field_summary"></A><A NAME="type_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Type Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=TABLE OF customer_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF customer_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF customer_type INDEX BY BINARY_INTEGER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#CUSTOMER_TABLE">CUSTOMER_TABLE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=RECORD
+       localTypeName=
+       schema=
+       fieldType=RECORD
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->RECORD</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="CUSTOMER_TYPE"></A><TD><CODE><B><A HREF="#CUSTOMER_TYPE(VARCHAR2(20),VARCHAR2(100),VARCHAR2(35),VARCHAR2(20),VARCHAR2(20),VARCHAR2(30),VARCHAR2(50),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10))">CUSTOMER_TYPE</A></B>(ID VARCHAR2(20), NAME VARCHAR2(100), SHORT_NAME VARCHAR2(35), DB_ID VARCHAR2(20), SUB_CUST_CODE VARCHAR2(20), SUB_ACCOUNT VARCHAR2(30), REGNO VARCHAR2(50), RESIDENCE VARCHAR2(10), CT_TYPE VARCHAR2(10), CT_ENTITY VARCHAR2(10), LANGUAGE VARCHAR2(10), BUSINESS_TYPE VARCHAR2(10), TAX_CODE VARCHAR2(10))</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=TABLE OF loan_customer_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF loan_customer_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF loan_customer_type INDEX BY BINARY_INTEGER</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#LOAN_CUSTOMER_TABLE">LOAN_CUSTOMER_TABLE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=loan_customers%ROWTYPE
+       localTypeName=
+       schema=
+       fieldType=loan_customers%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->loan_customers%ROWTYPE</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#LOAN_CUSTOMER_TYPE">LOAN_CUSTOMER_TYPE</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="method_summary"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="2"><FONT SIZE="+2"><B>Method Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="DEL"></A><TD><CODE><B><A HREF="#DEL(CUSTOMER_TABLE)">DEL</A></B>(P_DATA IN CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Delete a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=7 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET"></A><TD><CODE><B><A HREF="#GET(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,CUSTOMER_TABLE)">GET</A></B>(P_ID IN VARCHAR2, P_NAME IN VARCHAR2, P_SHORT_NAME IN VARCHAR2, P_CUST_CODE IN VARCHAR2, P_ACCOUNT IN VARCHAR2, P_REGNO IN VARCHAR2, R_RECORDS IN OUT CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Search data
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_BY_CRITERIA"></A><TD><CODE><B><A HREF="#GET_BY_CRITERIA(CUSTOMER_TYPE,CUSTOMER_TABLE)">GET_BY_CRITERIA</A></B>(P_CRITERIA IN CUSTOMER_TYPE, R_RECORDS IN OUT CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Search data
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_BY_ID"></A><TD><CODE><B><A HREF="#GET_BY_ID(VARCHAR2,CUSTOMER_TABLE)">GET_BY_ID</A></B>(P_ID IN VARCHAR2, R_RECORDS IN OUT CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Get data by id
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_LOAN_CUSTOMER"></A><TD><CODE><B><A HREF="#GET_LOAN_CUSTOMER(VARCHAR2,LOAN_CUSTOMER_TYPE,NUMBER,VARCHAR2)">GET_LOAN_CUSTOMER</A></B>(P_ID IN VARCHAR2, R OUT LOAN_CUSTOMER_TYPE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Get loan-related customer data by customer ID.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="GET_RECORD"></A><TD><CODE><B><A HREF="#GET_RECORD(VARCHAR2,CUSTOMER_TYPE,NUMBER,VARCHAR2)">GET_RECORD</A></B>(P_ID IN VARCHAR2, R OUT CUSTOMER_TYPE, R_RESULT IN OUT NUMBER, R_MESSAGE IN OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Get data by id
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="INS"></A><TD><CODE><B><A HREF="#INS(CUSTOMER_TABLE)">INS</A></B>(P_DATA IN CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Insert a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="LCK"></A><TD><CODE><B><A HREF="#LCK(CUSTOMER_TABLE)">LCK</A></B>(P_DATA IN CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Lock a record
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=4 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="SEARCH_BY_ACCOUNT"></A><TD><CODE><B><A HREF="#SEARCH_BY_ACCOUNT(VARCHAR2,CUSTOMER_TYPE,NUMBER,VARCHAR2)">SEARCH_BY_ACCOUNT</A></B>(P_ACCOUNT IN VARCHAR2, R_RECORD IN OUT CUSTOMER_TYPE, R_RESULT OUT NUMBER, R_MESSAGE OUT VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Search customer by account number
+</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="UPD"></A><TD><CODE><B><A HREF="#UPD(CUSTOMER_TABLE)">UPD</A></B>(P_DATA IN CUSTOMER_TABLE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Update a record
+</TD>
+</TR>
+</TABLE>
+<P></P>
+<A NAME="trigger_summary"></A><A NAME="field_detail"></A><A NAME="type_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Type Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="CUSTOMER_TABLE"></A>
+<H3>CUSTOMER_TABLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=TABLE OF customer_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF customer_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF customer_type INDEX BY BINARY_INTEGER <B>CUSTOMER_TABLE</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="CUSTOMER_TYPE(VARCHAR2(20),VARCHAR2(100),VARCHAR2(35),VARCHAR2(20),VARCHAR2(20),VARCHAR2(30),VARCHAR2(50),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10),VARCHAR2(10))"></A>
+<H3>CUSTOMER_TYPE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=RECORD
+       localTypeName=
+       schema=
+       fieldType=RECORD
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->RECORD <B>CUSTOMER_TYPE</B>(ID VARCHAR2(20), <BR>                            NAME VARCHAR2(100), <BR>                            SHORT_NAME VARCHAR2(35), <BR>                            DB_ID VARCHAR2(20), <BR>                            SUB_CUST_CODE VARCHAR2(20), <BR>                            SUB_ACCOUNT VARCHAR2(30), <BR>                            REGNO VARCHAR2(50), <BR>                            RESIDENCE VARCHAR2(10), <BR>                            CT_TYPE VARCHAR2(10), <BR>                            CT_ENTITY VARCHAR2(10), <BR>                            LANGUAGE VARCHAR2(10), <BR>                            BUSINESS_TYPE VARCHAR2(10), <BR>                            TAX_CODE VARCHAR2(10))</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LOAN_CUSTOMER_TABLE"></A>
+<H3>LOAN_CUSTOMER_TABLE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=TABLE OF loan_customer_type INDEX BY BINARY_INTEGER
+       localTypeName=
+       schema=
+       fieldType=TABLE OF loan_customer_type INDEX BY BINARY_INTEGER
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->TABLE OF loan_customer_type INDEX BY BINARY_INTEGER <B>LOAN_CUSTOMER_TABLE</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LOAN_CUSTOMER_TYPE"></A>
+<H3>LOAN_CUSTOMER_TYPE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=loan_customers%ROWTYPE
+       localTypeName=
+       schema=
+       fieldType=loan_customers%ROWTYPE
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->loan_customers%ROWTYPE <B>LOAN_CUSTOMER_TYPE</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="method_detail"></A>
+<TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
+</TR>
+</TABLE>
+<A NAME="DEL(CUSTOMER_TABLE)"></A>
+<H3>DEL</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>DEL</B>(P_DATA IN CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Delete a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,CUSTOMER_TABLE)"></A>
+<H3>GET</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET</B>(P_ID IN VARCHAR2, <BR>            P_NAME IN VARCHAR2, <BR>            P_SHORT_NAME IN VARCHAR2, <BR>            P_CUST_CODE IN VARCHAR2, <BR>            P_ACCOUNT IN VARCHAR2, <BR>            P_REGNO IN VARCHAR2, <BR>            R_RECORDS IN OUT CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Search data
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_BY_CRITERIA(CUSTOMER_TYPE,CUSTOMER_TABLE)"></A>
+<H3>GET_BY_CRITERIA</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_CRITERIA</B>(P_CRITERIA IN CUSTOMER_TYPE, <BR>                        R_RECORDS IN OUT CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Search data
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_BY_ID(VARCHAR2,CUSTOMER_TABLE)"></A>
+<H3>GET_BY_ID</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_BY_ID</B>(P_ID IN VARCHAR2, <BR>                  R_RECORDS IN OUT CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Get data by id
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_LOAN_CUSTOMER(VARCHAR2,LOAN_CUSTOMER_TYPE,NUMBER,VARCHAR2)"></A>
+<H3>GET_LOAN_CUSTOMER</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_LOAN_CUSTOMER</B>(P_ID IN VARCHAR2, <BR>                          R OUT LOAN_CUSTOMER_TYPE, <BR>                          R_RESULT OUT NUMBER, <BR>                          R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD> Get loan-related customer data by customer ID.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>P_ID</CODE> -
+              customer ID</DD>
+<DD>
+<CODE>R</CODE> -
+              loan-related customer data</DD>
+<DD>
+<CODE>R_RESULT</CODE> -
+              result (0=ok)</DD>
+<DD>
+<CODE>R_MESSAGE</CODE> -
+              error message</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="GET_RECORD(VARCHAR2,CUSTOMER_TYPE,NUMBER,VARCHAR2)"></A>
+<H3>GET_RECORD</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_RECORD</B>(P_ID IN VARCHAR2, <BR>                   R OUT CUSTOMER_TYPE, <BR>                   R_RESULT IN OUT NUMBER, <BR>                   R_MESSAGE IN OUT VARCHAR2)</PRE>
+<DL>
+<DD>Get data by id
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="INS(CUSTOMER_TABLE)"></A>
+<H3>INS</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INS</B>(P_DATA IN CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Insert a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="LCK(CUSTOMER_TABLE)"></A>
+<H3>LCK</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>LCK</B>(P_DATA IN CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Lock a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="SEARCH_BY_ACCOUNT(VARCHAR2,CUSTOMER_TYPE,NUMBER,VARCHAR2)"></A>
+<H3>SEARCH_BY_ACCOUNT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SEARCH_BY_ACCOUNT</B>(P_ACCOUNT IN VARCHAR2, <BR>                          R_RECORD IN OUT CUSTOMER_TYPE, <BR>                          R_RESULT OUT NUMBER, <BR>                          R_MESSAGE OUT VARCHAR2)</PRE>
+<DL>
+<DD>Search customer by account number
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="UPD(CUSTOMER_TABLE)"></A>
+<H3>UPD</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>UPD</B>(P_DATA IN CUSTOMER_TABLE)</PRE>
+<DL>
+<DD>Update a record
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="trigger_detail"></A>
+<TABLE CELLSPACING="0" CELLPADDING="1" WIDTH="100%" BORDER="0">
+<TR>
+<TD CLASS="NavBarRow1" COLSPAN="2">
+<TABLE CELLSPACING="3" CELLPADDING="0" BORDER="0">
+<TR VALIGN="top" ALIGN="center">
+<TD CLASS="NavBarRow1"><A HREF="../summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../index-list.html"><FONT CLASS="NavBarFont1"><B>Index</B></FONT></A> &nbsp;</TD><TD CLASS="NavBarRow1"><A HREF="../generator.html"><FONT CLASS="NavBarFont1"><B>Generator</B></FONT></A> &nbsp;</TD>
+</TR>
+</TABLE>
+</TD><TD rowspan="3" VALIGN="top" ALIGN="right"><EM><b>MyApplication</b></EM></TD>
+</TR>
+<TR>
+<TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+      SUMMARY:  <A HREF="#field_summary">FIELD</A> | <A HREF="#type_summary">TYPE</A> | <A HREF="#method_summary">METHOD</A></FONT></TD><TD CLASS="NavBarRow3" VALIGN="top"><FONT SIZE="-2">
+    DETAIL:  <A HREF="#field_detail">FIELD</A> | <A HREF="#type_detail">TYPE</A> | <A HREF="#method_detail">METHOD</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

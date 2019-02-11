@@ -1,16 +1,18 @@
 create or replace type app_extend force
+/**
+* Project:      app_util<br/>
+* Description:  App tool for data management.
+* @author Vinhpt
+* @headcom
+*/
 under app_base_object(
-/* **********************************************************************************
- * app_extend
- * **********************************************************************************
- *  description: this is extend object of base object for some config and auto update
- *      date time methods
- * **********************************************************************************/
 -- private attributes
+    /** */
     "__app_config__"    app_config,
     "__config__"        pljson,
     "__mode__"          varchar2(64),
 -- globall attributes
+    /** */
     created_ts          timestamp,
     created_dnum        number,
     created_tnum        number,
@@ -20,14 +22,17 @@ under app_base_object(
     updated_tnum        number,
     updated_unix_ts     number,
     duration            number,
+    created_date        date,
+    updated_date        date,
 -- static
 -- constructor
+    /** */
     constructor function app_extend return self as result,
 -- initialize
+    /** */
     member procedure initialize(
         pi_name             varchar2    default null,
         pi_config_code      varchar2    default null,
-        pi_description      varchar2    default null,
         pi_config           varchar2    default null,
         pi_mode             varchar2    default null
     ),
@@ -44,6 +49,7 @@ under app_base_object(
     ),
     overriding member procedure get_attributes_info,
 -- manipulate
+    /** */
     member procedure get_created_datetime_dim,
     member procedure get_updated_datetime_dim,    
     member procedure get_duration,

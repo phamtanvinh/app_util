@@ -30,7 +30,6 @@ as
     member procedure initialize(
         pi_name                 varchar2    default null,
         pi_config_code          varchar2    default null,
-        pi_description          varchar2    default null,
         pi_mode                 varchar2    default null,
         pi_transaction_code     varchar2    default null,
         pi_app_user             varchar2    default null,
@@ -44,7 +43,6 @@ as
         (self as app_extend).initialize(
             pi_name             => nvl(pi_name          ,'app_logger'),
             pi_config_code      => nvl(pi_config_code   ,'app_logger'),
-            pi_description      => pi_description,
             pi_mode             => pi_mode);
         app_user        := pi_app_user;
         set_transaction(pi_transaction_code     => pi_transaction_code);

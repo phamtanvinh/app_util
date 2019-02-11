@@ -28,10 +28,10 @@ as
         config_value    := pi_config_value;
         config_type     := pi_config_type;
         status          := pi_status;
+        created_date    := sysdate;
     end;
     member procedure initialize(        
         pi_name             varchar2        default null,
-        pi_description      varchar2        default null,
         pi_config_id        varchar2        default null,
         pi_config_code      varchar2        default null,
         pi_config_user      varchar2        default null,
@@ -44,8 +44,7 @@ as
     begin
         (self as app_base_object).initialize(
             pi_name         => nvl(pi_name, 'app_config'),
-            pi_config_code  => 'app_config', 
-            pi_description  => pi_description
+            pi_config_code  => 'app_config' 
         );
         self.set_config(
             pi_config_id        => pi_config_id,
@@ -74,6 +73,8 @@ as
         "__attributes__".put('config_name'  ,config_name);
         "__attributes__".put('config_value' ,config_value.to_char);
         "__attributes__".put('status'       ,status);
+        "__attributes__".put('created_date' ,created_date);
+        "__attributes__".put('updated_date' ,updated_date);
     end;
 -- manipulate
 end;

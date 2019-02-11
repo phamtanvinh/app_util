@@ -51,7 +51,6 @@ as
                 g_app_config.config_name,
                 g_app_config.config_value.to_char(false),
                 g_app_config.config_type,
-                g_app_config.description,
                 g_app_config.status,
                 g_app_config.created_date,
                 g_app_config.updated_date;
@@ -78,7 +77,6 @@ as
                 g_app_config.config_name,
                 l_config_value,
                 g_app_config.config_type,
-                g_app_config.description,
                 g_app_config.status,
                 g_app_config.created_date,
                 g_app_config.updated_date 
