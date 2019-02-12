@@ -15,11 +15,11 @@ as object(
     "__attributes__"    pljson,
     /** Private attribute.*/
     "__ts__"            timestamp,
--- static
--- constructor
-    /** Create new object.*/
+/*static*/
+/*constructor*/
+    /** Contructor.*/
     constructor function app_base_object return self as result,
--- initialize
+/*initialize*/
     /** Abstract method. <br/>
     * Used to create constructor
     */
@@ -34,12 +34,12 @@ as object(
     /** Abstract method. <br/>
     * Print (no sort) all global attributes from <code>__attributes__</code>
     */
-    member procedure print_attributes_info,
+    member procedure print,
     /** Inherit method. <br/>
     * Print (sorted) all global attributes from <code>__attributes__</code>
     */
-    member procedure print_attributes_info(pi_is_sorted boolean),
--- manipulate
+    member procedure print(pi_is_sorted boolean),
+/*manipulate*/
     /** Abstract method. <br/>
     * Update all attributes.
     */

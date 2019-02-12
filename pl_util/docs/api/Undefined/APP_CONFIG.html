@@ -128,7 +128,14 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#CONFIG_VALUE">CONFIG_VALUE</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       Get configuration from other sources.<br\>
+ Ex: custom package, table, or default.<br\>
+ Priority: high => low
+ - User input
+ - Custom package
+ - Config table
+ - Default<br\>
+ Higher attributes will override lower ones.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -240,6 +247,7 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_CONFIG_VALUE">PRINT_CONFIG_VALUE</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
       </TD>
 </TR>
 <TR CLASS="TableRowColor">
@@ -334,7 +342,15 @@
         public PLJSON <B>CONFIG_VALUE</B>
 </PRE>
 <DL>
-<DD></DD>
+<DD> Get configuration from other sources.<br\>
+ Ex: custom package, table, or default.<br\>
+ Priority: high => low
+ - User input
+ - Custom package
+ - Config table
+ - Default<br\>
+ Higher attributes will override lower ones.
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -449,7 +465,8 @@
        fieldType=MEMBER PROCEDURE
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>PRINT_CONFIG_VALUE</B>()</PRE>
 <DL>
-<DD></DD>
+<DD>
+      </DD>
 <DD>
 <DL></DL>
 </DD>

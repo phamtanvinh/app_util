@@ -6,8 +6,8 @@ as
     begin
         g_config        := new pljson();
         g_app_logger    := new app_logger;
-        g_config.put('running_table'    ,app_meta_data_util.get_table_name(pi_table_name => 'logger_running'));
-        g_config.put('exception_table'  ,app_meta_data_util.get_table_name(pi_table_name => 'logger_exception'));     
+        g_config.put('running_table'    ,app_meta_data.get_table_name(pi_table_name => 'logger_running'));
+        g_config.put('exception_table'  ,app_meta_data.get_table_name(pi_table_name => 'logger_exception'));     
     end;
 
 -- get sql

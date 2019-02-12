@@ -1,4 +1,4 @@
-create or replace package body app_meta_data_util
+create or replace package body app_meta_data
 as
     function get_object_name(
         pi_object_name      varchar2,
@@ -40,5 +40,5 @@ begin
     g_suffix.put('table'        ,'tab');
     g_suffix.put('type'         ,'typ');
     g_suffix.put('package'      ,'pkg');
-end app_meta_data_util;
+end app_meta_data;
 /

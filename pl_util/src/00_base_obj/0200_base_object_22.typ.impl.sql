@@ -30,20 +30,20 @@ as
         "__ts__"            := current_timestamp;
     end;
 
-    member procedure print_attributes_info
+    member procedure print
     is
     begin
         get_attributes_info();
-        app_util.print_string_format("__attributes__");
+        app_util.print("__attributes__");
     end;
 
-    member procedure print_attributes_info(pi_is_sorted boolean)
+    member procedure print(pi_is_sorted boolean)
     is
         l_dictionary    app_util.dictionary;
     begin
         get_attributes_info();
         l_dictionary := app_util.get_dictionary("__attributes__");
-        app_util.print_string_format(l_dictionary);
+        app_util.print(l_dictionary);
     end;
 
 -- manipulate

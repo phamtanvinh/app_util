@@ -2,7 +2,7 @@ create or replace type app_extend force
 under app_base_object(
 /**
 * Project:      app_util<br/>
-* Description:  App tool for data management.
+* Description:  This type extend time series to support logging, monitoring duration...
 * @author Vinhpt
 * @headcom
 */
@@ -19,13 +19,13 @@ under app_base_object(
     created_dnum        number,
     created_tnum        number,
     created_unix_ts     number,
+    created_date        date,
     updated_ts          timestamp,
     updated_dnum        number,
     updated_tnum        number,
     updated_unix_ts     number,
-    duration            number,
-    created_date        date,
     updated_date        date,
+    duration            number,
 -- static
 -- constructor
     /** */

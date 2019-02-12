@@ -145,6 +145,23 @@
 		siblingCount=0 
 		argumentCount=1 
 		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="EXIST_PACKAGE"></A><TD><CODE><B><A HREF="#EXIST_PACKAGE(VARCHAR2)">EXIST_PACKAGE</A></B>(PI_PACKAGE_NAME IN VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Check package is existed.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=BOOLEAN
+       localTypeName=
+       schema=
+       fieldType=BOOLEAN
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->BOOLEAN</CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=1 
+		predecessorCount=0 
 		siblingNoArgumentCount=0--><A NAME="EXIST_TABLE"></A><TD><CODE><B><A HREF="#EXIST_TABLE(VARCHAR2)">EXIST_TABLE</A></B>(PI_TABLE_NAME IN VARCHAR2)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -285,6 +302,40 @@
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        Convert timestamp to unix timestamp.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=2 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><A NAME="MERGE_JSON"></A><TD><CODE><B><A HREF="#MERGE_JSON(PLJSON,PLJSON)">MERGE_JSON</A></B>(PIO_TAR_JSON IN OUT PLJSON, PI_SRC_JSON IN PLJSON)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Merge json from other.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=2 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#MERGE_JSON(PLJSON,VARCHAR2)">MERGE_JSON</A></B>(PIO_TAR_JSON IN OUT PLJSON, PI_SRC_JSON IN VARCHAR2)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Merge json from other.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -462,6 +513,31 @@
 <DD>
 <CODE>PI_IS_FORCED</CODE> -
               Defaul false, if set true, this table will drop cascade</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="EXIST_PACKAGE(VARCHAR2)"></A>
+<H3>EXIST_PACKAGE</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=BOOLEAN
+       localTypeName=
+       schema=
+       fieldType=BOOLEAN
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->BOOLEAN <B>EXIST_PACKAGE</B>(PI_PACKAGE_NAME IN VARCHAR2)</PRE>
+<DL>
+<DD> Check package is existed.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_PACKAGE_NAME</CODE> -
+              Pass package name</DD>
 </DT>
 </DL>
 </DD>
@@ -721,6 +797,62 @@
 </DT>
 <DT>Returns:
           <DD>number</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="MERGE_JSON(PLJSON,PLJSON)"></A>
+<H3>MERGE_JSON</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>MERGE_JSON</B>(PIO_TAR_JSON IN OUT PLJSON, <BR>                   PI_SRC_JSON IN PLJSON)</PRE>
+<DL>
+<DD> Merge json from other.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PIO_TAR_JSON</CODE> -
+              Pass target pljson</DD>
+<DD>
+<CODE>PI_SRC_JSON</CODE> -
+              Pass source pljson</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="MERGE_JSON(PLJSON,VARCHAR2)"></A>
+<H3>MERGE_JSON</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>MERGE_JSON</B>(PIO_TAR_JSON IN OUT PLJSON, <BR>                   PI_SRC_JSON IN VARCHAR2)</PRE>
+<DL>
+<DD> Merge json from other.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PIO_TAR_JSON</CODE> -
+              Pass target pljson</DD>
+<DD>
+<CODE>PI_SRC_JSON</CODE> -
+              Pass source json string</DD>
 </DT>
 </DL>
 </DD>

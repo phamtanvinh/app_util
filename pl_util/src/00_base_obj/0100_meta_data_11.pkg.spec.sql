@@ -1,4 +1,4 @@
-create or replace package app_meta_data_util
+create or replace package app_meta_data
 /**
 * Project:      app_util<br/>
 * Description:  This package is used to config global config as default,
@@ -35,5 +35,5 @@ as
         pi_prefix           varchar2 default null,
         pi_suffix           varchar2 default null
     ) return varchar2;
-end app_meta_data_util;
+end app_meta_data;
 /

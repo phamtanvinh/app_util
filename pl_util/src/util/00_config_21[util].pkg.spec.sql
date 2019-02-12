@@ -29,7 +29,10 @@ as
         pi_config_code      varchar2 default null,
         pi_config_name      varchar2 default null,
         pi_status           varchar2 default 'active'
-    );    
+    );
+    /** Get config from table and set into variable.
+    * @param po_app_config Output to config variable
+    */    
     procedure get_config(
         pi_config_id        varchar2 default null,
         pi_config_code      varchar2 default null,

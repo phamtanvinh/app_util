@@ -10,6 +10,16 @@ under app_base_object(
     config_code     varchar2(64),
     config_user     varchar2(64),
     config_name     varchar2(64),
+    /**
+    * Get configuration from other sources.<br\>
+    * Ex: custom package, table, or default.<br\>
+    * Priority: high => low
+    * - User input
+    * - Custom package
+    * - Config table
+    * - Default<br\>
+    * Higher attributes will override lower ones.
+    */
     config_value    pljson,
     config_type     varchar2(64),
     status          varchar2(16),
@@ -30,6 +40,7 @@ under app_base_object(
         pi_config_type      varchar2        default null,
         pi_status           varchar2        default null
     ),
+    /** */
     member procedure print_config_value,
     /** Implement method.
     * Put config info.
