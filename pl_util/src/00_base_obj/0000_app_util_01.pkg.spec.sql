@@ -5,12 +5,13 @@ create or replace package app_util
 * or produres.<br/>
 * Features:<br/>
 * <pre>
-*   1. manipulate string <br/>
-*   2. manipulate table <br/>
-*   3. manipulate date and time <br/>
-*   4. manipulate dictionary <br/>
-*   5. manipulate transaction <br/>
+*   1. manipulate string
+*   2. manipulate table
+*   3. manipulate date and time
+*   4. manipulate dictionary
+*   5. manipulate transaction
 *   6. manipulate json
+*   7. manipulate package
 * </pre>
 * @author Vinhpt
 * @headcom
@@ -56,20 +57,20 @@ as
     * @param pi_key Pass key
     * @param pi_value Pass value
     */
-    procedure print_string_format(
+    procedure print(
         pi_key          varchar2, 
         pi_value        varchar2, 
         pi_rpad_size    number default g_rpad_size);
     /** Print string from dictionary.
     * @param pi_dictionary Pass dictionary, defined by app_util
     */
-    procedure print_string_format(
+    procedure print(
         pi_dictionary   dictionary,
         pi_rpad_size    number default g_rpad_size);
     /** Print string from pljson.
     * @param pi_jo Pass plsjon
     */
-    procedure print_string_format(
+    procedure print(
         pi_jo           pljson,
         pi_rpad_size    number default g_rpad_size );
 -- feature: manipulate table
@@ -136,5 +137,28 @@ as
         pio_json in out pljson,
         pi_json         varchar2
     );
+    /** 
+    * Merge json from other.
+    * @param pio_tar_json   Pass target pljson
+    * @param pi_src_json    Pass source pljson
+    */
+    procedure merge_json(
+        pio_tar_json in out pljson,
+        pi_src_json         pljson
+    );
+    /** 
+    * Merge json from other.
+    * @param pio_tar_json   Pass target pljson
+    * @param pi_src_json    Pass source json string
+    */    procedure merge_json(
+        pio_tar_json in out pljson,
+        pi_src_json         varchar2
+    );
+-- feature: manipulate package
+    /** 
+    * Check package is existed.
+    * @param pi_package_name Pass package name
+    */
+    function exist_package(pi_package_name varchar2) return boolean;
 end app_util;
 /

@@ -90,6 +90,6 @@ as
 begin
 -- setup by default
     g_config    := new pljson();
-    g_config.put('table_name', app_meta_data_util.get_table_name(pi_table_name => 'config'));
+    g_config.put('table_name', app_meta_data.get_table_name(pi_table_name => 'config'));
 end app_config_sql;
 /

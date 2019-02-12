@@ -65,7 +65,7 @@
 <A HREF="undefined/app_base_object.html#app_base_object">APP_BASE_OBJECT</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_BASE_OBJECT)</FONT>
-<BR> Create new object.<P></P>
+<BR> Contructor.<P></P>
 </DD>
 <DD>
 <A HREF="undefined/app_config.html#app_base_object">APP_BASE_OBJECT</A>
@@ -170,8 +170,14 @@
 <A HREF="undefined/app_config.html#config_value">CONFIG_VALUE</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_CONFIG)</FONT>
-<BR>
-<P></P>
+<BR> Get configuration from other sources.<br\>
+ Ex: custom package, table, or default.<br\>
+ Priority: high => low
+ - User input
+ - Custom package
+ - Config table
+ - Default<br\>
+ Higher attributes will override lower ones.<P></P>
 </DD>
 <DD>
 <A HREF="undefined/app_config.html#created_date">CREATED_DATE</A>
@@ -264,6 +270,12 @@
 <P></P>
 </DD>
 <DD>
+<A HREF="Undefined/APP_UTIL.html#EXIST_PACKAGE(VARCHAR2)">EXIST_PACKAGE</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_UTIL)</FONT>
+<BR> Check package is existed.<P></P>
+</DD>
+<DD>
 <A HREF="Undefined/APP_UTIL.html#EXIST_TABLE(VARCHAR2)">EXIST_TABLE</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_UTIL)</FONT>
@@ -338,11 +350,25 @@
       <P></P>
 </DD>
 <DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#G_APP_CONFIG">G_APP_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
 <A HREF="Undefined/APP_LOGGER_SQL.html#G_APP_LOGGER">G_APP_LOGGER</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_LOGGER_SQL)</FONT>
 <BR>
       <P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#G_APP_LOGGER">G_APP_LOGGER</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
 </DD>
 <DD>
 <A HREF="Undefined/APP_META_DATA_UTIL.html#G_CONFIG">G_CONFIG</A>
@@ -363,6 +389,13 @@
 					&nbsp; <FONT SIZE="-1">(APP_LOGGER_SQL)</FONT>
 <BR>
 <P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#G_CONFIG">G_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+      <P></P>
 </DD>
 <DD>
 <A HREF="Undefined/APP_META_DATA_UTIL.html#G_PREFIX">G_PREFIX</A>
@@ -465,6 +498,13 @@ get sql
 <BR> Generate object string from global config by default.<P></P>
 </DD>
 <DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#GET_PRIVATE_CONFIG">GET_PRIVATE_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
 <A HREF="Undefined/APP_UTIL.html#GET_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)">GET_STRING_FORMAT</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_UTIL)</FONT>
@@ -556,9 +596,44 @@ get sql
       <P></P>
 </DD>
 <DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#INITIALIZE(BOOLEAN)">INITIALIZE</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+      <P></P>
+</DD>
+<DD>
 <A HREF="Undefined/APP_CONFIG_UTIL.html#INSERT_CONFIG">INSERT_CONFIG</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_CONFIG_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#INSERT_LOGGER_EXCEPTION">INSERT_LOGGER_EXCEPTION</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#INSERT_LOGGER_RUNNING(APP_LOGGER)">INSERT_LOGGER_RUNNING</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#INSERT_LOGGER_RUNNING(VARCHAR2,VARCHAR2)">INSERT_LOGGER_RUNNING</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#INSERT_LOGGER_RUNNING(BOOLEAN)">INSERT_LOGGER_RUNNING</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
 <BR>
 <P></P>
 </DD>
@@ -599,6 +674,18 @@ get sql
 <DL>
 <DT>
 <A NAME="M"></A>M</DT>
+<DD>
+<A HREF="Undefined/APP_UTIL.html#MERGE_JSON(PLJSON,PLJSON)">MERGE_JSON</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_UTIL)</FONT>
+<BR> Merge json from other.<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_UTIL.html#MERGE_JSON(PLJSON,VARCHAR2)">MERGE_JSON</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_UTIL)</FONT>
+<BR> Merge json from other.<P></P>
+</DD>
 </DL>
 <DL>
 <DT>
@@ -612,13 +699,13 @@ get sql
 <DT>
 <A NAME="P"></A>P</DT>
 <DD>
-<A HREF="undefined/app_base_object.html#print_attributes_info">PRINT_ATTRIBUTES_INFO</A>
+<A HREF="undefined/app_base_object.html#print">PRINT</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_BASE_OBJECT)</FONT>
 <BR> Abstract method.<P></P>
 </DD>
 <DD>
-<A HREF="undefined/app_base_object.html#print_attributes_info(boolean)">PRINT_ATTRIBUTES_INFO</A>
+<A HREF="undefined/app_base_object.html#print(boolean)">PRINT</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_BASE_OBJECT)</FONT>
 <BR> Inherit method.<P></P>
@@ -628,7 +715,7 @@ get sql
 					
 					&nbsp; <FONT SIZE="-1">(APP_CONFIG)</FONT>
 <BR>
-<P></P>
+      <P></P>
 </DD>
 <DD>
 <A HREF="Undefined/APP_UTIL.html#PRINT_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)">PRINT_STRING_FORMAT</A>
@@ -664,9 +751,23 @@ get sql
       <P></P>
 </DD>
 <DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#REFRESH_CONFIG">REFRESH_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+      <P></P>
+</DD>
+<DD>
 <A HREF="Undefined/APP_LOGGER_SQL.html#RESET_CONFIG">RESET_CONFIG</A>
 					
 					&nbsp; <FONT SIZE="-1">(APP_LOGGER_SQL)</FONT>
+<BR>
+      <P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#RESET_CONFIG">RESET_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
 <BR>
       <P></P>
 </DD>
@@ -722,6 +823,20 @@ get sql
 					&nbsp; <FONT SIZE="-1">(APP_CONFIG_UTIL)</FONT>
 <BR>
       <P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#SET_GLOBAL_CONFIG(VARCHAR2,VARCHAR2)">SET_GLOBAL_CONFIG</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
+</DD>
+<DD>
+<A HREF="Undefined/APP_LOGGER_UTIL.html#SET_LOGGER(APP_LOGGER)">SET_LOGGER</A>
+					
+					&nbsp; <FONT SIZE="-1">(APP_LOGGER_UTIL)</FONT>
+<BR>
+<P></P>
 </DD>
 </DL>
 <DL>

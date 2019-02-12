@@ -1,9 +1,10 @@
 import os
 import re
 from datetime import datetime
-
-def merge_files(in_dir, out_dir, out_file='out', ext='sql', excludes = ['requirements']):
+__excludes = ['requirements', 'test-suite']
+def merge_files(in_dir, out_dir, out_file='out', ext='sql', excludes=[]):
     files = []
+    excludes += __excludes
     for (dirpath, dirnames, filenames) in os.walk(in_dir):
         filenames = list(filter(lambda filename: re.match(r'[^9].*.{ext}'.format(ext=ext), filename), filenames))
         files.extend(list(map(lambda filename: os.path.join(dirpath, filename), filenames)))

@@ -60,7 +60,7 @@ as
     member procedure print_config_value
     is
     begin
-        app_util.print_string_format(config_value);
+        app_util.print(config_value);
     end;
 
     overriding member procedure get_attributes_info

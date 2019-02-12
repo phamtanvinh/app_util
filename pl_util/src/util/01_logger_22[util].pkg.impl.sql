@@ -7,8 +7,8 @@ as
         g_app_config        := new app_config();
         g_config            := new pljson();
         "__config__"        := new pljson();
-        g_config.put('running_table'    ,app_meta_data_util.get_table_name(pi_table_name => 'logger_running'));
-        g_config.put('exception_table'  ,app_meta_data_util.get_table_name(pi_table_name => 'logger_exception'));     
+        g_config.put('running_table'    ,app_meta_data.get_table_name(pi_table_name => 'logger_running'));
+        g_config.put('exception_table'  ,app_meta_data.get_table_name(pi_table_name => 'logger_exception'));     
         -- mode control by default
         g_config.put('is_overrided_config', true);
         g_config.put('is_loaded_custom_config', true);

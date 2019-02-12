@@ -1,7 +1,7 @@
 create or replace package app_logger_util
 /**
 * Project:      app_util<br/>
-* Description:  This package is used to log application.
+* Description:  This package is used to log application processes.
 * @author Vinhpt
 * @headcom
 */
