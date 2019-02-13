@@ -108,10 +108,14 @@ as
         );
     end;
 
-    member procedure get_duration
+    member procedure get_duration(pi_is_total boolean default false)
     is
     begin
-        duration    := app_util.get_unix_ts() - updated_unix_ts;
+        if pi_is_total then
+            duration    := app_util.get_unix_ts() - created_unix_ts;
+        else
+            duration    := app_util.get_unix_ts() - updated_unix_ts;
+        end if;
     end;
 
     overriding member procedure update_all

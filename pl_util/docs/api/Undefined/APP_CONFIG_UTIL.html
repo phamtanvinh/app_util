@@ -49,19 +49,6 @@
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
        schemaName=
-       typeName=VARCHAR2(4000)
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2(4000)
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2(4000)</CODE></FONT></TD><TD><CODE><B><A HREF="#__config__">__config__</A></B></CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
        typeName=APP_CONFIG
        localTypeName=
        schema=
@@ -69,7 +56,6 @@
        synonymsFile=,,--><!--Object Type in same schema--><A href="APP_CONFIG.html">APP_CONFIG</A></CODE></FONT></TD><TD><CODE><B><A HREF="#G_APP_CONFIG">G_APP_CONFIG</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
       </TD>
 </TR>
 <TR CLASS="TableRowColor">
@@ -82,6 +68,7 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_CONFIG">G_CONFIG</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
       </TD>
 </TR>
 </TABLE>
@@ -100,10 +87,10 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=1 
-		argumentCount=4 
+		siblingCount=2 
+		argumentCount=0 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><A NAME="GET_CONFIG"></A><TD><CODE><B><A HREF="#GET_CONFIG(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2)">GET_CONFIG</A></B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL, PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL, PI_STATUS IN VARCHAR2 DEFAULT 'active')</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG">GET_CONFIG</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </TD>
@@ -117,13 +104,30 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=1 
-		argumentCount=5 
+		siblingCount=2 
+		argumentCount=4 
 		predecessorCount=1 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,APP_CONFIG)">GET_CONFIG</A></B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL, PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL, PI_STATUS IN VARCHAR2 DEFAULT 'active', PO_APP_CONFIG OUT APP_CONFIG)</CODE>
+		siblingNoArgumentCount=1--><TD><CODE><B><A HREF="#GET_CONFIG(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2)">GET_CONFIG</A></B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, PI_CONFIG_CODE IN VARCHAR2, PI_CONFIG_NAME IN VARCHAR2, PI_STATUS IN VARCHAR2 DEFAULT 'active')</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=2 
+		argumentCount=5 
+		predecessorCount=2 
+		siblingNoArgumentCount=1--><TD><CODE><B><A HREF="#GET_CONFIG(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2,APP_CONFIG)">GET_CONFIG</A></B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, PI_CONFIG_CODE IN VARCHAR2, PI_CONFIG_NAME IN VARCHAR2, PI_STATUS IN VARCHAR2 DEFAULT 'active', PO_APP_CONFIG OUT APP_CONFIG)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Get config from table and set into variable.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -170,24 +174,6 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
 		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#REFRESH_CONFIG">REFRESH_CONFIG</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
 		argumentCount=1 
 		predecessorCount=0 
 		siblingNoArgumentCount=0--><A NAME="SET_CONFIG"></A><TD><CODE><B><A HREF="#SET_CONFIG(APP_CONFIG)">SET_CONFIG</A></B>(PI_APP_CONFIG IN APP_CONFIG DEFAULT NULL)</CODE>
@@ -204,27 +190,13 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Field Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="__config__"></A>
-<H3>__config__</H3>
-<PRE>
-        public VARCHAR2(4000) <B>__config__</B>
-</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-</DL>
-<HR>
 <A NAME="G_APP_CONFIG"></A>
 <H3>G_APP_CONFIG</H3>
 <PRE>
         public APP_CONFIG <B>G_APP_CONFIG</B>
 </PRE>
 <DL>
-<DD>
-      </DD>
+<DD></DD>
 <DD>
 <DL></DL>
 </DD>
@@ -236,7 +208,8 @@
         public PLJSON <B>G_CONFIG</B>
 </PRE>
 <DL>
-<DD></DD>
+<DD>
+      </DD>
 <DD>
 <DL></DL>
 </DD>
@@ -248,6 +221,24 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
 </TR>
 </TABLE>
+<A NAME="GET_CONFIG"></A>
+<H3>GET_CONFIG</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>()</PRE>
+<DL>
+<DD></DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
 <A NAME="GET_CONFIG(VARCHAR2,VARCHAR2,VARCHAR2,VARCHAR2)"></A>
 <H3>GET_CONFIG</H3>
 <PRE>public <!--
@@ -256,7 +247,7 @@
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL, <BR>                   PI_STATUS IN VARCHAR2 DEFAULT 'active')</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_CODE IN VARCHAR2, <BR>                   PI_CONFIG_NAME IN VARCHAR2, <BR>                   PI_STATUS IN VARCHAR2 DEFAULT 'active')</PRE>
 <DL>
 <DD></DD>
 <DD>
@@ -274,11 +265,18 @@
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_CODE IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL, <BR>                   PI_STATUS IN VARCHAR2 DEFAULT 'active', <BR>                   PO_APP_CONFIG OUT APP_CONFIG)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>(PI_CONFIG_ID IN VARCHAR2 DEFAULT NULL, <BR>                   PI_CONFIG_CODE IN VARCHAR2, <BR>                   PI_CONFIG_NAME IN VARCHAR2, <BR>                   PI_STATUS IN VARCHAR2 DEFAULT 'active', <BR>                   PO_APP_CONFIG OUT APP_CONFIG)</PRE>
 <DL>
-<DD></DD>
+<DD> Get config from table and set into variable.
+</DD>
 <DD>
-<DL></DL>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PO_APP_CONFIG</CODE> -
+              Output to config variable</DD>
+</DT>
+</DL>
 </DD>
 <P></P>
 <DL></DL>
@@ -314,25 +312,6 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_CONFIG</B>()</PRE>
 <DL>
 <DD></DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="REFRESH_CONFIG"></A>
-<H3>REFRESH_CONFIG</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>REFRESH_CONFIG</B>()</PRE>
-<DL>
-<DD>
-      </DD>
 <DD>
 <DL></DL>
 </DD>

@@ -58,7 +58,7 @@ under app_base_object(
     /** */
     member procedure get_created_datetime_dim,
     member procedure get_updated_datetime_dim,    
-    member procedure get_duration,
+    member procedure get_duration(pi_is_total boolean default false),
     overriding member procedure update_all
 ) not final;
 /

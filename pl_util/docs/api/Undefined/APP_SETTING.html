@@ -32,13 +32,9 @@
 <HR>
 <H2>
 <FONT SIZE="-1"></FONT>
-<BR>Package&nbsp;APP_CONFIG_SQL</H2> Project:      app_util<br/>
- Description:  App tool for data management.
+<BR>Package&nbsp;APP_SETTING</H2>
 <P></P>
-<DL>
-<DT>Author:</DT>
-<DD>Vinhpt</DD>
-</DL>
+<DL></DL>
 <HR>
 <P></P>
 <A NAME="field_summary"></A>
@@ -56,8 +52,31 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_CONFIG">G_CONFIG</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Setting config.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=PLJSON
+       localTypeName=
+       schema=
+       fieldType=PLJSON
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_LOGGER">G_LOGGER</A></B></CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Setting logger.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=PLJSON
+       localTypeName=
+       schema=
+       fieldType=PLJSON
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_META_DATA">G_META_DATA</A></B></CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Setting meta data.</TD>
 </TR>
 </TABLE>
 <P></P>
@@ -78,63 +97,10 @@
 		siblingCount=0 
 		argumentCount=0 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG">GET_CONFIG</A></B>()</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#LOAD_CUSTOMIZATION">LOAD_CUSTOMIZATION</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG_SQL">GET_CONFIG_SQL</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CREATE_TABLE_SQL">GET_CREATE_TABLE_SQL</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_INSERT_SQL">GET_INSERT_SQL</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       Initializes all user config setting.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -148,11 +114,44 @@
 		siblingCount=0 
 		argumentCount=0 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SET_PRIVATE_ATTRIBUTES">SET_PRIVATE_ATTRIBUTES</A></B>()</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#RESET_ALL">RESET_ALL</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Reset all setting to default.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SET_CONFIG">SET_CONFIG</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Setting config.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=0 
+		argumentCount=0 
+		predecessorCount=0 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SET_LOGGER">SET_LOGGER</A></B>()</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Setting logger.</TD>
 </TR>
 </TABLE>
 <P></P>
@@ -168,8 +167,34 @@
         public PLJSON <B>G_CONFIG</B>
 </PRE>
 <DL>
+<DD> Setting config.
+</DD>
 <DD>
-      </DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="G_LOGGER"></A>
+<H3>G_LOGGER</H3>
+<PRE>
+        public PLJSON <B>G_LOGGER</B>
+</PRE>
+<DL>
+<DD> Setting logger.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="G_META_DATA"></A>
+<H3>G_META_DATA</H3>
+<PRE>
+        public PLJSON <B>G_META_DATA</B>
+</PRE>
+<DL>
+<DD> Setting meta data.
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -181,18 +206,18 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="GET_CONFIG"></A>
-<H3>GET_CONFIG</H3>
+<A NAME="LOAD_CUSTOMIZATION"></A>
+<H3>LOAD_CUSTOMIZATION</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>LOAD_CUSTOMIZATION</B>()</PRE>
 <DL>
-<DD>
-      </DD>
+<DD> Initializes all user config setting.
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -200,73 +225,56 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="GET_CONFIG_SQL"></A>
-<H3>GET_CONFIG_SQL</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_CONFIG_SQL</B>()</PRE>
-<DL>
-<DD></DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="GET_CREATE_TABLE_SQL"></A>
-<H3>GET_CREATE_TABLE_SQL</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_CREATE_TABLE_SQL</B>()</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="GET_INSERT_SQL"></A>
-<H3>GET_INSERT_SQL</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_INSERT_SQL</B>()</PRE>
-<DL>
-<DD></DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="SET_PRIVATE_ATTRIBUTES"></A>
-<H3>SET_PRIVATE_ATTRIBUTES</H3>
+<A NAME="RESET_ALL"></A>
+<H3>RESET_ALL</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_PRIVATE_ATTRIBUTES</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>RESET_ALL</B>()</PRE>
 <DL>
+<DD> Reset all setting to default.
+</DD>
 <DD>
-      </DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="SET_CONFIG"></A>
+<H3>SET_CONFIG</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_CONFIG</B>()</PRE>
+<DL>
+<DD> Setting config.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="SET_LOGGER"></A>
+<H3>SET_LOGGER</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_LOGGER</B>()</PRE>
+<DL>
+<DD> Setting logger.
+</DD>
 <DD>
 <DL></DL>
 </DD>

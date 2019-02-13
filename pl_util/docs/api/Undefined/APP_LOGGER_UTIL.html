@@ -33,7 +33,7 @@
 <H2>
 <FONT SIZE="-1"></FONT>
 <BR>Package&nbsp;APP_LOGGER_UTIL</H2> Project:      app_util<br/>
- Description:  This package is used to log application.
+ Description:  This package is used to log application processes.
 <P></P>
 <DL>
 <DT>Author:</DT>
@@ -45,19 +45,6 @@
 <TABLE WIDTH="100%" CELLSPACING="0" CELLPADDING="3" BORDER="1">
 <TR CLASS="TableHeadingColor">
 <TD COLSPAN="2"><FONT SIZE="+2"><B>Field Summary</B></FONT></TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=PLJSON
-       localTypeName=
-       schema=
-       fieldType=PLJSON
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#__config__">__config__</A></B></CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -115,10 +102,11 @@
 		siblingCount=0 
 		argumentCount=0 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_PRIVATE_CONFIG">GET_PRIVATE_CONFIG</A></B>()</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG">GET_CONFIG</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       <code>[internal]</code><br/> 
+</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -135,8 +123,8 @@
 		siblingNoArgumentCount=0--><A NAME="INITIALIZE"></A><TD><CODE><B><A HREF="#INITIALIZE(BOOLEAN)">INITIALIZE</A></B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       <code>[table]</code><br/>
+ Create all tables for logging, for running process and tracking exception.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -147,10 +135,28 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=0 
-		argumentCount=0 
+		siblingCount=1 
+		argumentCount=1 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_EXCEPTION">INSERT_LOGGER_EXCEPTION</A></B>()</CODE>
+		siblingNoArgumentCount=0--><A NAME="INSERT_LOGGER_EXCEPTION"></A><TD><CODE><B><A HREF="#INSERT_LOGGER_EXCEPTION(APP_LOGGER)">INSERT_LOGGER_EXCEPTION</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <code>[table]</code><code>[anchor]</code><code>[exception]</code><br/>
+ Auto get exception and insert into table.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=1 
+		argumentCount=1 
+		predecessorCount=1 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_EXCEPTION(BOOLEAN)">INSERT_LOGGER_EXCEPTION</A></B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </TD>
@@ -170,7 +176,8 @@
 		siblingNoArgumentCount=0--><A NAME="INSERT_LOGGER_RUNNING"></A><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(APP_LOGGER)">INSERT_LOGGER_RUNNING</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       <code>[table]</code><code>[anchor]</code><br/>
+</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -187,7 +194,8 @@
 		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(VARCHAR2,VARCHAR2)">INSERT_LOGGER_RUNNING</A></B>(PI_LOG_STEP_NAME IN VARCHAR2, PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       <code>[table]</code><br/>
+ Update step and insert into table.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -201,10 +209,11 @@
 		siblingCount=2 
 		argumentCount=1 
 		predecessorCount=2 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(BOOLEAN)">INSERT_LOGGER_RUNNING</A></B>(PI_IS_REPEATED IN BOOLEAN DEFAULT FALSE)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(BOOLEAN)">INSERT_LOGGER_RUNNING</A></B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       <code>[table]</code><br/>
+</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -218,46 +227,11 @@
 		siblingCount=0 
 		argumentCount=0 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#REFRESH_CONFIG">REFRESH_CONFIG</A></B>()</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SET_ATTRIBUTES">SET_ATTRIBUTES</A></B>()</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#RESET_CONFIG">RESET_CONFIG</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=2 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><A NAME="SET_GLOBAL_CONFIG"></A><TD><CODE><B><A HREF="#SET_GLOBAL_CONFIG(VARCHAR2,VARCHAR2)">SET_GLOBAL_CONFIG</A></B>(PI_PACKAGE_NAME IN VARCHAR2 DEFAULT NULL, PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL)</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
+       <code>[internal]</code><br/> 
+</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -274,6 +248,7 @@
 		siblingNoArgumentCount=0--><A NAME="SET_LOGGER"></A><TD><CODE><B><A HREF="#SET_LOGGER(APP_LOGGER)">SET_LOGGER</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
       </TD>
 </TR>
 </TABLE>
@@ -284,19 +259,6 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Field Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="__config__"></A>
-<H3>__config__</H3>
-<PRE>
-        public PLJSON <B>__config__</B>
-</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-</DL>
-<HR>
 <A NAME="G_APP_CONFIG"></A>
 <H3>G_APP_CONFIG</H3>
 <PRE>
@@ -340,17 +302,18 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="GET_PRIVATE_CONFIG"></A>
-<H3>GET_PRIVATE_CONFIG</H3>
+<A NAME="GET_CONFIG"></A>
+<H3>GET_CONFIG</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_PRIVATE_CONFIG</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>()</PRE>
 <DL>
-<DD></DD>
+<DD> <code>[internal]</code><br/> 
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -368,16 +331,23 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INITIALIZE</B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</PRE>
 <DL>
+<DD> <code>[table]</code><br/>
+ Create all tables for logging, for running process and tracking exception.
+</DD>
 <DD>
-      </DD>
-<DD>
-<DL></DL>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_IS_FORCED</CODE> -
+              Pass true, drop and create table any way</DD>
+</DT>
+</DL>
 </DD>
 <P></P>
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_EXCEPTION"></A>
+<A NAME="INSERT_LOGGER_EXCEPTION(APP_LOGGER)"></A>
 <H3>INSERT_LOGGER_EXCEPTION</H3>
 <PRE>public <!--
        schemaName=
@@ -385,7 +355,27 @@
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_EXCEPTION</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_EXCEPTION</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
+<DL>
+<DD> <code>[table]</code><code>[anchor]</code><code>[exception]</code><br/>
+ Auto get exception and insert into table.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="INSERT_LOGGER_EXCEPTION(BOOLEAN)"></A>
+<H3>INSERT_LOGGER_EXCEPTION</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_EXCEPTION</B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</PRE>
 <DL>
 <DD></DD>
 <DD>
@@ -405,7 +395,8 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
 <DL>
-<DD></DD>
+<DD> <code>[table]</code><code>[anchor]</code><br/>
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -423,9 +414,26 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_LOG_STEP_NAME IN VARCHAR2, <BR>                              PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</PRE>
 <DL>
-<DD></DD>
+<DD> <code>[table]</code><br/>
+ Update step and insert into table. <br/>
+ Example:
+ <pre>
+ begin
+   app_logger_util.insert_logger_running('test name', 'test description');
+ end;
+ </pre>
+</DD>
 <DD>
-<DL></DL>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_LOG_STEP_NAME</CODE> -
+              Step name</DD>
+<DD>
+<CODE>PI_LOG_STEP_DESCRIPTION</CODE> -
+              Description for this step</DD>
+</DT>
+</DL>
 </DD>
 <P></P>
 <DL></DL>
@@ -439,9 +447,10 @@
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_IS_REPEATED IN BOOLEAN DEFAULT FALSE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</PRE>
 <DL>
-<DD></DD>
+<DD> <code>[table]</code><br/>
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -449,55 +458,18 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="REFRESH_CONFIG"></A>
-<H3>REFRESH_CONFIG</H3>
+<A NAME="SET_ATTRIBUTES"></A>
+<H3>SET_ATTRIBUTES</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>REFRESH_CONFIG</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_ATTRIBUTES</B>()</PRE>
 <DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
+<DD> <code>[internal]</code><br/> 
 </DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="RESET_CONFIG"></A>
-<H3>RESET_CONFIG</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>RESET_CONFIG</B>()</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="SET_GLOBAL_CONFIG(VARCHAR2,VARCHAR2)"></A>
-<H3>SET_GLOBAL_CONFIG</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_GLOBAL_CONFIG</B>(PI_PACKAGE_NAME IN VARCHAR2 DEFAULT NULL, <BR>                          PI_CONFIG_NAME IN VARCHAR2 DEFAULT NULL)</PRE>
-<DL>
-<DD></DD>
 <DD>
 <DL></DL>
 </DD>
@@ -515,7 +487,8 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_LOGGER</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
 <DL>
-<DD></DD>
+<DD>
+      </DD>
 <DD>
 <DL></DL>
 </DD>

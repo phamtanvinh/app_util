@@ -33,7 +33,7 @@
 <H2>
 <FONT SIZE="-1"></FONT>
 <BR>Subtype&nbsp;APP_EXTEND</H2> Project:      app_util<br/>
- Description:  App tool for data management.
+ Description:  This type extend time series to support logging, monitoring duration...
 <P></P>
 <DL>
 <DT>Author:</DT>
@@ -315,9 +315,9 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE</CODE></FONT></TD>
 <!-- 
 		siblingCount=0 
-		argumentCount=0 
+		argumentCount=1 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_DURATION">GET_DURATION</A></B>()</CODE>
+		siblingNoArgumentCount=0--><A NAME="GET_DURATION"></A><TD><CODE><B><A HREF="#GET_DURATION(BOOLEAN)">GET_DURATION</A></B>(PI_IS_TOTAL IN BOOLEAN DEFAULT FALSE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </TD>
@@ -654,7 +654,7 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="GET_DURATION"></A>
+<A NAME="GET_DURATION(BOOLEAN)"></A>
 <H3>GET_DURATION</H3>
 <PRE>public <!--
        schemaName=
@@ -662,7 +662,7 @@
        localTypeName=
        schema=
        fieldType=MEMBER PROCEDURE
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>GET_DURATION</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->MEMBER PROCEDURE <B>GET_DURATION</B>(PI_IS_TOTAL IN BOOLEAN DEFAULT FALSE)</PRE>
 <DL>
 <DD></DD>
 <DD>
