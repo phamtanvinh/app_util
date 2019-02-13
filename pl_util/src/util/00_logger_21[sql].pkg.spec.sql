@@ -15,7 +15,7 @@ as
     "__config__"            pljson;
 -- manipulate config
     /** */
-    procedure reset_config;
+    procedure get_config;
 -- get sql
     /** */
     function get_create_logger_running_sql return varchar2;

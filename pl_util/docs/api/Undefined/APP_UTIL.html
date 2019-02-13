@@ -37,12 +37,13 @@
  or produres.<br/>
  Features:<br/>
  <pre>
-   1. manipulate string <br/>
-   2. manipulate table <br/>
-   3. manipulate date and time <br/>
-   4. manipulate dictionary <br/>
-   5. manipulate transaction <br/>
+   1. manipulate string
+   2. manipulate table
+   3. manipulate date and time
+   4. manipulate dictionary
+   5. manipulate transaction
    6. manipulate json
+   7. manipulate package
  </pre>
 <P></P>
 <DL>
@@ -346,10 +347,10 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=2 
+		siblingCount=3 
 		argumentCount=3 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><A NAME="PRINT_STRING_FORMAT"></A><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_KEY IN VARCHAR2, PI_VALUE IN VARCHAR2, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+		siblingNoArgumentCount=0--><A NAME="PRINT"></A><TD><CODE><B><A HREF="#PRINT(VARCHAR2,VARCHAR2,NUMBER)">PRINT</A></B>(PI_KEY IN VARCHAR2, PI_VALUE IN VARCHAR2, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        Print string from key, value.</TD>
@@ -363,10 +364,10 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=2 
+		siblingCount=3 
 		argumentCount=2 
 		predecessorCount=1 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(DICTIONARY,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_DICTIONARY IN DICTIONARY, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT(DICTIONARY,NUMBER)">PRINT</A></B>(PI_DICTIONARY IN DICTIONARY, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        Print string from dictionary.</TD>
@@ -380,13 +381,30 @@
        fieldType=
        synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
 <!-- 
-		siblingCount=2 
+		siblingCount=3 
 		argumentCount=2 
 		predecessorCount=2 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT_STRING_FORMAT(PLJSON,NUMBER)">PRINT_STRING_FORMAT</A></B>(PI_JO IN PLJSON, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT(PLJSON,NUMBER)">PRINT</A></B>(PI_JO IN PLJSON, PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        Print string from pljson.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+<!-- 
+		siblingCount=3 
+		argumentCount=2 
+		predecessorCount=3 
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#PRINT(VARCHAR2,BOOLEAN)">PRINT</A></B>(PI_STRING IN VARCHAR2, PI_IS_PREVIEWED IN BOOLEAN DEFAULT TRUE)</CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Print string with condition.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -860,15 +878,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="PRINT_STRING_FORMAT(VARCHAR2,VARCHAR2,NUMBER)"></A>
-<H3>PRINT_STRING_FORMAT</H3>
+<A NAME="PRINT(VARCHAR2,VARCHAR2,NUMBER)"></A>
+<H3>PRINT</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_KEY IN VARCHAR2, <BR>                            PI_VALUE IN VARCHAR2, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT</B>(PI_KEY IN VARCHAR2, <BR>              PI_VALUE IN VARCHAR2, <BR>              PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
 <DL>
 <DD> Print string from key, value.
 </DD>
@@ -888,15 +906,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="PRINT_STRING_FORMAT(DICTIONARY,NUMBER)"></A>
-<H3>PRINT_STRING_FORMAT</H3>
+<A NAME="PRINT(DICTIONARY,NUMBER)"></A>
+<H3>PRINT</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_DICTIONARY IN DICTIONARY, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT</B>(PI_DICTIONARY IN DICTIONARY, <BR>              PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
 <DL>
 <DD> Print string from dictionary.
 </DD>
@@ -913,15 +931,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="PRINT_STRING_FORMAT(PLJSON,NUMBER)"></A>
-<H3>PRINT_STRING_FORMAT</H3>
+<A NAME="PRINT(PLJSON,NUMBER)"></A>
+<H3>PRINT</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT_STRING_FORMAT</B>(PI_JO IN PLJSON, <BR>                            PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT</B>(PI_JO IN PLJSON, <BR>              PI_RPAD_SIZE IN NUMBER DEFAULT G_RPAD_SIZE)</PRE>
 <DL>
 <DD> Print string from pljson.
 </DD>
@@ -931,6 +949,34 @@
         <DD>
 <CODE>PI_JO</CODE> -
               Pass plsjon</DD>
+</DT>
+</DL>
+</DD>
+<P></P>
+<DL></DL>
+</DL>
+<HR>
+<A NAME="PRINT(VARCHAR2,BOOLEAN)"></A>
+<H3>PRINT</H3>
+<PRE>public <!--
+       schemaName=
+       typeName=
+       localTypeName=
+       schema=
+       fieldType=
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>PRINT</B>(PI_STRING IN VARCHAR2, <BR>              PI_IS_PREVIEWED IN BOOLEAN DEFAULT TRUE)</PRE>
+<DL>
+<DD> Print string with condition.
+</DD>
+<DD>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_STRING</CODE> -
+              Pass string to preview</DD>
+<DD>
+<CODE>PI_IS_PREVIEWED</CODE> -
+              If true then print, or do nothing</DD>
 </DT>
 </DL>
 </DD>

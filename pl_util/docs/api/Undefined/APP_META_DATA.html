@@ -32,8 +32,9 @@
 <HR>
 <H2>
 <FONT SIZE="-1"></FONT>
-<BR>Package&nbsp;APP_CONFIG_SQL</H2> Project:      app_util<br/>
- Description:  App tool for data management.
+<BR>Package&nbsp;APP_META_DATA</H2> Project:      app_util<br/>
+ Description:  This package is used to config global config as default,
+ which is able to be overrided by custom package.
 <P></P>
 <DL>
 <DT>Author:</DT>
@@ -53,11 +54,10 @@
        localTypeName=
        schema=
        fieldType=PLJSON
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#__config__">__config__</A></B></CODE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_CONFIG">G_CONFIG</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       All global configurations.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -66,11 +66,22 @@
        localTypeName=
        schema=
        fieldType=PLJSON
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_CONFIG">G_CONFIG</A></B></CODE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_PREFIX">G_PREFIX</A></B></CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Config for all global prefixes.</TD>
+</TR>
+<TR CLASS="TableRowColor">
+<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
+       schemaName=
+       typeName=PLJSON
+       localTypeName=
+       schema=
+       fieldType=PLJSON
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->PLJSON</CODE></FONT></TD><TD><CODE><B><A HREF="#G_SUFFIX">G_SUFFIX</A></B></CODE>
+<BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       Config for all global suffixes.</TD>
 </TR>
 </TABLE>
 <P></P>
@@ -82,20 +93,19 @@
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
        schemaName=
-       typeName=
+       typeName=VARCHAR2
        localTypeName=
        schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
+       fieldType=VARCHAR2
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
 <!-- 
 		siblingCount=0 
-		argumentCount=0 
+		argumentCount=3 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG">GET_CONFIG</A></B>()</CODE>
+		siblingNoArgumentCount=0--><A NAME="GET_OBJECT_NAME"></A><TD><CODE><B><A HREF="#GET_OBJECT_NAME(VARCHAR2,VARCHAR2,VARCHAR2)">GET_OBJECT_NAME</A></B>(PI_OBJECT_NAME IN VARCHAR2, PI_PREFIX IN VARCHAR2 DEFAULT NULL, PI_SUFFIX IN VARCHAR2 DEFAULT NULL)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Generate object string from global config by default.</TD>
 </TR>
 <TR CLASS="TableRowColor">
 <TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
@@ -107,65 +117,12 @@
        synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
 <!-- 
 		siblingCount=0 
-		argumentCount=0 
+		argumentCount=3 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CONFIG_SQL">GET_CONFIG_SQL</A></B>()</CODE>
+		siblingNoArgumentCount=0--><A NAME="GET_TABLE_NAME"></A><TD><CODE><B><A HREF="#GET_TABLE_NAME(VARCHAR2,VARCHAR2,VARCHAR2)">GET_TABLE_NAME</A></B>(PI_TABLE_NAME IN VARCHAR2, PI_PREFIX IN VARCHAR2 DEFAULT NULL, PI_SUFFIX IN VARCHAR2 DEFAULT NULL)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_CREATE_TABLE_SQL">GET_CREATE_TABLE_SQL</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2</CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#GET_INSERT_SQL">GET_INSERT_SQL</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </TD>
-</TR>
-<TR CLASS="TableRowColor">
-<TD WIDTH="1%" VALIGN="top" ALIGN="right"><FONT SIZE="-1"><CODE>&nbsp;<!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--></CODE></FONT></TD>
-<!-- 
-		siblingCount=0 
-		argumentCount=0 
-		predecessorCount=0 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#SET_PRIVATE_ATTRIBUTES">SET_PRIVATE_ATTRIBUTES</A></B>()</CODE>
-<BR>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      
-      </TD>
+       Generate table name from global config.</TD>
 </TR>
 </TABLE>
 <P></P>
@@ -175,27 +132,40 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Field Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="__config__"></A>
-<H3>__config__</H3>
-<PRE>
-        public PLJSON <B>__config__</B>
-</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-</DL>
-<HR>
 <A NAME="G_CONFIG"></A>
 <H3>G_CONFIG</H3>
 <PRE>
         public PLJSON <B>G_CONFIG</B>
 </PRE>
 <DL>
+<DD> All global configurations.
+</DD>
 <DD>
-      </DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="G_PREFIX"></A>
+<H3>G_PREFIX</H3>
+<PRE>
+        public PLJSON <B>G_PREFIX</B>
+</PRE>
+<DL>
+<DD> Config for all global prefixes.
+</DD>
+<DD>
+<DL></DL>
+</DD>
+</DL>
+<HR>
+<A NAME="G_SUFFIX"></A>
+<H3>G_SUFFIX</H3>
+<PRE>
+        public PLJSON <B>G_SUFFIX</B>
+</PRE>
+<DL>
+<DD> Config for all global suffixes.
+</DD>
 <DD>
 <DL></DL>
 </DD>
@@ -207,94 +177,58 @@
 <TD COLSPAN="1"><FONT SIZE="+2"><B>Method Detail</B></FONT></TD>
 </TR>
 </TABLE>
-<A NAME="GET_CONFIG"></A>
-<H3>GET_CONFIG</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>GET_CONFIG</B>()</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="GET_CONFIG_SQL"></A>
-<H3>GET_CONFIG_SQL</H3>
+<A NAME="GET_OBJECT_NAME(VARCHAR2,VARCHAR2,VARCHAR2)"></A>
+<H3>GET_OBJECT_NAME</H3>
 <PRE>public <!--
        schemaName=
        typeName=VARCHAR2
        localTypeName=
        schema=
        fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_CONFIG_SQL</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_OBJECT_NAME</B>(PI_OBJECT_NAME IN VARCHAR2, <BR>                                PI_PREFIX IN VARCHAR2 DEFAULT NULL, <BR>                                PI_SUFFIX IN VARCHAR2 DEFAULT NULL)</PRE>
 <DL>
-<DD></DD>
+<DD> Generate object string from global config by default.
+</DD>
 <DD>
-<DL></DL>
+<DL>
+<DT>Parameters:
+        <DD>
+<CODE>PI_OBJECT_NAME</CODE> -
+              Pass object name</DD>
+<DD>
+<CODE>PI_PREFIX</CODE> -
+              Pass prefix, default from g_prefix</DD>
+<DD>
+<CODE>PI_SUFFIX</CODE> -
+              Pass suffix, default from g_suffix</DD>
+</DT>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
+</DL>
 </DD>
 <P></P>
 <DL></DL>
 </DL>
 <HR>
-<A NAME="GET_CREATE_TABLE_SQL"></A>
-<H3>GET_CREATE_TABLE_SQL</H3>
+<A NAME="GET_TABLE_NAME(VARCHAR2,VARCHAR2,VARCHAR2)"></A>
+<H3>GET_TABLE_NAME</H3>
 <PRE>public <!--
        schemaName=
        typeName=VARCHAR2
        localTypeName=
        schema=
        fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_CREATE_TABLE_SQL</B>()</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_TABLE_NAME</B>(PI_TABLE_NAME IN VARCHAR2, <BR>                               PI_PREFIX IN VARCHAR2 DEFAULT NULL, <BR>                               PI_SUFFIX IN VARCHAR2 DEFAULT NULL)</PRE>
 <DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
+<DD> Generate table name from global config.
 </DD>
-<P></P>
-<DL></DL>
-</DL>
-<HR>
-<A NAME="GET_INSERT_SQL"></A>
-<H3>GET_INSERT_SQL</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=VARCHAR2
-       localTypeName=
-       schema=
-       fieldType=VARCHAR2
-       synonymsFile=,,--><!--GenerateTypeLink: default reached-->VARCHAR2 <B>GET_INSERT_SQL</B>()</PRE>
+<DD>
 <DL>
-<DD></DD>
-<DD>
-<DL></DL>
-</DD>
-<P></P>
-<DL></DL>
+<DT>Returns:
+          <DD>varchar2</DD>
+</DT>
 </DL>
-<HR>
-<A NAME="SET_PRIVATE_ATTRIBUTES"></A>
-<H3>SET_PRIVATE_ATTRIBUTES</H3>
-<PRE>public <!--
-       schemaName=
-       typeName=
-       localTypeName=
-       schema=
-       fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>SET_PRIVATE_ATTRIBUTES</B>()</PRE>
-<DL>
-<DD>
-      </DD>
-<DD>
-<DL></DL>
 </DD>
 <P></P>
 <DL></DL>

@@ -73,6 +73,14 @@ as
     procedure print(
         pi_jo           pljson,
         pi_rpad_size    number default g_rpad_size );
+    /** Print string with condition.
+    * @param pi_string Pass string to preview
+    * @param pi_is_previewed If true then print, or do nothing
+    */
+    procedure print(
+        pi_string       varchar2,
+        pi_is_previewed boolean default true
+    );
 -- feature: manipulate table
     /** 
     * Check table if exist.

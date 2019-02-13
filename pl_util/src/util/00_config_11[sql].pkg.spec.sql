@@ -7,18 +7,18 @@ create or replace package app_config_sql
 */
 as
 -- global config
-    /***/
+    /** */
     g_config                pljson;
-    g_table_name            varchar2(64);
--- private config
-    /***/
+    /** */
     "__config__"            pljson;
--- global attributes
--- update config
-    /***/
-    procedure update_config;
+-- manipulate config
+    /** */
+    procedure get_config;
+-- manipulate private attributes
+    /** */
+    procedure set_private_attributes;
 -- get sql
-    /***/
+    /** */
     function get_create_table_sql return varchar2;
     function get_insert_sql return varchar2;
     function get_config_sql return varchar2;

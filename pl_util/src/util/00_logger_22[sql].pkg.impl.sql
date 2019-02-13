@@ -1,13 +1,12 @@
 create or replace package body app_logger_sql
 as
 -- manipulate config
-    procedure reset_config
+    procedure get_config
     is
     begin
-        g_config        := new pljson();
+        g_config        := new pljson;
         g_app_logger    := new app_logger;
-        g_config.put('running_table'    ,app_meta_data.get_table_name(pi_table_name => 'logger_running'));
-        g_config.put('exception_table'  ,app_meta_data.get_table_name(pi_table_name => 'logger_exception'));     
+        g_config        := app_setting.get_logger;
     end;
 
 -- get sql
@@ -138,7 +137,6 @@ as
         return l_sql;
     end;
 begin
--- setup by default
-    reset_config();
+    get_config;
 end app_logger_sql;
 /

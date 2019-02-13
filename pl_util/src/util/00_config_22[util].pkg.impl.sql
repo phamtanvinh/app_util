@@ -1,11 +1,7 @@
 create or replace package body app_config_util
-as 
--- manipulate config
-    procedure refresh_config
-    is
-    begin
-        app_config_sql.g_config     := g_config;
-    end;
+as
+-- private attributes
+    g_app_config            app_config;
 -- manipulate attributes
     procedure set_config(pi_app_config  app_config default null)
     is
@@ -13,60 +9,22 @@ as
         g_app_config    := nvl(pi_app_config, g_app_config);
     end;
 
--- manipulate tables
-    procedure initialize(pi_is_forced boolean default false)
+    procedure get_config
     is
-        l_sql               varchar2(4000);
     begin
-        refresh_config();
-        dbms_output.put_line('initialize ...');
-        if pi_is_forced then
-            dbms_output.put_line('drop table '||g_config.get_string('table_name') ||' ...');
-            app_util.drop_table(g_config.get_string('table_name'), true);
-        else
-            dbms_output.put_line('warning: all config data will be clear if you pass "true", please follow code below');
-        end if;
-        l_sql   := app_config_sql.get_config_sql();
-        if pi_is_forced then
-            dbms_output.put_line('create table '||g_config.get_string('table_name') ||' ...');
-            execute immediate l_sql;
-        else
-            dbms_output.put_line(l_sql);
-        end if;
-        dbms_output.put_line('done.');
-    end;
-
-    procedure insert_config
-    is
-        l_sql               varchar2(4000);
-    begin
-        refresh_config();
-        l_sql   := app_config_sql.get_insert_sql();
-        --dbms_output.put_line(l_sql);
-        execute immediate l_sql
-            using
-                g_app_config.config_id,
-                g_app_config.config_code,
-                g_app_config.config_user,
-                g_app_config.config_name,
-                g_app_config.config_value.to_char(false),
-                g_app_config.config_type,
-                g_app_config.status,
-                g_app_config.created_date,
-                g_app_config.updated_date;
+        g_config := app_setting.get_config;
     end;
 
     procedure get_config(
         pi_config_id        varchar2 default null,
-        pi_config_code      varchar2 default null,
-        pi_config_name      varchar2 default null,
+        pi_config_code      varchar2,
+        pi_config_name      varchar2,
         pi_status           varchar2 default 'active'
     )
     is
         l_sql               varchar2(4000);
         l_config_value      varchar2(4000);
     begin
-        refresh_config();
         l_sql   := app_config_sql.get_config_sql();
         --dbms_output.put_line(l_sql);
         execute immediate l_sql 
@@ -93,8 +51,8 @@ as
 
     procedure get_config(
         pi_config_id        varchar2 default null,
-        pi_config_code      varchar2 default null,
-        pi_config_name      varchar2 default null,
+        pi_config_code      varchar2,
+        pi_config_name      varchar2,
         pi_status           varchar2 default 'active',
         po_app_config out   app_config
     )
@@ -108,10 +66,59 @@ as
         );
         po_app_config   := g_app_config;
     end;
+-- manipulate tables
+    procedure initialize(pi_is_forced boolean default false)
+    is
+        l_sql               varchar2(4000);
+        l_message           varchar2(4000);
+        l_is_previewed      boolean := true;
+        l_table_name        varchar2(64) := g_config.get_string('table_name');
+    begin
+        if pi_is_forced then
+            l_is_previewed := false;
+        end if;
+        dbms_output.put_line('initialize ...');
+        if pi_is_forced then
+            dbms_output.put_line('drop table '||l_table_name ||' ...');
+            app_util.drop_table(l_table_name, true);
+        end if;
+
+        l_message := 'warning: all config data will be clear if you pass "true", please follow code below';
+        app_util.print( pi_string => l_message, pi_is_previewed => l_is_previewed);
+
+        l_sql   := app_config_sql.get_config_sql();
+        if pi_is_forced then
+            dbms_output.put_line('create table '||l_table_name ||' ...');
+            execute immediate l_sql;
+        end if;
+        
+        app_util.print(pi_string => l_sql , pi_is_previewed => l_is_previewed);
+        dbms_output.put_line('done.');
+    end;
+
+    procedure insert_config
+    is
+        l_sql               varchar2(4000);
+    begin
+        l_sql   := app_config_sql.get_insert_sql();
+        --dbms_output.put_line(l_sql);
+        execute immediate l_sql
+            using
+                g_app_config.config_id,
+                g_app_config.config_code,
+                g_app_config.config_user,
+                g_app_config.config_name,
+                g_app_config.config_value.to_char(false),
+                g_app_config.config_type,
+                g_app_config.status,
+                g_app_config.created_date,
+                g_app_config.updated_date;
+    end;
+
 begin
 -- setup by default
     g_app_config        := new app_config();
     g_config            := new pljson() ;
-    g_config.put('table_name', app_meta_data.get_table_name(pi_table_name => 'config'));
+    get_config;
 end app_config_util;
 /

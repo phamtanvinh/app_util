@@ -14,19 +14,9 @@ as
 -- private config
     /** */
     "__config__"            pljson;
--- manipulate config
-    -- default config
-    /** */
-    procedure reset_config;
-    procedure get_private_config;
-    procedure set_global_config(
-        pi_package_name     varchar2 default null,
-        pi_config_name      varchar2 default null
-    );
-    -- [__config__] < [private] < [custom]
-    /** */
-    procedure refresh_config;
 -- manipulate tables
+    /** */
+    procedure get_config;
     /** */
     procedure initialize(pi_is_forced boolean default false);
     procedure set_logger(pi_app_logger app_logger);

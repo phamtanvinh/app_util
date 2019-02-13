@@ -74,6 +74,17 @@ as
         l_string        := get_string_format(pi_jo => pi_jo, pi_rpad_size => pi_rpad_size);
         dbms_output.put_line(l_string);
     end;
+
+     procedure print(
+        pi_string       varchar2,
+        pi_is_previewed boolean default true
+    )
+    is
+    begin
+        if pi_is_previewed then
+            dbms_output.put_line(pi_string);
+        end if;
+    end;
 -- feature: manipulate table
     function exist_table(pi_table_name varchar2) return boolean
     is
@@ -93,9 +104,11 @@ as
     end;
     procedure drop_table(pi_table_name varchar2, pi_is_forced boolean default false)
     is
+        l_string        varchar2(4000);
     begin
+        l_string    := 'drop table ' || pi_table_name || ' cascade constraints purge';
         if exist_table(pi_table_name) and pi_is_forced then
-            execute immediate 'drop table ' || pi_table_name || ' cascade constraints purge';
+            execute immediate l_string;
         end if;
           
     end;
