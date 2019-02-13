@@ -1,12 +1,5 @@
 create or replace package body app_setting
 as
-    /** Setting meta data.*/
-    g_meta_data         pljson;
-    /** Setting config.*/
-    g_config            pljson;
-    /** Setting logger.*/
-    g_logger            pljson;
-
     procedure load_customization
     is
     begin
@@ -34,25 +27,6 @@ as
         g_logger.put('running_table',app_meta_data.get_table_name(pi_table_name => 'logger_running'));
         g_logger.put('exception_table',app_meta_data.get_table_name(pi_table_name => 'logger_exception'));     
     end;
-
-    function get_meta_data return pljson
-    is
-    begin
-        return g_meta_data;
-    end;
-
-    function get_config return pljson
-    is
-    begin
-        return g_config;
-    end;
-
-    function get_logger return pljson
-    is
-    begin
-        return g_logger;
-    end;
-
 begin
     reset_all;
     load_customization;

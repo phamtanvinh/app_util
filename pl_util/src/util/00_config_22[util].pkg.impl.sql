@@ -1,7 +1,8 @@
 create or replace package body app_config_util
 as
--- private attributes
-    g_app_config            app_config;
+-- private config
+    /** */
+    "__config__"            varchar2(4000);
 -- manipulate attributes
     procedure set_config(pi_app_config  app_config default null)
     is
@@ -12,7 +13,7 @@ as
     procedure get_config
     is
     begin
-        g_config := app_setting.get_config;
+        g_config := app_setting.g_config;
     end;
 
     procedure get_config(

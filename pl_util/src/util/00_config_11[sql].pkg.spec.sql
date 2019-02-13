@@ -9,8 +9,6 @@ as
 -- global config
     /** */
     g_config                pljson;
-    /** */
-    "__config__"            pljson;
 -- manipulate config
     /** */
     procedure get_config;

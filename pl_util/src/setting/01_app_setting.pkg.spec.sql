@@ -5,6 +5,18 @@ create or replace package app_setting
 * @author Vinhpt
 */
 as
+/*
+ *  Global attributes
+ */
+    /** Setting meta data.*/
+    g_meta_data         pljson;
+    /** Setting config.*/
+    g_config            pljson;
+    /** Setting logger.*/
+    g_logger            pljson;
+/*
+ *  Global methods
+ */
     /** 
     * Initializes all user config setting.
     */
@@ -16,11 +28,5 @@ as
     procedure set_config;
     /** Setting logger.*/
     procedure set_logger;
-    /** */
-    function get_meta_data return pljson;
-    /** */
-    function get_config return pljson;
-    /** */
-    function get_logger return pljson;
 end app_setting;
 /

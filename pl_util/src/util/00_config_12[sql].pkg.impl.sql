@@ -1,13 +1,15 @@
 create or replace package body app_config_sql
 as
 -- private attributes
+    /** */
+    "__config__"            pljson;
     g_table_name            varchar2(64);
 -- manipulate config
     procedure get_config
     is
     begin
         g_config := new pljson;
-        g_config := app_setting.get_config;
+        g_config := app_setting.g_config;
     end;
     procedure set_private_attributes
     is

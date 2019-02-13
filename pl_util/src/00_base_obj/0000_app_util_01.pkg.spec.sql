@@ -23,7 +23,9 @@ as
     type tuple is table of varchar2(4000);
     /** Key length: 64, Value length: 4000.*/
     type dictionary is table of varchar2(4000) index by varchar2(64);
--- feature: manipulate string
+/*
+ *  Feature: manipulate string
+ */
     /**
     * Generate string to print format.
     * @param pi_key Pass key string
@@ -81,7 +83,10 @@ as
         pi_string       varchar2,
         pi_is_previewed boolean default true
     );
--- feature: manipulate table
+
+/*
+ *  Feature: manipulate table
+ */
     /** 
     * Check table if exist.
     * @param pi_table_name Table name
@@ -94,7 +99,9 @@ as
     * @param pi_is_forced Defaul false, if set true, this table will drop cascade
     */
     procedure drop_table(pi_table_name varchar2, pi_is_forced boolean default false);
--- feature: manipulate date and time
+/*
+ *  Feature: manipulate date and time
+ */
     /** 
     * Convert timestamp to format yyyymmdd.
     * @param pi_ts Pass timestamp
@@ -113,20 +120,29 @@ as
     * @return number
     */
     function get_unix_ts(pi_ts timestamp default current_timestamp) return number;
--- feature: manipulate dictionary
+
+/*
+ *  Feature: manipulate dictionary
+ */
     /**
     * Generate a dictionary from pljson type.
     * @param pi_json Pass pljson
     * @return dictionary
     */
     function get_dictionary(pi_json    pljson) return dictionary;
--- feature: manipulate transaction
+
+/*
+ *  Feature: manipulate transaction
+ */
     /** 
     * Generate local transaction id.
     * @return varchar2
     */
     function get_transaction_id return varchar2;
--- feature: manipulate json
+
+/*
+ *  Feature: manipulate json
+ */
     /**
     * Update pljson from another, only keys exist.
     * @param pio_json Pass pljson object to update
@@ -162,11 +178,26 @@ as
         pio_tar_json in out pljson,
         pi_src_json         varchar2
     );
--- feature: manipulate package
+
+/*
+ *  Feature: manipulate package
+ */
     /** 
     * Check package is existed.
     * @param pi_package_name Pass package name
     */
     function exist_package(pi_package_name varchar2) return boolean;
+
+/*
+ * Featue: execute sql
+ */
+    /** 
+    * Execute sql with condition
+    * @param pi_is_forced Pass true, and run
+    */
+    procedure exec(
+        pi_sql          varchar2, 
+        pi_is_forced    boolean     default false)
+    ;
 end app_util;
 /

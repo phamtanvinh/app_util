@@ -1,15 +1,29 @@
 create or replace package body app_logger_sql
 as
--- manipulate config
+-- private config
+    /** */
+    "__config__"            pljson;
+/*
+ *  Internal methods
+ */
     procedure get_config
     is
     begin
         g_config        := new pljson;
-        g_app_logger    := new app_logger;
-        g_config        := app_setting.get_logger;
+        g_config        := app_setting.g_logger;
     end;
 
--- get sql
+    procedure set_attributes
+    is
+    begin
+        "__config__"    := new pljson;
+        g_config        := new pljson;
+        g_app_logger    := new app_logger;
+    end;
+
+/*
+ *  Global methods
+ */
     function get_create_logger_running_sql return varchar2
     is
         l_sql   varchar2(4000);
@@ -137,6 +151,10 @@ as
         return l_sql;
     end;
 begin
+    /*
+     * Load all internal methods
+     */
+    set_attributes;
     get_config;
 end app_logger_sql;
 /

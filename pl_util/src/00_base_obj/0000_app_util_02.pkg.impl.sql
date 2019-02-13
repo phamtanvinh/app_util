@@ -222,5 +222,17 @@ as
 
         return l_is_true;
     end;
+/*
+ * Featue: execute sql
+ */
+    procedure exec(
+        pi_sql          varchar2, 
+        pi_is_forced    boolean     default false)
+    is
+    begin
+        if pi_is_forced then
+            execute immediate pi_sql;
+        end if;
+    end;
 end app_util;
 /

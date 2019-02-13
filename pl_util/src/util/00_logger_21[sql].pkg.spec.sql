@@ -6,17 +6,24 @@ create or replace package app_logger_sql
 * @headcom
 */
 as
--- global config
+/*
+ *  Global attributes
+ */
     /** */
-    g_app_logger            app_logger;
     g_config                pljson;
--- private config
-    /** */
-    "__config__"            pljson;
--- manipulate config
-    /** */
+    g_app_logger            app_logger;
+
+/*
+ *  Internal methods
+ */
+    /** Internal method. */
     procedure get_config;
--- get sql
+    /** Internal method. */
+    procedure set_attributes;
+
+/*
+ *  Global methods
+ */
     /** */
     function get_create_logger_running_sql return varchar2;
     function get_create_logger_exception_sql return varchar2;

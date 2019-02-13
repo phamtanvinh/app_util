@@ -10,9 +10,7 @@ as
 -- global config
     /** */
     g_config                pljson;
--- private config
-    /** */
-    "__config__"            varchar2(4000);
+    g_app_config            app_config;
 -- manipulate attributes
     /** */
     procedure set_config(pi_app_config  app_config default null);
