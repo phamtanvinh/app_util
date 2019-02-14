@@ -1,6 +1,8 @@
 create or replace package body app_util
 as
--- feature: manipulate string
+/*
+ *  Feature: manipulate string
+ */
     function get_string_format(
         pi_key          varchar2, 
         pi_value        varchar2, 
@@ -85,7 +87,10 @@ as
             dbms_output.put_line(pi_string);
         end if;
     end;
--- feature: manipulate table
+
+/*
+ *  Feature: manipulate table
+ */
     function exist_table(pi_table_name varchar2) return boolean
     is
         l_is_true   boolean := false;
@@ -112,7 +117,10 @@ as
         end if;
           
     end;
--- feature: manipulate date and time
+
+/*
+ *  Feature: manipulate date and time
+ */
     function get_dnum(pi_ts timestamp default current_timestamp) return number
     is
     begin
@@ -130,7 +138,9 @@ as
     begin
         return round((cast(pi_ts as date) - date '1970-01-01')*24*60*60);
     end;
--- feature: manipulate dictionary
+/*
+ *  Feature: manipulate dictionary
+ */
     function get_dictionary(pi_json    pljson) return dictionary
     is
         l_keys          pljson_list := pi_json.get_keys;
@@ -142,13 +152,17 @@ as
 
         return l_dictionary;
     end;
--- feature: manipulate transaction
+/*
+ *  Feature: manipulate transaction
+ */
     function get_transaction_id return varchar2
     is
     begin
         return dbms_transaction.local_transaction_id(true);
     end;
--- feature: manipulate json
+/*
+ *  Feature: manipulate json
+ */
     procedure update_json(
         pio_json in out pljson,
         pi_json         pljson
@@ -204,7 +218,9 @@ as
             pi_src_json     => l_json
         );
     end;
--- feature: manipulate package
+/*
+ *  Feature: manipulate package
+ */
     function exist_package(pi_package_name varchar2) return boolean
     is
         l_is_true   boolean := false;
