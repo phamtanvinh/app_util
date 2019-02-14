@@ -51,19 +51,21 @@ declare
     );
 begin
     app_logger_util.set_logger(l_logger);
-    --app_logger_util.g_app_logger.print;
-    app_logger_util.insert_logger_running;
-    app_logger_util.insert_logger_running('step 1', 'no description');
-    dbms_lock.sleep(1);
-    app_logger_util.insert_logger_running('step 2', 'no description');
-    app_logger_util.g_app_logger.print;
-    app_logger_util.insert_logger_running(false);
-    dbms_lock.sleep(1);
-    app_logger_util.insert_logger_running(false);
+    app_logger_util.insert_running;
+    app_logger_util.insert_running('step 1', 'no description');
+    /* apex */
+    --dbms_session.sleep(1);
+    --dbms_lock.sleep(1);
+    app_logger_util.insert_running('step 2', 'no description');
+    app_logger_util.insert_running(false);
+    /* apex */
+    --dbms_session.sleep(1);
+    --dbms_lock.sleep(1);
+    app_logger_util.insert_running(false);
     raise no_data_found;
 exception
     when no_data_found then
-        app_logger_util.insert_logger_exception(true);
+        app_logger_util.insert_exception(true);
 end;
 /
 

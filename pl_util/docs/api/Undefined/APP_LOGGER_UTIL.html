@@ -138,7 +138,7 @@
 		siblingCount=1 
 		argumentCount=1 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><A NAME="INSERT_LOGGER_EXCEPTION"></A><TD><CODE><B><A HREF="#INSERT_LOGGER_EXCEPTION(APP_LOGGER)">INSERT_LOGGER_EXCEPTION</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
+		siblingNoArgumentCount=0--><A NAME="INSERT_EXCEPTION"></A><TD><CODE><B><A HREF="#INSERT_EXCEPTION(APP_LOGGER)">INSERT_EXCEPTION</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <code>[table]</code><code>[anchor]</code><code>[exception]</code><br/>
@@ -156,7 +156,7 @@
 		siblingCount=1 
 		argumentCount=1 
 		predecessorCount=1 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_EXCEPTION(BOOLEAN)">INSERT_LOGGER_EXCEPTION</A></B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_EXCEPTION(BOOLEAN)">INSERT_EXCEPTION</A></B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </TD>
@@ -173,7 +173,7 @@
 		siblingCount=2 
 		argumentCount=1 
 		predecessorCount=0 
-		siblingNoArgumentCount=0--><A NAME="INSERT_LOGGER_RUNNING"></A><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(APP_LOGGER)">INSERT_LOGGER_RUNNING</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
+		siblingNoArgumentCount=0--><A NAME="INSERT_RUNNING"></A><TD><CODE><B><A HREF="#INSERT_RUNNING(APP_LOGGER)">INSERT_RUNNING</A></B>(PI_APP_LOGGER IN APP_LOGGER)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <code>[table]</code><code>[anchor]</code><br/>
@@ -191,7 +191,7 @@
 		siblingCount=2 
 		argumentCount=2 
 		predecessorCount=1 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(VARCHAR2,VARCHAR2)">INSERT_LOGGER_RUNNING</A></B>(PI_LOG_STEP_NAME IN VARCHAR2, PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_RUNNING(VARCHAR2,VARCHAR2)">INSERT_RUNNING</A></B>(PI_LOG_STEP_NAME IN VARCHAR2, PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <code>[table]</code><br/>
@@ -209,7 +209,7 @@
 		siblingCount=2 
 		argumentCount=1 
 		predecessorCount=2 
-		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_LOGGER_RUNNING(BOOLEAN)">INSERT_LOGGER_RUNNING</A></B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</CODE>
+		siblingNoArgumentCount=0--><TD><CODE><B><A HREF="#INSERT_RUNNING(BOOLEAN)">INSERT_RUNNING</A></B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</CODE>
 <BR>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
        <code>[table]</code><br/>
@@ -347,15 +347,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_EXCEPTION(APP_LOGGER)"></A>
-<H3>INSERT_LOGGER_EXCEPTION</H3>
+<A NAME="INSERT_EXCEPTION(APP_LOGGER)"></A>
+<H3>INSERT_EXCEPTION</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_EXCEPTION</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_EXCEPTION</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
 <DL>
 <DD> <code>[table]</code><code>[anchor]</code><code>[exception]</code><br/>
  Auto get exception and insert into table.
@@ -367,15 +367,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_EXCEPTION(BOOLEAN)"></A>
-<H3>INSERT_LOGGER_EXCEPTION</H3>
+<A NAME="INSERT_EXCEPTION(BOOLEAN)"></A>
+<H3>INSERT_EXCEPTION</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_EXCEPTION</B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_EXCEPTION</B>(PI_IS_FORCED IN BOOLEAN DEFAULT FALSE)</PRE>
 <DL>
 <DD></DD>
 <DD>
@@ -385,15 +385,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_RUNNING(APP_LOGGER)"></A>
-<H3>INSERT_LOGGER_RUNNING</H3>
+<A NAME="INSERT_RUNNING(APP_LOGGER)"></A>
+<H3>INSERT_RUNNING</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_RUNNING</B>(PI_APP_LOGGER IN APP_LOGGER)</PRE>
 <DL>
 <DD> <code>[table]</code><code>[anchor]</code><br/>
 </DD>
@@ -404,22 +404,22 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_RUNNING(VARCHAR2,VARCHAR2)"></A>
-<H3>INSERT_LOGGER_RUNNING</H3>
+<A NAME="INSERT_RUNNING(VARCHAR2,VARCHAR2)"></A>
+<H3>INSERT_RUNNING</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_LOG_STEP_NAME IN VARCHAR2, <BR>                              PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_RUNNING</B>(PI_LOG_STEP_NAME IN VARCHAR2, <BR>                       PI_LOG_STEP_DESCRIPTION IN VARCHAR2)</PRE>
 <DL>
 <DD> <code>[table]</code><br/>
  Update step and insert into table. <br/>
  Example:
  <pre>
  begin
-   app_logger_util.insert_logger_running('test name', 'test description');
+   app_logger_util.insert_running('test name', 'test description');
  end;
  </pre>
 </DD>
@@ -439,15 +439,15 @@
 <DL></DL>
 </DL>
 <HR>
-<A NAME="INSERT_LOGGER_RUNNING(BOOLEAN)"></A>
-<H3>INSERT_LOGGER_RUNNING</H3>
+<A NAME="INSERT_RUNNING(BOOLEAN)"></A>
+<H3>INSERT_RUNNING</H3>
 <PRE>public <!--
        schemaName=
        typeName=
        localTypeName=
        schema=
        fieldType=
-       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_LOGGER_RUNNING</B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</PRE>
+       synonymsFile=,,--><!--GenerateTypeLink: default reached--> <B>INSERT_RUNNING</B>(PI_IS_DEFAULT IN BOOLEAN DEFAULT TRUE)</PRE>
 <DL>
 <DD> <code>[table]</code><br/>
 </DD>

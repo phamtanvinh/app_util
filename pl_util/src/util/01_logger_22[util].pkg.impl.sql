@@ -36,12 +36,12 @@ as
         app_util.drop_table(g_config.get('running_table').get_string, pi_is_forced);
         app_util.drop_table(g_config.get('exception_table').get_string, pi_is_forced);
 
-        l_sql := app_logger_sql.get_create_logger_running_sql();
+        l_sql := app_logger_sql.get_create_running();
         app_util.print(l_sql, not(pi_is_forced));
         app_util.exec(l_sql, pi_is_forced);
         app_util.print('Created table ' || g_config.get('running_table').get_string, pi_is_forced);
 
-        l_sql := app_logger_sql.get_create_logger_exception_sql();
+        l_sql := app_logger_sql.get_create_exception();
         app_util.print(l_sql, not(pi_is_forced));
         app_util.exec(l_sql, pi_is_forced);
         app_util.print('Created table ' || g_config.get('exception_table').get_string, pi_is_forced);
@@ -55,11 +55,11 @@ as
         g_app_logger    := pi_app_logger;
     end;
     -- this is anchor for updating logger (last call)
-    procedure insert_logger_running(pi_app_logger app_logger)
+    procedure insert_running(pi_app_logger app_logger)
     is
         l_sql   varchar2(4000);
     begin
-        l_sql   := app_logger_sql.get_insert_logger_running_sql();
+        l_sql   := app_logger_sql.get_insert_running();
         -- dbms_output.put_line(l_sql);
         execute immediate l_sql
             using 
@@ -79,7 +79,7 @@ as
     end;
 
     -- this will be update step and datetime and duration
-    procedure insert_logger_running(
+    procedure insert_running(
         pi_log_step_name        varchar2,
         pi_log_step_description varchar2)
     is
@@ -88,28 +88,28 @@ as
             pi_log_step_name        => pi_log_step_name,
             pi_log_step_description => pi_log_step_description
         );
-        insert_logger_running(g_app_logger);
+        insert_running(g_app_logger);
     end;
 
-    procedure insert_logger_running(pi_is_default boolean default true)
+    procedure insert_running(pi_is_default boolean default true)
     is
     begin
         if not(pi_is_default) 
         then
-            insert_logger_running(
+            insert_running(
                 pi_log_step_name        => null,
                 pi_log_step_description => null
             );
         else
-            insert_logger_running(g_app_logger);
+            insert_running(g_app_logger);
         end if;
     end;
 
-    procedure insert_logger_exception(pi_app_logger app_logger)
+    procedure insert_exception(pi_app_logger app_logger)
     is
         l_sql   varchar2(4000);
     begin
-        l_sql   := app_logger_sql.get_insert_logger_exception_sql();
+        l_sql   := app_logger_sql.get_insert_exception();
         --app_util.print(l_sql, not(pi_is_forced));
         execute immediate l_sql
             using 
@@ -130,13 +130,13 @@ as
                 pi_app_logger.error_sqlerrm,
                 pi_app_logger.error_backtrace;
     end;
-    procedure insert_logger_exception(pi_is_forced boolean default false)
+    procedure insert_exception(pi_is_forced boolean default false)
     is
     begin
         g_app_logger.initialize_exception();
         g_app_logger.get_duration(pi_is_total => true);
         if pi_is_forced then
-            insert_logger_exception(g_app_logger);
+            insert_exception(g_app_logger);
         else
             g_app_logger.print;
         end if;

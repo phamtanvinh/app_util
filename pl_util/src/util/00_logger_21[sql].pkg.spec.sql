@@ -25,9 +25,9 @@ as
  *  Global methods
  */
     /** */
-    function get_create_logger_running_sql return varchar2;
-    function get_create_logger_exception_sql return varchar2;
-    function get_insert_logger_running_sql return varchar2;
-    function get_insert_logger_exception_sql return varchar2;
+    function get_create_running return varchar2;
+    function get_create_exception return varchar2;
+    function get_insert_running return varchar2;
+    function get_insert_exception return varchar2;
 end app_logger_sql;
 /
