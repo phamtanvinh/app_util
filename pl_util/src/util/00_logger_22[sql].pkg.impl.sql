@@ -24,7 +24,7 @@ as
 /*
  *  Global methods
  */
-    function get_create_logger_running_sql return varchar2
+    function get_create_running return varchar2
     is
         l_sql   varchar2(4000);
     begin
@@ -47,7 +47,7 @@ as
         return l_sql;
     end;
 
-    function get_create_logger_exception_sql return varchar2
+    function get_create_exception return varchar2
     is
         l_sql   varchar2(4000);
     begin
@@ -72,7 +72,7 @@ as
             )';
         return l_sql;
     end;
-    function get_insert_logger_running_sql return varchar2
+    function get_insert_running return varchar2
     is
         l_sql   varchar2(4000);
     begin
@@ -108,7 +108,7 @@ as
         ';
         return l_sql;
     end;
-    function get_insert_logger_exception_sql return varchar2
+    function get_insert_exception return varchar2
     is
         l_sql   varchar2(4000);
     begin
