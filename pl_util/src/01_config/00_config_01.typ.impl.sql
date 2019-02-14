@@ -5,7 +5,7 @@ as
     constructor function app_config return self as result
     is
     begin
-        self.initialize();
+        self.initialize;
         return;
     end;
 
@@ -44,7 +44,7 @@ as
     begin
         (self as app_base_object).initialize(
             pi_name         => nvl(pi_name, 'app_config'),
-            pi_config_code  => 'app_config' 
+            pi_config_code  => nvl(pi_config_code, 'app_config') 
         );
         self.set_config(
             pi_config_id        => pi_config_id,
