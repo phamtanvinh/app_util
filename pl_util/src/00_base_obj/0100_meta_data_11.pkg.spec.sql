@@ -7,18 +7,25 @@ create or replace package app_meta_data
 * @headcom
 */
 as
--- global attributes
-    /** All global configurations.*/
+/*
+ *  Global attributes
+ */
+    /** <code>[config]</code><br/> 
+    * Config setting for this package.
+    */
     g_config                pljson;
-    /** Config for all global prefixes.*/
+    /** <code>[config]</code><br/> */
     g_prefix                pljson;
-    /** Config for all global suffixes.*/
+    /** <code>[config]</code><br/> */
     g_suffix                pljson;
-    /**
+/*
+ *  Global methods
+ */
+    /** <code>[undefined]</code><br/>
     * Generate object string from global config by default.
     * @param pi_object_name Pass object name
-    * @param pi_prefix Pass prefix, default from g_prefix
-    * @param pi_suffix Pass suffix, default from g_suffix
+    * @param pi_prefix Pass prefix, default g_prefix
+    * @param pi_suffix Pass suffix, default g_suffix
     * @return varchar2
     */
     function get_object_name(
@@ -26,7 +33,7 @@ as
         pi_prefix           varchar2 default null,
         pi_suffix           varchar2 default null
     ) return varchar2;
-    /**
+    /** <code>[undefined]</code><br/>
     * Generate table name from global config.
     * @return varchar2
     */

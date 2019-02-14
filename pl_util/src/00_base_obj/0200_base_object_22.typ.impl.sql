@@ -1,7 +1,8 @@
 create or replace type body app_base_object
 as
--- static
--- constructor
+/*
+ *  Constructors
+ */
     constructor function app_base_object return self as result
     is
     begin
@@ -9,7 +10,10 @@ as
         update_all();
         return;
     end;
--- initialize
+
+/*
+ *  Global methods
+ */
     member procedure get_attributes_info
     is
     begin
@@ -20,33 +24,37 @@ as
     end;
 
     member procedure initialize(
-        pi_name             varchar2 default null,
-        pi_config_code      varchar2 default null
+        pi_name             varchar2,
+        pi_config_code      varchar2
     )
     is
     begin
-        "__name__"          := nvl(pi_name          ,'app_base_object');
-        "__config_code__"   := nvl(pi_config_code   ,'app_base_object');
+        "__name__"          := pi_name;
+        "__config_code__"   := pi_config_code;
         "__ts__"            := current_timestamp;
     end;
 
-    member procedure print
+    member procedure initialize
     is
     begin
-        get_attributes_info();
-        app_util.print("__attributes__");
+        initialize(
+            pi_name             => 'app_base_object',
+            pi_config_code      => 'app_base_object'            
+        );
     end;
 
-    member procedure print(pi_is_sorted boolean)
+    member procedure print(pi_is_sorted boolean default false)
     is
         l_dictionary    app_util.dictionary;
     begin
         get_attributes_info();
-        l_dictionary := app_util.get_dictionary("__attributes__");
-        app_util.print(l_dictionary);
+        if pi_is_sorted then
+            l_dictionary := app_util.get_dictionary("__attributes__");
+            app_util.print(l_dictionary);
+        else
+            app_util.print("__attributes__");
+        end if;
     end;
-
--- manipulate
 
     member procedure update_all
     is

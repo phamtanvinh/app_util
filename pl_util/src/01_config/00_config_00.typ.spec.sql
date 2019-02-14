@@ -11,13 +11,13 @@ under app_base_object(
     config_user     varchar2(64),
     config_name     varchar2(64),
     /**
-    * Get configuration from other sources.<br\>
-    * Ex: custom package, table, or default.<br\>
-    * Priority: high => low
-    * - User input
-    * - Custom package
-    * - Config table
-    * - Default<br\>
+    * Get configuration from other sources. <br/>
+    * Ex: custom package, table, or default. <br/>
+    * Priority: high => low <br/>
+    * - User input <br/>
+    * - Custom package <br/>
+    * - Config table <br/>
+    * - Default <br/>
     * Higher attributes will override lower ones.
     */
     config_value    pljson,
